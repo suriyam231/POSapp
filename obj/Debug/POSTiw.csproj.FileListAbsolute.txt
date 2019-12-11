@@ -1,0 +1,10 @@
+D:\New folder\POS\POSTiw\bin\Debug\POSTiw.exe.config
+D:\New folder\POS\POSTiw\bin\Debug\POSTiw.exe
+D:\New folder\POS\POSTiw\bin\Debug\POSTiw.pdb
+D:\New folder\POS\POSTiw\obj\Debug\POSTiw.csprojAssemblyReference.cache
+D:\New folder\POS\POSTiw\obj\Debug\POSTiw.Form1.resources
+D:\New folder\POS\POSTiw\obj\Debug\POSTiw.Properties.Resources.resources
+D:\New folder\POS\POSTiw\obj\Debug\POSTiw.csproj.GenerateResource.cache
+D:\New folder\POS\POSTiw\obj\Debug\POSTiw.exe
+D:\New folder\POS\POSTiw\obj\Debug\POSTiw.pdb
+D:\New folder\POS\POSTiw\obj\Debug\POSTiw.Main.resources
