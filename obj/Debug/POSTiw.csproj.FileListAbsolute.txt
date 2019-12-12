@@ -18,3 +18,4 @@ D:\WinAppPOS\obj\Debug\POSTiw.Properties.Resources.resources
 D:\WinAppPOS\obj\Debug\POSTiw.csproj.GenerateResource.cache
 D:\WinAppPOS\obj\Debug\POSTiw.exe
 D:\WinAppPOS\obj\Debug\POSTiw.pdb
+D:\WinAppPOS\obj\Debug\POSTiw.Warehouse.resources

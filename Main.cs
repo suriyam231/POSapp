@@ -53,5 +53,16 @@ namespace POSTiw
         {
 
         }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Warehouse ss = new Warehouse();
+            ss.Show();
+        }
     }
 }

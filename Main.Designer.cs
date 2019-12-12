@@ -56,7 +56,6 @@
             this.button6 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
@@ -193,7 +192,7 @@
             this.label1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(6, 64);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(634, 788);
+            this.label1.Size = new System.Drawing.Size(547, 788);
             this.label1.TabIndex = 10;
             // 
             // label2
@@ -201,16 +200,16 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(650, 64);
+            this.label2.Location = new System.Drawing.Point(559, 64);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(767, 788);
+            this.label2.Size = new System.Drawing.Size(858, 788);
             this.label2.TabIndex = 11;
             // 
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("TH SarabunPSK", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(685, 81);
+            this.label7.Location = new System.Drawing.Point(614, 81);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(363, 23);
             this.label7.TabIndex = 12;
@@ -221,9 +220,9 @@
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.Info;
             this.textBox1.Font = new System.Drawing.Font("TH SarabunPSK", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(690, 107);
+            this.textBox1.Location = new System.Drawing.Point(619, 107);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(540, 34);
+            this.textBox1.Size = new System.Drawing.Size(611, 34);
             this.textBox1.TabIndex = 13;
             // 
             // button2
@@ -231,7 +230,7 @@
             this.button2.BackColor = System.Drawing.Color.PaleVioletRed;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("TH SarabunPSK", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(1236, 107);
+            this.button2.Location = new System.Drawing.Point(1236, 106);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(130, 34);
             this.button2.TabIndex = 14;
@@ -244,20 +243,21 @@
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(690, 186);
+            this.dataGridView1.Location = new System.Drawing.Point(620, 186);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(676, 338);
+            this.dataGridView1.Size = new System.Drawing.Size(746, 338);
             this.dataGridView1.TabIndex = 15;
             // 
             // label9
             // 
             this.label9.BackColor = System.Drawing.Color.White;
             this.label9.Font = new System.Drawing.Font("TH SarabunPSK", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(685, 160);
+            this.label9.Location = new System.Drawing.Point(615, 160);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(114, 23);
             this.label9.TabIndex = 16;
             this.label9.Text = "รายการสินค้า";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label10
             // 
@@ -292,7 +292,7 @@
             this.button3.BackColor = System.Drawing.Color.SpringGreen;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("TH SarabunPSK", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(666, 728);
+            this.button3.Location = new System.Drawing.Point(619, 728);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(166, 93);
             this.button3.TabIndex = 20;
@@ -304,7 +304,7 @@
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button4.Font = new System.Drawing.Font("TH SarabunPSK", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(853, 728);
+            this.button4.Location = new System.Drawing.Point(811, 728);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(166, 93);
             this.button4.TabIndex = 21;
@@ -316,7 +316,7 @@
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button5.Font = new System.Drawing.Font("TH SarabunPSK", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(1040, 728);
+            this.button5.Location = new System.Drawing.Point(1002, 728);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(166, 93);
             this.button5.TabIndex = 22;
@@ -328,7 +328,7 @@
             this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button6.Font = new System.Drawing.Font("TH SarabunPSK", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(1226, 728);
+            this.button6.Location = new System.Drawing.Point(1200, 728);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(166, 93);
             this.button6.TabIndex = 23;
@@ -358,36 +358,25 @@
             this.button7.Text = "ตรวจสอบบิล";
             this.button7.UseVisualStyleBackColor = false;
             // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button8.Font = new System.Drawing.Font("TH SarabunPSK", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(59, 415);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(166, 93);
-            this.button8.TabIndex = 26;
-            this.button8.Text = "เพิ่มสินค้า";
-            this.button8.UseVisualStyleBackColor = false;
-            // 
             // button9
             // 
             this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button9.Font = new System.Drawing.Font("TH SarabunPSK", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(243, 415);
+            this.button9.Location = new System.Drawing.Point(59, 415);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(166, 93);
             this.button9.TabIndex = 27;
             this.button9.Text = "คลังสินค้า";
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button10
             // 
             this.button10.BackColor = System.Drawing.Color.Cyan;
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button10.Font = new System.Drawing.Font("TH SarabunPSK", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(426, 415);
+            this.button10.Location = new System.Drawing.Point(243, 415);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(166, 93);
             this.button10.TabIndex = 28;
@@ -459,7 +448,7 @@
             this.textBox2.Font = new System.Drawing.Font("TH SarabunPSK", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(59, 108);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(419, 34);
+            this.textBox2.Size = new System.Drawing.Size(300, 34);
             this.textBox2.TabIndex = 34;
             // 
             // button15
@@ -467,7 +456,7 @@
             this.button15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button15.Font = new System.Drawing.Font("TH SarabunPSK", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.Location = new System.Drawing.Point(484, 108);
+            this.button15.Location = new System.Drawing.Point(365, 108);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(130, 34);
             this.button15.TabIndex = 35;
@@ -479,9 +468,9 @@
             this.label15.BackColor = System.Drawing.Color.White;
             this.label15.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label15.Location = new System.Drawing.Point(53, 814);
+            this.label15.Location = new System.Drawing.Point(5, 816);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(549, 23);
+            this.label15.Size = new System.Drawing.Size(548, 23);
             this.label15.TabIndex = 36;
             this.label15.Text = "Design by Computer Science @Rajamangala University of Technology Thanyaburi ";
             // 
@@ -501,7 +490,6 @@
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.button6);
@@ -566,7 +554,6 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
