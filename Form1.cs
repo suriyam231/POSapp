@@ -28,7 +28,7 @@ namespace POSTiw
         {
             //SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;User ID=posservicetp_co_cc_data;Password=p@$$w0rd;");
             SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
-            SqlDataAdapter sda = new SqlDataAdapter("select Count(*) From Profile where Username = '" + textBox1.Text + "' and Password = '" + passwordTXT.Text + "'", conn);
+            SqlDataAdapter sda = new SqlDataAdapter("select Count(*) From Users where Username = '" + textBox1.Text + "' and Password = '" + passwordTXT.Text + "'", conn);
             DataTable dt = new DataTable();
 
    

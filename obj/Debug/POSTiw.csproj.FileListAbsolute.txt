@@ -8,3 +8,13 @@ D:\New folder\POS\POSTiw\obj\Debug\POSTiw.csproj.GenerateResource.cache
 D:\New folder\POS\POSTiw\obj\Debug\POSTiw.exe
 D:\New folder\POS\POSTiw\obj\Debug\POSTiw.pdb
 D:\New folder\POS\POSTiw\obj\Debug\POSTiw.Main.resources
+D:\WinAppPOS\bin\Debug\POSTiw.exe.config
+D:\WinAppPOS\bin\Debug\POSTiw.exe
+D:\WinAppPOS\bin\Debug\POSTiw.pdb
+D:\WinAppPOS\obj\Debug\POSTiw.csprojAssemblyReference.cache
+D:\WinAppPOS\obj\Debug\POSTiw.Form1.resources
+D:\WinAppPOS\obj\Debug\POSTiw.Main.resources
+D:\WinAppPOS\obj\Debug\POSTiw.Properties.Resources.resources
+D:\WinAppPOS\obj\Debug\POSTiw.csproj.GenerateResource.cache
+D:\WinAppPOS\obj\Debug\POSTiw.exe
+D:\WinAppPOS\obj\Debug\POSTiw.pdb
