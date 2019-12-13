@@ -1,0 +1,14 @@
+D:\WinAppPOS\bin\Release\POSTiw.exe.config
+D:\WinAppPOS\bin\Release\POSTiw.exe
+D:\WinAppPOS\bin\Release\POSTiw.pdb
+D:\WinAppPOS\obj\Release\POSTiw.csprojAssemblyReference.cache
+D:\WinAppPOS\obj\Release\POSTiw.AddProdcutNew.resources
+D:\WinAppPOS\obj\Release\POSTiw.AddQuantity.resources
+D:\WinAppPOS\obj\Release\POSTiw.Form1.resources
+D:\WinAppPOS\obj\Release\POSTiw.Main.resources
+D:\WinAppPOS\obj\Release\POSTiw.Properties.Resources.resources
+D:\WinAppPOS\obj\Release\POSTiw.TypeProduct.resources
+D:\WinAppPOS\obj\Release\POSTiw.Warehouse.resources
+D:\WinAppPOS\obj\Release\POSTiw.csproj.GenerateResource.cache
+D:\WinAppPOS\obj\Release\POSTiw.exe
+D:\WinAppPOS\obj\Release\POSTiw.pdb

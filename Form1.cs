@@ -32,14 +32,7 @@ namespace POSTiw
             DataTable dt = new DataTable();
 
    
-            SqlCommand command = new SqlCommand();
-            command.Connection = conn;
-            command.CommandText = "SELECT * FROM [dbo].[Product]";
-
-            DataTable data = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-
-            adapter.Fill(data);
+           
 
 
 
