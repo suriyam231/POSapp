@@ -19,6 +19,7 @@ namespace POSTiw
 
             addProdcutNew1.Hide();
             typeProduct1.Hide();
+            editProduct1.Hide();
          
         }
 
@@ -26,6 +27,7 @@ namespace POSTiw
         {
             addProdcutNew1.Hide();
             typeProduct1.Hide();
+            editProduct1.Hide();
             addQuantity1.Show();
             addQuantity1.BringToFront();
         }
@@ -39,6 +41,7 @@ namespace POSTiw
         {
             addQuantity1.Hide();
             typeProduct1.Hide();
+            editProduct1.Hide();
             addProdcutNew1.Show();
             addProdcutNew1.BringToFront();
         }
@@ -47,9 +50,19 @@ namespace POSTiw
         {
             addQuantity1.Hide();
             addProdcutNew1.Hide();
-            typeProduct1.Show();
+            typeProduct1.Hide();
+            editProduct1.Show();
             typeProduct1.BringToFront();
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            addQuantity1.Hide();
+            addProdcutNew1.Hide();
+            editProduct1.Hide();
+            typeProduct1.Show();
+            typeProduct1.BringToFront();
         }
     }
 }

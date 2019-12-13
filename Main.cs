@@ -9,8 +9,7 @@ namespace POSTiw
         {
             InitializeComponent();
 
-            label4.Size = new System.Drawing.Size(1440, 60);
-            button2.FlatAppearance.BorderSize = 0;
+            
 
         }
 

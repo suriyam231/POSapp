@@ -22,3 +22,4 @@ D:\WinAppPOS\obj\Debug\POSTiw.Warehouse.resources
 D:\WinAppPOS\obj\Debug\POSTiw.AddProdcutNew.resources
 D:\WinAppPOS\obj\Debug\POSTiw.AddQuantity.resources
 D:\WinAppPOS\obj\Debug\POSTiw.TypeProduct.resources
+D:\WinAppPOS\obj\Debug\POSTiw.Page.EditProduct.resources

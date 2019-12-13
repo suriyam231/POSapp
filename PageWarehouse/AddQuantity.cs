@@ -144,8 +144,6 @@ namespace POSTiw
                 dataGridView1.DataSource = data;
 
             }
-
-
         }
         public void deleteText(object sender, KeyEventArgs kea)
         {
