@@ -38,6 +38,26 @@ namespace POSTiw.Page
                 comboBox1.Items.Add(reader.GetValue(1).ToString());
             }
             reader.Close();
+
+            SqlConnection connn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
+            connn.Open();
+            string count = "select COUNT(ProductID) from Products";
+            string sum = "select SUM(ProductQuantity) from Products";
+            DataTable data2 = new DataTable();
+            DataTable data3 = new DataTable();
+            SqlDataAdapter adapter2 = new SqlDataAdapter(count, connn);
+            SqlDataAdapter adapter3 = new SqlDataAdapter(sum, connn);
+            int number = 0;
+            int Total = 0;
+            adapter2.Fill(data2);
+            adapter3.Fill(data3);
+            number = data2.Rows[0].Field<int>(0);
+            Total = data3.Rows[0].Field<int>(0);
+
+
+            Total_lab.Text = number.ToString();
+            TotalProduct_lab.Text = Total.ToString();
+
         }
 
         private void EditProduct_Load(object sender, EventArgs e)
@@ -108,10 +128,6 @@ namespace POSTiw.Page
         {
             try
             {
-
-                //ID_lab.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
-                //Name_lab.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
-                //Amount_lab.Text = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
                 ID_lab.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
                 PNAME_txt.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
                 PDes_txt.Text = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
@@ -125,6 +141,75 @@ namespace POSTiw.Page
             {
                 MessageBox.Show("กรุณาคลิกที่หน้าสินค้าที่ต้องการแก้ไข");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int Amount = 0;
+                float Price = 0;
+                float CostPrice = 0;
+                Int32.TryParse(Pamuont_txt.Text, out Amount);
+                float.TryParse(Pprice_txt.Text, out Price);
+                float.TryParse(Pcost_txt.Text, out CostPrice);
+
+                string ID = ID_lab.Text.ToString();
+                string Name = PNAME_txt.Text.ToString();
+                string Des = PDes_txt.Text.ToString();
+                string From = Presfer_txt.Text.ToString();
+
+                if (Amount != 0 && Price != 0 && CostPrice != 0  && Name != null && From != null)
+                {
+                    string type = comboBox1.SelectedItem.ToString();
+                    SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
+
+                    conn.Open();
+                    //string qry = "INSERT INTO Products Values('" + ID + "','" + Name + "','" + Des + "'," + Amount + "," + Price + "," + CostPrice + ",'" + From + "','" + type + "','" + DateTime.Now + "')";
+                   
+                    string update = "UPDATE Products SET ProductName = '"+Name+"',Description = '"+Des+"',ProductQuantity ='"+Amount+"',ProductPrice = '"+Price+"',CostPrice = '"+CostPrice+"',ProductFrom = '"+From+"',TypeName ='"+type+"',Date = '" + DateTime.Now + "' WHERE ProductID = '" + ID + "'";
+                    /*(ProductID,ProductName,Description,ProductQuantity,ProductPrice,CostPrice,ProductFrom,TypeID,UpDate)*/
+                    SqlDataReader reader = new SqlCommand(update, conn).ExecuteReader();
+                    MessageBox.Show("แก้ไขรายละเอียดสินค้า : " + Name + " เรียบร้อยแล้ว");
+
+                    SqlConnection connn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
+                    SqlCommand command = new SqlCommand();
+                    command.Connection = connn;
+                    command.CommandText = "SELECT * FROM [dbo].[Products]";
+                    DataTable data2 = new DataTable();
+                    SqlDataAdapter adapter2 = new SqlDataAdapter(command);
+                    adapter2.Fill(data2);
+                    dataGridView1.DataSource = data2;
+                    ID_lab.Text = null;
+                    PNAME_txt.Text = null;
+                    PDes_txt.Text = null;
+                    Presfer_txt.Text = null;
+                    Pamuont_txt.Text = null;
+                    Pprice_txt.Text = null;
+                    Pcost_txt.Text = null;
+                    comboBox1.SelectedItem = null;
+                }
+                else
+                {
+                    MessageBox.Show("กรุณากรอกข้อมูลให้ครบถ้วน ก่อนกดเพิ่มสินค้า");
+                }
+
+
+            }
+            catch (SqlException error)
+            {
+                string ID = ID_lab.Text.ToString();
+                MessageBox.Show("มีรหัสสืนค้า : " + ID + " อยู่ในระบบแล้ว ไม่สามารถเพิ่มข้อมูลซ้ำได้");
+            }
+            catch (NullReferenceException nul)
+            {
+                MessageBox.Show("กรุณาเลือกประเภทสินค้า");
+            }
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

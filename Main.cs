@@ -60,8 +60,16 @@ namespace POSTiw
 
         private void button9_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Warehouse ss = new Warehouse();
             ss.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 F = new Form1();
+            F.Show();
         }
     }
 }

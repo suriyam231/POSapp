@@ -30,6 +30,7 @@ namespace POSTiw
             editProduct1.Hide();
             addQuantity1.Show();
             addQuantity1.BringToFront();
+           
         }
 
         private void Warehouse_Load(object sender, EventArgs e)
@@ -47,12 +48,15 @@ namespace POSTiw
         }
 
         private void button3_Click(object sender, EventArgs e)
-        {
+        { 
             addQuantity1.Hide();
             addProdcutNew1.Hide();
             typeProduct1.Hide();
             editProduct1.Show();
-            typeProduct1.BringToFront();
+            editProduct1.BringToFront();
+
+             
+
 
         }
 
@@ -63,6 +67,13 @@ namespace POSTiw
             editProduct1.Hide();
             typeProduct1.Show();
             typeProduct1.BringToFront();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Main ss = new Main();
+            ss.Show();
         }
     }
 }

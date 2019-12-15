@@ -54,6 +54,12 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.ID_lab = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.Total_lab = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.TotalProduct_lab = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,7 +84,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(30, 138);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(708, 604);
+            this.dataGridView1.Size = new System.Drawing.Size(708, 438);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
             // 
@@ -245,6 +251,7 @@
             this.button1.TabIndex = 33;
             this.button1.Text = "เพิ่มสินค้า";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label8
             // 
@@ -322,11 +329,84 @@
             this.ID_lab.Size = new System.Drawing.Size(276, 32);
             this.ID_lab.TabIndex = 40;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Thistle;
+            this.label15.Font = new System.Drawing.Font("TH SarabunPSK", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(106, 659);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(130, 36);
+            this.label15.TabIndex = 41;
+            this.label15.Text = "สินค้าทั้งหมด : ";
+            this.label15.Click += new System.EventHandler(this.label15_Click);
+            // 
+            // Total_lab
+            // 
+            this.Total_lab.AutoSize = true;
+            this.Total_lab.BackColor = System.Drawing.Color.Thistle;
+            this.Total_lab.Font = new System.Drawing.Font("TH SarabunPSK", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Total_lab.Location = new System.Drawing.Point(242, 659);
+            this.Total_lab.Name = "Total_lab";
+            this.Total_lab.Size = new System.Drawing.Size(60, 36);
+            this.Total_lab.TabIndex = 42;
+            this.Total_lab.Text = "xxxxx";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Thistle;
+            this.label16.Font = new System.Drawing.Font("TH SarabunPSK", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(321, 661);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(54, 36);
+            this.label16.TabIndex = 43;
+            this.label16.Text = "อย่าง";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.Thistle;
+            this.label17.Font = new System.Drawing.Font("TH SarabunPSK", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(447, 661);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(87, 36);
+            this.label17.TabIndex = 44;
+            this.label17.Text = "ทั้งหมด : ";
+            // 
+            // TotalProduct_lab
+            // 
+            this.TotalProduct_lab.AutoSize = true;
+            this.TotalProduct_lab.BackColor = System.Drawing.Color.Thistle;
+            this.TotalProduct_lab.Font = new System.Drawing.Font("TH SarabunPSK", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalProduct_lab.Location = new System.Drawing.Point(550, 661);
+            this.TotalProduct_lab.Name = "TotalProduct_lab";
+            this.TotalProduct_lab.Size = new System.Drawing.Size(51, 36);
+            this.TotalProduct_lab.TabIndex = 45;
+            this.TotalProduct_lab.Text = "xxxx";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.Thistle;
+            this.label18.Font = new System.Drawing.Font("TH SarabunPSK", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(634, 661);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(38, 36);
+            this.label18.TabIndex = 46;
+            this.label18.Text = "ชิ้น";
+            // 
             // EditProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.TotalProduct_lab);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.Total_lab);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.ID_lab);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
@@ -390,5 +470,11 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label ID_lab;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label Total_lab;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label TotalProduct_lab;
+        private System.Windows.Forms.Label label18;
     }
 }

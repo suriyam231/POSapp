@@ -40,6 +40,7 @@
             this.addQuantity1 = new POSTiw.AddQuantity();
             this.button4 = new System.Windows.Forms.Button();
             this.editProduct1 = new POSTiw.Page.EditProduct();
+            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -144,11 +145,26 @@
             this.editProduct1.Size = new System.Drawing.Size(1440, 800);
             this.editProduct1.TabIndex = 8;
             // 
+            // button5
+            // 
+            this.button5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button5.Font = new System.Drawing.Font("TH SarabunPSK", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(1256, 12);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(156, 79);
+            this.button5.TabIndex = 9;
+            this.button5.Text = "หน้าขายของ";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Warehouse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1424, 861);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.editProduct1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -180,5 +196,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private Page.EditProduct editProduct1;
+        private System.Windows.Forms.Button button5;
     }
 }

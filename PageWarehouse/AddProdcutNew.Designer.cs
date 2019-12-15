@@ -332,7 +332,7 @@
             this.label18.BackColor = System.Drawing.Color.LightCyan;
             this.label18.Font = new System.Drawing.Font("TH SarabunPSK", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label18.Location = new System.Drawing.Point(668, 549);
+            this.label18.Location = new System.Drawing.Point(668, 90);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(276, 22);
             this.label18.TabIndex = 27;
