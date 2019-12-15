@@ -377,14 +377,19 @@
             // button9
             // 
             this.button9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.button9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button9.BackgroundImage")));
+            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button9.FlatAppearance.BorderSize = 0;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button9.Font = new System.Drawing.Font("TH SarabunPSK", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(59, 415);
+            this.button9.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ForeColor = System.Drawing.Color.Purple;
+            this.button9.Location = new System.Drawing.Point(59, 404);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(166, 93);
+            this.button9.Size = new System.Drawing.Size(166, 104);
             this.button9.TabIndex = 27;
             this.button9.Text = "คลังสินค้า";
+            this.button9.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
