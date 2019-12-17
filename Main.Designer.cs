@@ -67,6 +67,12 @@
             this.button15 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.index = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Proname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Proamount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Proprice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -231,6 +237,7 @@
             this.textBox1.Size = new System.Drawing.Size(611, 34);
             this.textBox1.TabIndex = 13;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Onkey);
             // 
             // button2
             // 
@@ -252,6 +259,13 @@
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.index,
+            this.ProID,
+            this.Proname,
+            this.Proamount,
+            this.Proprice,
+            this.total});
             this.dataGridView1.Location = new System.Drawing.Point(620, 186);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(729, 338);
@@ -522,6 +536,36 @@
             this.dataGridView2.Size = new System.Drawing.Size(436, 106);
             this.dataGridView2.TabIndex = 37;
             // 
+            // index
+            // 
+            this.index.HeaderText = "ลำดับ";
+            this.index.Name = "index";
+            // 
+            // ProID
+            // 
+            this.ProID.HeaderText = "รหัสสินค้า";
+            this.ProID.Name = "ProID";
+            // 
+            // Proname
+            // 
+            this.Proname.HeaderText = "ชื่อสินค้า";
+            this.Proname.Name = "Proname";
+            // 
+            // Proamount
+            // 
+            this.Proamount.HeaderText = "จำนวนสินค้า";
+            this.Proamount.Name = "Proamount";
+            // 
+            // Proprice
+            // 
+            this.Proprice.HeaderText = "ราคาต่อหน่วย";
+            this.Proprice.Name = "Proprice";
+            // 
+            // total
+            // 
+            this.total.HeaderText = "รวมราคา";
+            this.total.Name = "total";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -617,5 +661,11 @@
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn index;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Proname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Proamount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Proprice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn total;
     }
 }
