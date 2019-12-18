@@ -249,5 +249,79 @@ namespace POSTiw
 
             
         }
+
+        private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
+        {
+            //namePro_lab.Text = dataGridView1.SelectedRows[1].Cells[1].Value.ToString();
+           
+            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            {
+                namePro_lab.Text = row.Cells[2].Value.ToString();
+                textBox3.Text = row.Cells[3].Value.ToString();
+            }
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            
+            string ProduceName = namePro_lab.Text.ToString();
+            string number = textBox3.Text.ToString();
+
+            string text = null;
+
+                foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                {
+                    if(number == "0" || number == "")
+                    {
+                    dataGridView1.Rows.RemoveAt(this.dataGridView1.SelectedRows[0].Index);
+                    namePro_lab.Text = "";
+                    textBox3.Text = "";
+
+
+                    }
+                    text = row.Cells[2].Value.ToString();
+ 
+                    if (ProduceName == text)
+                    {
+                        string textPrice = row.Cells[4].Value.ToString();
+                        int price = 0;
+                        int amount = 0;
+                        Int32.TryParse(number, out amount);
+                        Int32.TryParse(textPrice, out price);
+                        int total = 0;
+                        total = amount * price;
+                        row.Cells[3].Value = amount.ToString();
+                        row.Cells[5].Value = total.ToString();
+                 
+                        break;
+                    }
+                }
+           // }
+            int Total = 0;
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                try
+                {
+                    string gettext = dataGridView1.Rows[i].Cells[5].Value.ToString();
+                    int texts;
+                    Int32.TryParse(gettext, out texts);
+                    Total = Total + texts;
+                }
+                catch (Exception er)
+                {
+                    
+                    break;
+                }
+            }
+            label12.Text = Total.ToString();
+
+        }
+        public void Click_OK(object sender, KeyEventArgs kea)
+        {
+            if (kea.KeyCode == Keys.Enter)
+            {
+                button16.PerformClick();
+            }
+        }
     }
 }

@@ -46,6 +46,12 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.index = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Proname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Proamount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Proprice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -67,12 +73,13 @@
             this.button15 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.index = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Proname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Proamount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Proprice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label16 = new System.Windows.Forms.Label();
+            this.namePro_lab = new System.Windows.Forms.Label();
+            this.button16 = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -210,11 +217,12 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(559, 64);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(858, 788);
             this.label2.TabIndex = 11;
+            this.label2.Text = "ตกลง";
             // 
             // label7
             // 
@@ -268,8 +276,39 @@
             this.total});
             this.dataGridView1.Location = new System.Drawing.Point(620, 186);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(729, 338);
+            this.dataGridView1.Size = new System.Drawing.Size(729, 309);
             this.dataGridView1.TabIndex = 15;
+            this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
+            // 
+            // index
+            // 
+            this.index.HeaderText = "ลำดับ";
+            this.index.Name = "index";
+            // 
+            // ProID
+            // 
+            this.ProID.HeaderText = "รหัสสินค้า";
+            this.ProID.Name = "ProID";
+            // 
+            // Proname
+            // 
+            this.Proname.HeaderText = "ชื่อสินค้า";
+            this.Proname.Name = "Proname";
+            // 
+            // Proamount
+            // 
+            this.Proamount.HeaderText = "จำนวนสินค้า";
+            this.Proamount.Name = "Proamount";
+            // 
+            // Proprice
+            // 
+            this.Proprice.HeaderText = "ราคาต่อหน่วย";
+            this.Proprice.Name = "Proprice";
+            // 
+            // total
+            // 
+            this.total.HeaderText = "รวมราคา";
+            this.total.Name = "total";
             // 
             // label9
             // 
@@ -287,7 +326,7 @@
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.BackColor = System.Drawing.SystemColors.Info;
-            this.label10.Location = new System.Drawing.Point(1016, 564);
+            this.label10.Location = new System.Drawing.Point(1016, 624);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(350, 78);
             this.label10.TabIndex = 17;
@@ -297,7 +336,7 @@
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.BackColor = System.Drawing.SystemColors.Info;
             this.label11.Font = new System.Drawing.Font("TH SarabunPSK", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(1019, 567);
+            this.label11.Location = new System.Drawing.Point(1018, 629);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(198, 66);
             this.label11.TabIndex = 18;
@@ -308,9 +347,9 @@
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.BackColor = System.Drawing.SystemColors.Info;
             this.label12.Font = new System.Drawing.Font("TH SarabunPSK", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(1190, 570);
+            this.label12.Location = new System.Drawing.Point(1189, 632);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(176, 66);
+            this.label12.Size = new System.Drawing.Size(160, 66);
             this.label12.TabIndex = 19;
             this.label12.Text = "0";
             // 
@@ -536,35 +575,88 @@
             this.dataGridView2.Size = new System.Drawing.Size(436, 106);
             this.dataGridView2.TabIndex = 37;
             // 
-            // index
+            // label16
             // 
-            this.index.HeaderText = "ลำดับ";
-            this.index.Name = "index";
+            this.label16.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label16.BackColor = System.Drawing.Color.White;
+            this.label16.Font = new System.Drawing.Font("TH SarabunPSK", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(804, 516);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(104, 37);
+            this.label16.TabIndex = 38;
+            this.label16.Text = "ชื่อสินค้า :";
             // 
-            // ProID
+            // namePro_lab
             // 
-            this.ProID.HeaderText = "รหัสสินค้า";
-            this.ProID.Name = "ProID";
+            this.namePro_lab.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.namePro_lab.BackColor = System.Drawing.Color.White;
+            this.namePro_lab.Font = new System.Drawing.Font("TH SarabunPSK", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.namePro_lab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.namePro_lab.Location = new System.Drawing.Point(891, 514);
+            this.namePro_lab.Name = "namePro_lab";
+            this.namePro_lab.Size = new System.Drawing.Size(134, 37);
+            this.namePro_lab.TabIndex = 39;
+            this.namePro_lab.Text = "x";
             // 
-            // Proname
+            // button16
             // 
-            this.Proname.HeaderText = "ชื่อสินค้า";
-            this.Proname.Name = "Proname";
+            this.button16.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button16.Font = new System.Drawing.Font("TH SarabunPSK", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button16.ForeColor = System.Drawing.Color.White;
+            this.button16.Location = new System.Drawing.Point(1273, 517);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(76, 34);
+            this.button16.TabIndex = 41;
+            this.button16.Text = "ตกลง";
+            this.button16.UseVisualStyleBackColor = false;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
+            this.button16.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Click_OK);
             // 
-            // Proamount
+            // label17
             // 
-            this.Proamount.HeaderText = "จำนวนสินค้า";
-            this.Proamount.Name = "Proamount";
+            this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label17.BackColor = System.Drawing.Color.White;
+            this.label17.Font = new System.Drawing.Font("TH SarabunPSK", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(614, 514);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(184, 37);
+            this.label17.TabIndex = 42;
+            this.label17.Text = "* จัดการจำนวนสินค้า";
             // 
-            // Proprice
+            // label18
             // 
-            this.Proprice.HeaderText = "ราคาต่อหน่วย";
-            this.Proprice.Name = "Proprice";
+            this.label18.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label18.BackColor = System.Drawing.Color.White;
+            this.label18.Font = new System.Drawing.Font("TH SarabunPSK", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(1024, 516);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(104, 37);
+            this.label18.TabIndex = 43;
+            this.label18.Text = "จำนวน :";
             // 
-            // total
+            // textBox3
             // 
-            this.total.HeaderText = "รวมราคา";
-            this.total.Name = "total";
+            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox3.BackColor = System.Drawing.SystemColors.Info;
+            this.textBox3.Font = new System.Drawing.Font("TH SarabunPSK", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(1109, 517);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(88, 34);
+            this.textBox3.TabIndex = 44;
+            this.textBox3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Click_OK);
+            // 
+            // label19
+            // 
+            this.label19.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label19.BackColor = System.Drawing.Color.White;
+            this.label19.Font = new System.Drawing.Font("TH SarabunPSK", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(1204, 519);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(64, 37);
+            this.label19.TabIndex = 45;
+            this.label19.Text = "ชิ้น";
             // 
             // Main
             // 
@@ -572,6 +664,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(1424, 861);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.button16);
+            this.Controls.Add(this.namePro_lab);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.button15);
@@ -667,5 +766,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Proamount;
         private System.Windows.Forms.DataGridViewTextBoxColumn Proprice;
         private System.Windows.Forms.DataGridViewTextBoxColumn total;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label namePro_lab;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label19;
     }
 }
