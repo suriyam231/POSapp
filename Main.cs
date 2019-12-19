@@ -19,7 +19,8 @@ namespace POSTiw
             //dataOrder.Columns.Add("ราคารวม");
             //dataGridView1.DataSource = dataOrder;
 
-
+            this.ActiveControl = textBox1;
+            label20.Hide();
             
         }
 
@@ -64,9 +65,11 @@ namespace POSTiw
             {
                 Random rand = new Random();
                 billID = rand.Next(000000000, 999999999);
+              
             }
 
             string ReceiptID = billID.ToString();
+            label20.Text = ReceiptID.ToString();
             string getProduct = "Select * from Products where ProductID = '" + textBox1.Text.ToString() + "'";
             SqlDataAdapter adapterGet = new SqlDataAdapter(getProduct, connn);
             DataTable Product = new DataTable();
@@ -242,6 +245,13 @@ namespace POSTiw
             dataGridView1.Columns[5].Width = 110;
 
         }
+        public void Check_bill(object sender, KeyEventArgs kea)
+        {
+            if (kea.KeyCode == Keys.Enter)
+            {
+
+            }
+        }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -276,8 +286,6 @@ namespace POSTiw
                     dataGridView1.Rows.RemoveAt(this.dataGridView1.SelectedRows[0].Index);
                     namePro_lab.Text = "";
                     textBox3.Text = "";
-
-
                     }
                     text = row.Cells[2].Value.ToString();
  
@@ -323,5 +331,86 @@ namespace POSTiw
                 button16.PerformClick();
             }
         }
+        public void button6_Click(object sender, EventArgs e)
+        {
+            label20.Text = "";
+            namePro_lab.Text = "";
+            textBox3.Text = "";
+            label12.Text = "";
+            Main m = new Main();
+            this.Controls.Clear();
+            this.InitializeComponent();
+            this.ActiveControl = textBox1;
+            label20.Hide();
+            dataGridView1.Columns[0].Width = 50;
+            dataGridView1.Columns[1].Width = 150;
+            dataGridView1.Columns[2].Width = 150;
+            dataGridView1.Columns[3].Width = 110;
+            dataGridView1.Columns[4].Width = 110;
+            dataGridView1.Columns[5].Width = 110;
+
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string textID = label20.Text.ToString();
+            int num = 0;
+            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+            {
+
+                string ReceiptID = textID.ToString();
+                string ProductID = dataGridView1.Rows[i].Cells[1].Value.ToString();
+                string txtPrice = dataGridView1.Rows[i].Cells[4].Value.ToString();
+                string txtAmount = dataGridView1.Rows[i].Cells[3].Value.ToString();
+                int Amount = 0;
+
+                float Price = 0;
+                Int32.TryParse(txtAmount, out Amount);
+                float.TryParse(txtPrice, out Price);
+                string Active = "Y";
+                num = num + Amount;
+
+                SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
+
+                conn.Open();
+                string qry = "INSERT ReceiptDetail Values('" + ProductID + "','" + ReceiptID + "'," + Price + "," + Amount + ",'" + Active + "')";
+                SqlDataReader reader = new SqlCommand(qry, conn).ExecuteReader();
+                //8850987128400
+            }
+            SqlConnection connn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
+
+            connn.Open();
+            string qry2 = "INSERT Receipt Values('"+ textID+ "','"+DateTime.Now.Date+"','"+ DateTime.Now.TimeOfDay + "','"+ label12.Text.ToString() + "','"+num+"')";
+            SqlDataReader reader2 = new SqlCommand(qry2, connn).ExecuteReader();
+            string a = label12.Text.ToString();
+            ModalPage.CheckBill Bill = new ModalPage.CheckBill();
+            Bill.ad(a.ToString(),textID.ToString());
+            Bill.Show();
+        }
+        public void ad(string a,string textID)
+        {
+
+            if (a == "succes")
+            {
+
+
+                
+
+            }
+            if(a == "fail")
+            {
+                SqlConnection connn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
+
+                connn.Open();
+                string qry2 = "delete ReceiptDetail where ReceiptID = '"+textID+"'";
+                string qry1 = "delete Receipt where ReceiptID = '" + textID + "'";
+                SqlDataReader reader2 = new SqlCommand(qry2, connn).ExecuteReader();
+
+                SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
+                conn.Open();
+                SqlDataReader reader1 = new SqlCommand(qry1, conn).ExecuteReader();
+            }
+        }
+
+        
     }
 }

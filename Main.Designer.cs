@@ -80,6 +80,7 @@
             this.label18 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -365,6 +366,7 @@
             this.button3.TabIndex = 20;
             this.button3.Text = "คิดเงิน";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -404,6 +406,7 @@
             this.button6.TabIndex = 23;
             this.button6.Text = "ยกเลิก";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // label13
             // 
@@ -658,12 +661,22 @@
             this.label19.TabIndex = 45;
             this.label19.Text = "ชิ้น";
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(744, 166);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(41, 13);
+            this.label20.TabIndex = 46;
+            this.label20.Text = "label20";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(1424, 861);
+            this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label18);
@@ -711,6 +724,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ระบบบริหารจัดการร้านสะดวกซื้อทิวพาณิชย์";
             this.Load += new System.EventHandler(this.Main_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Check_bill);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -773,5 +787,6 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
     }
 }
