@@ -384,7 +384,8 @@ namespace POSTiw
         private void button3_Click(object sender, EventArgs e)
         {
             string Type;
-            using(ModalPage.CheckBill bill = new ModalPage.CheckBill())
+            string Active = "Y";
+            using (ModalPage.CheckBill bill = new ModalPage.CheckBill())
             {
                 string a = label12.Text.ToString();
 
@@ -408,7 +409,7 @@ namespace POSTiw
                             float Price = 0;
                             Int32.TryParse(txtAmount, out Amount);
                             float.TryParse(txtPrice, out Price);
-                            string Active = "Y";
+                           
                             num = num + Amount;
 
                             SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
@@ -428,14 +429,12 @@ namespace POSTiw
                             int TotalAmount = 0;
                             TotalAmount = index - Amount;
                             string Edit = "UPDATE Products SET ProductQuantity = " + TotalAmount + " Where ProductID = '" + ProductID + "'";
-                            SqlDataReader readerUdate = new SqlCommand(Edit, conn).ExecuteReader();
-
-                            //8850987128400
+                            SqlDataReader readerUdate = new SqlCommand(Edit, conn).ExecuteReader();    
                         }
                         SqlConnection connn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
 
                         connn.Open();
-                        string qry2 = "INSERT Receipt Values('" + textID + "','" + DateTime.Now.Date + "','" + DateTime.Now.TimeOfDay + "','" + label12.Text.ToString() + "','" + num + "')";
+                        string qry2 = "INSERT Receipt Values('" + textID + "','" + DateTime.Now.Date + "','" + DateTime.Now.TimeOfDay + "','" + label12.Text.ToString() + "','" + num + "','"+ Active+ "')";
                         SqlDataReader reader2 = new SqlCommand(qry2, connn).ExecuteReader();
                         label20.Text = "";
                         namePro_lab.Text = "";
@@ -454,14 +453,69 @@ namespace POSTiw
                     }
                 }
             }
-           
-           // string a = label12.Text.ToString();
-            //ModalPage.CheckBill Bill = new ModalPage.CheckBill();
-            //Bill.ad(a.ToString(),textID.ToString());
-            //Bill.Show();
         }
-       
 
-        
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string name;
+            string Active = "P";
+            using (ModalPage.PauseBill pause = new ModalPage.PauseBill())
+            {
+                if (pause.ShowDialog() == DialogResult.OK)
+                {
+                    name = pause.Getvalues;
+                    string textID = label20.Text.ToString();
+                    int num = 0;
+                    for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                    {
+
+                        string ReceiptID = textID.ToString();
+                        string ProductID = dataGridView1.Rows[i].Cells[1].Value.ToString();
+                        string txtPrice = dataGridView1.Rows[i].Cells[4].Value.ToString();
+                        string txtAmount = dataGridView1.Rows[i].Cells[3].Value.ToString();
+                        int Amount = 0;
+
+                        float Price = 0;
+                        Int32.TryParse(txtAmount, out Amount);
+                        float.TryParse(txtPrice, out Price);
+
+                        num = num + Amount;
+
+                        SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
+                        conn.Open();
+                        string qry = "INSERT ReceiptDetail Values('" + ProductID + "','" + ReceiptID + "'," + Price + "," + Amount + ",'" + Active + "')";
+                        SqlDataReader reader = new SqlCommand(qry, conn).ExecuteReader();
+                        conn.Close();
+
+                    }
+                    SqlConnection connn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
+                    connn.Open();
+                    string qry2 = "INSERT Receipt Values('" + textID + "','" + DateTime.Now.Date + "','" + DateTime.Now.TimeOfDay + "','" + label12.Text.ToString() + "','" + num + "','" + Active + "')";
+                    SqlDataReader reader2 = new SqlCommand(qry2, connn).ExecuteReader();
+                    connn.Close();
+
+                    connn.Open();
+                    string Pause = "INSERT PauseBill Values('"+label20.Text.ToString()+"','" + label20.Text.ToString() + "','"+ name + "')";
+                    SqlDataReader reader3 = new SqlCommand(Pause, connn).ExecuteReader();
+                    connn.Close();
+
+
+                    label20.Text = "";
+                    namePro_lab.Text = "";
+                    textBox3.Text = "";
+                    label12.Text = "";
+                    this.Controls.Clear();
+                    this.InitializeComponent();
+                    this.ActiveControl = textBox1;
+                    label20.Hide();
+                    dataGridView1.Columns[0].Width = 50;
+                    dataGridView1.Columns[1].Width = 150;
+                    dataGridView1.Columns[2].Width = 150;
+                    dataGridView1.Columns[3].Width = 110;
+                    dataGridView1.Columns[4].Width = 110;
+                    dataGridView1.Columns[5].Width = 110;
+                }
+            }
+        }
     }
 }

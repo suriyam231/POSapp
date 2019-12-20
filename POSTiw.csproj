@@ -56,6 +56,12 @@
     <Compile Include="ModalPage\CheckBill.Designer.cs">
       <DependentUpon>CheckBill.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModalPage\PauseBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModalPage\PauseBill.Designer.cs">
+      <DependentUpon>PauseBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="PageWarehouse\AddProdcutNew.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     </Compile>
     <EmbeddedResource Include="ModalPage\CheckBill.resx">
       <DependentUpon>CheckBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModalPage\PauseBill.resx">
+      <DependentUpon>PauseBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PageWarehouse\AddProdcutNew.resx">
       <DependentUpon>AddProdcutNew.cs</DependentUpon>
