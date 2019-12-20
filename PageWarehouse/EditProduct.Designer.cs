@@ -249,7 +249,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(115, 40);
             this.button1.TabIndex = 33;
-            this.button1.Text = "เพิ่มสินค้า";
+            this.button1.Text = "แก้ไขสินค้า";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 

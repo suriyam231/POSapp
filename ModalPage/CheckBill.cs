@@ -13,6 +13,14 @@ namespace POSTiw.ModalPage
     public partial class CheckBill : Form
     {
         string textID;
+        public string Getvalues
+        {
+            get
+            {
+                return "succes";
+            }
+
+        }
         public CheckBill()
         {
             InitializeComponent();
@@ -23,10 +31,9 @@ namespace POSTiw.ModalPage
         {
 
         }
-        public void ad(string a, string text)
+        public void ad(string a)
         {
             string b = a.ToString();
-            textID = text;
             Total_lab.Text = b.ToString();
         }
         public void keydown(object sender, KeyEventArgs kea)
@@ -45,10 +52,11 @@ namespace POSTiw.ModalPage
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            string a = "succes";
-            Main  main= new Main();
-            main.ad(a.ToString(),textID.ToString());
-            this.Close();
+            //string a = "succes";
+            //Main  main= new Main();
+            //main.ad(a.ToString(),textID.ToString());
+            
+            //this.Close();
         }
         public void Onkey(object sender, KeyEventArgs kea)
         {
@@ -74,10 +82,11 @@ namespace POSTiw.ModalPage
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string a = "fail";
-            Main main = new Main();
-            main.ad(a.ToString(), textID.ToString());
-            this.Close();
+            //string a = "fail";
+            //Main main = new Main();
+            //main.ad(a.ToString(), textID.ToString());
+            //main.button6_Click("ยกเลิก", e);
+            //this.Close();
         }
     }
 }
