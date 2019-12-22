@@ -5,8 +5,11 @@ using System.Windows.Forms;
 
 namespace POSTiw
 {
+  
     public partial class Main : Form
     {
+        string IDPause;
+        string Type;
         public Main()
         {
             InitializeComponent();
@@ -21,6 +24,9 @@ namespace POSTiw
 
             this.ActiveControl = textBox1;
             label20.Hide();
+            dataGridView3.Hide();
+            IDPause = null;
+            Type = null;
             
         }
 
@@ -53,7 +59,7 @@ namespace POSTiw
         {
             try
             {
-                int billID = 0;
+            int billID = 0;
             string RID =null;
             string amount=null;
             string ProID = null;
@@ -72,7 +78,9 @@ namespace POSTiw
 
            
                 string ReceiptID = billID.ToString();
+               
                 label20.Text = ReceiptID.ToString();
+               
                 string getProduct = "Select * from Products where ProductID = '" + textBox1.Text.ToString() + "'";
                 SqlDataAdapter adapterGet = new SqlDataAdapter(getProduct, connn);
                 DataTable Product = new DataTable();
@@ -373,6 +381,7 @@ namespace POSTiw
             this.InitializeComponent();
             this.ActiveControl = textBox1;
             label20.Hide();
+            dataGridView3.Hide();
             dataGridView1.Columns[0].Width = 50;
             dataGridView1.Columns[1].Width = 150;
             dataGridView1.Columns[2].Width = 150;
@@ -383,6 +392,7 @@ namespace POSTiw
         }
         private void button3_Click(object sender, EventArgs e)
         {
+            
             string Type;
             string Active = "Y";
             using (ModalPage.CheckBill bill = new ModalPage.CheckBill())
@@ -396,6 +406,24 @@ namespace POSTiw
                     if (Type == "succes")
                     {
                         string textID = label20.Text.ToString();
+                        if (this.Type == "เรียกบิล")
+                        {
+                            SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
+                            conn.Open();
+                            string qry = "Delete PauseBill where ReceiptID = '" + this.IDPause + "'";
+                            SqlDataReader reader = new SqlCommand(qry, conn).ExecuteReader();
+                            conn.Close();
+                            conn.Open();
+                            string qry1 = "Delete Receipt where ReceiptID = '" + this.IDPause + "'";
+                            SqlDataReader reader1 = new SqlCommand(qry1, conn).ExecuteReader();
+                            conn.Close();
+                            conn.Open();
+                            string qry3 = "Delete ReceiptDetail where ReceiptID = '" + this.IDPause + "'";
+                            SqlDataReader reader3 = new SqlCommand(qry3, conn).ExecuteReader();
+                            conn.Close();
+                            textID = IDPause;
+                        }
+
                         int num = 0;
                         for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
                         {
@@ -444,6 +472,7 @@ namespace POSTiw
                         this.InitializeComponent();
                         this.ActiveControl = textBox1;
                         label20.Hide();
+                        dataGridView3.Hide();
                         dataGridView1.Columns[0].Width = 50;
                         dataGridView1.Columns[1].Width = 150;
                         dataGridView1.Columns[2].Width = 150;
@@ -508,6 +537,7 @@ namespace POSTiw
                     this.InitializeComponent();
                     this.ActiveControl = textBox1;
                     label20.Hide();
+                    dataGridView3.Hide();
                     dataGridView1.Columns[0].Width = 50;
                     dataGridView1.Columns[1].Width = 150;
                     dataGridView1.Columns[2].Width = 150;
@@ -516,6 +546,99 @@ namespace POSTiw
                     dataGridView1.Columns[5].Width = 110;
                 }
             }
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string textID;
+            using (ModalPage.SelecteBill bill = new ModalPage.SelecteBill())
+            {
+                if (bill.ShowDialog() == DialogResult.OK)
+                {
+                    IDPause = bill.Getvalues;
+                    Type = "เรียกบิล";
+                    textID = bill.Getvalues;
+                    SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
+                    conn.Open();
+                    string Text = "SELECT Products.ProductID,Products.ProductName,Products.ProductPrice, ReceiptDetail.Amount FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID Where ReceiptDetail.ReceiptID = '"+textID+"'";
+                    DataTable data = new DataTable();
+                    SqlDataAdapter adapter = new SqlDataAdapter(Text,conn);
+                    adapter.Fill(data);
+                    dataGridView3.DataSource = data;
+                    dataGridView3.Hide();
+                    for (int i = 0; i < dataGridView3.Rows.Count ; i++)
+                    {
+                        string ProductID = dataGridView3.Rows[i].Cells[0].Value.ToString();
+                        string ProductName = dataGridView3.Rows[i].Cells[1].Value.ToString();
+                        string txtPrice = dataGridView3.Rows[i].Cells[2].Value.ToString();
+                        string txtAmount = dataGridView3.Rows[i].Cells[3].Value.ToString();
+
+                        int Proamount = 0;
+                        int ProductPrice =0;
+                        Int32.TryParse(txtAmount, out Proamount);
+                        Int32.TryParse(txtPrice, out ProductPrice);
+                        int Total = Proamount * ProductPrice;
+                        DataTable dataOrder = new DataTable();
+                        DataRow row = dataOrder.NewRow();
+                       
+
+                        dataOrder.Columns.Add("index");
+                        dataOrder.Columns.Add("ProID");
+                        dataOrder.Columns.Add("Proname");
+                        dataOrder.Columns.Add("Proamount");
+                        dataOrder.Columns.Add("Proprice");
+                        dataOrder.Columns.Add("total");
+
+                        row["index"] = i+1;
+                        row["ProID"] = ProductID;
+                        row["Proname"] = ProductName;
+                        row["Proamount"] = Proamount;
+                        row["Proprice"] = ProductPrice;
+                        row["total"] = Total;
+                        dataOrder.Rows.Add(row);
+                        foreach (DataRow Drow in dataOrder.Rows)
+                        {
+                            int num = dataGridView1.Rows.Add();
+                            dataGridView1.Rows[num].Cells[0].Value = Drow["index"].ToString();
+                            dataGridView1.Rows[num].Cells[1].Value = Drow["ProID"].ToString();
+                            dataGridView1.Rows[num].Cells[2].Value = Drow["Proname"].ToString();
+                            dataGridView1.Rows[num].Cells[3].Value = Drow["Proamount"].ToString();
+                            dataGridView1.Rows[num].Cells[4].Value = Drow["Proprice"].ToString();
+                            dataGridView1.Rows[num].Cells[5].Value = Drow["total"].ToString();
+
+                        }
+                    }
+                    int TotalAll = 0;
+                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                    {
+                        try
+                        {
+                            string gettext = dataGridView1.Rows[i].Cells[5].Value.ToString();
+                            int texts;
+                            Int32.TryParse(gettext, out texts);
+                            TotalAll = TotalAll + texts;
+                        }
+                        catch (Exception er)
+                        {
+                            break;
+                        }
+                    }
+                    label12.Text = TotalAll.ToString();
+                    conn.Close();
+                    
+
+                }
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

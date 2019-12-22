@@ -62,6 +62,12 @@
     <Compile Include="ModalPage\PauseBill.Designer.cs">
       <DependentUpon>PauseBill.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModalPage\SelecteBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModalPage\SelecteBill.Designer.cs">
+      <DependentUpon>SelecteBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="PageWarehouse\AddProdcutNew.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModalPage\PauseBill.resx">
       <DependentUpon>PauseBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModalPage\SelecteBill.resx">
+      <DependentUpon>SelecteBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PageWarehouse\AddProdcutNew.resx">
       <DependentUpon>AddProdcutNew.cs</DependentUpon>

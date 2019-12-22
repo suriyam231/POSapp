@@ -25,3 +25,4 @@ D:\WinAppPOS\obj\Debug\POSTiw.TypeProduct.resources
 D:\WinAppPOS\obj\Debug\POSTiw.Page.EditProduct.resources
 D:\WinAppPOS\obj\Debug\POSTiw.ModalPage.CheckBill.resources
 D:\WinAppPOS\obj\Debug\POSTiw.ModalPage.PauseBill.resources
+D:\WinAppPOS\obj\Debug\POSTiw.ModalPage.SelecteBill.resources
