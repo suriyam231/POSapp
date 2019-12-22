@@ -26,27 +26,28 @@ namespace POSTiw
 
         public void button1_Click(object sender, EventArgs e)
         {
-            //SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;User ID=posservicetp_co_cc_data;Password=p@$$w0rd;");
-            SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
-            SqlDataAdapter sda = new SqlDataAdapter("select Count(*) From Users where Username = '" + textBox1.Text + "' and Password = '" + passwordTXT.Text + "'", conn);
-            DataTable dt = new DataTable();
-
-   
-           
-
-
-
-            sda.Fill(dt);
-
-            if (dt.Rows[0][0].ToString() == "1")
+            try
             {
-                this.Hide();
-                Main ss = new Main();
-                ss.Show();
+                //SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;User ID=posservicetp_co_cc_data;Password=p@$$w0rd;");
+                SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
+                SqlDataAdapter sda = new SqlDataAdapter("select Count(*) From Users where Username = '" + textBox1.Text + "' and Password = '" + passwordTXT.Text + "'", conn);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+
+                if (dt.Rows[0][0].ToString() == "1")
+                {
+                    this.Hide();
+                    Main ss = new Main();
+                    ss.Show();
+                }
+                else
+                {
+                    MessageBox.Show("เข้าสู่ระบบไม่สำเร็จ กรุณาตรวจสอบชื่อผู้ใช้และรหัสผ่านให้ถูกต้อง");
+                }
             }
-            else
+            catch(SqlException x)
             {
-                MessageBox.Show("เข้่าสู่ระบบไม่สำเร็จ กรุณาตรวจสอบชื่อผู้ใช้และรหัสผ่านให่้ถูกต้อง");
+                MessageBox.Show("ไม่สามารถเชื่อมต่อกับฐานข้อมูลได้ กรุณาตรวจสอบการเชื่อมต่ออินเตอร์เน็ตภายในเครื่องคอมพิวเตอร์ของคุณ");
             }
 
         }
