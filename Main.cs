@@ -640,5 +640,12 @@ namespace POSTiw
         {
 
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PreviousBill Pbill = new PreviousBill();
+            Pbill.Show();
+        }
     }
 }

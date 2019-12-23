@@ -26,3 +26,9 @@ D:\WinAppPOS\obj\Debug\POSTiw.Page.EditProduct.resources
 D:\WinAppPOS\obj\Debug\POSTiw.ModalPage.CheckBill.resources
 D:\WinAppPOS\obj\Debug\POSTiw.ModalPage.PauseBill.resources
 D:\WinAppPOS\obj\Debug\POSTiw.ModalPage.SelecteBill.resources
+D:\WinAppPOS\obj\Debug\POSTiw.PreviousBill.resources
+D:\WinAppPOS\bin\Debug\Dapper.dll
+D:\WinAppPOS\bin\Debug\Dapper.xml
+D:\WinAppPOS\obj\Debug\POSTiw.csproj.CopyComplete
+D:\WinAppPOS\obj\Debug\RdlCompile.cache
+D:\WinAppPOS\obj\Debug\RdlCompile.compiled
