@@ -15,6 +15,8 @@ namespace POSTiw
     public partial class PreviousBill : Form
     {
         string OrderId = null;
+        string Date = null;
+        string Time = null;
         SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
         public PreviousBill()
         {
@@ -48,27 +50,25 @@ namespace POSTiw
                 string qry = "Select *  from Receipt where ReceiptDate Between '" + date1 + "' and '" + date2 + "'";
                 dataGridView1.DataSource = db.Query<OrderDTO>(qry, conn).ToList();
             }
-            //conn.Open();
-            //string Text = "Select *  from Receipt where ReceiptDate Between '"+date1+"' and '"+date2 + "'";
-            //DataTable data = new DataTable();
-            //SqlDataAdapter adapter = new SqlDataAdapter(Text, conn);
-            //adapter.Fill(data);
-            //dataGridView1.DataSource = data;
-            //conn.Close();
+
         }
 
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
         {
            OrderId_lab.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
            OrderId = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
-            using(IDbConnection db = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd"))
+           Date = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+           Time = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
+            using (IDbConnection db = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd"))
             {
                 db.Open();
                 string qry = "SELECT Products.ProductID,Products.ProductName,Products.ProductPrice, ReceiptDetail.Amount FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID Where ReceiptID = '" + this.OrderId + "'";
                 List<OrderDetail> list = db.Query<OrderDetail>(qry, conn).ToList();
+                using (ModalPage.FormPrint form = new ModalPage.FormPrint(this.OrderId,this.Date,this.Time, list)){
+                    form.ShowDialog();
+                }
             }
           
-           
 
         }
     }
