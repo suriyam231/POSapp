@@ -47,7 +47,7 @@
             this.label1.AutoSize = true;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Font = new System.Drawing.Font("TH SarabunPSK", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(604, 22);
+            this.label1.Location = new System.Drawing.Point(646, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(267, 49);
             this.label1.TabIndex = 2;
@@ -57,9 +57,9 @@
             // 
             this.label2.BackColor = System.Drawing.Color.PapayaWhip;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.Location = new System.Drawing.Point(778, 103);
+            this.label2.Location = new System.Drawing.Point(829, 96);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(595, 652);
+            this.label2.Size = new System.Drawing.Size(595, 586);
             this.label2.TabIndex = 3;
             // 
             // label3
@@ -67,7 +67,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.PapayaWhip;
             this.label3.Font = new System.Drawing.Font("TH SarabunPSK", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1000, 118);
+            this.label3.Location = new System.Drawing.Point(1042, 118);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(189, 43);
             this.label3.TabIndex = 4;
@@ -80,7 +80,7 @@
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(956, 204);
+            this.dataGridView1.Location = new System.Drawing.Point(998, 204);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(278, 209);
@@ -92,7 +92,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.PapayaWhip;
             this.label4.Font = new System.Drawing.Font("TH SarabunPSK", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(891, 452);
+            this.label4.Location = new System.Drawing.Point(933, 452);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(156, 36);
             this.label4.TabIndex = 6;
@@ -102,7 +102,7 @@
             // 
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("TH SarabunPSK", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(1053, 458);
+            this.textBox1.Location = new System.Drawing.Point(1095, 458);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(222, 25);
             this.textBox1.TabIndex = 7;
@@ -113,7 +113,7 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("TH SarabunPSK", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1008, 542);
+            this.button1.Location = new System.Drawing.Point(1050, 542);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(161, 37);
             this.button1.TabIndex = 8;
@@ -126,7 +126,7 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("TH SarabunPSK", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(1114, 542);
+            this.button2.Location = new System.Drawing.Point(1156, 542);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(161, 37);
             this.button2.TabIndex = 9;
@@ -139,7 +139,7 @@
             this.button3.BackColor = System.Drawing.Color.Red;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("TH SarabunPSK", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(897, 542);
+            this.button3.Location = new System.Drawing.Point(939, 542);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(161, 37);
             this.button3.TabIndex = 10;
@@ -152,7 +152,7 @@
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button4.Font = new System.Drawing.Font("TH SarabunPSK", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(1291, 118);
+            this.button4.Location = new System.Drawing.Point(1374, 98);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(47, 38);
             this.button4.TabIndex = 11;
@@ -163,7 +163,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1388, 693);
+            this.label5.Location = new System.Drawing.Point(1430, 693);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 13);
             this.label5.TabIndex = 12;
@@ -186,7 +186,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "TypeProduct";
-            this.Size = new System.Drawing.Size(1440, 800);
+            this.Size = new System.Drawing.Size(1539, 713);
             this.Load += new System.EventHandler(this.TypeProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

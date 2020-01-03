@@ -62,7 +62,7 @@
             this.label1.AutoSize = true;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Font = new System.Drawing.Font("TH SarabunPSK", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(617, 15);
+            this.label1.Location = new System.Drawing.Point(646, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(155, 49);
             this.label1.TabIndex = 1;
@@ -72,9 +72,9 @@
             // 
             this.label2.BackColor = System.Drawing.Color.LightCyan;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.Location = new System.Drawing.Point(411, 87);
+            this.label2.Location = new System.Drawing.Point(447, 78);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(595, 652);
+            this.label2.Size = new System.Drawing.Size(595, 614);
             this.label2.TabIndex = 2;
             // 
             // label3
@@ -82,7 +82,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.LightCyan;
             this.label3.Font = new System.Drawing.Font("TH SarabunPSK", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(461, 111);
+            this.label3.Location = new System.Drawing.Point(490, 111);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(203, 36);
             this.label3.TabIndex = 3;
@@ -91,7 +91,7 @@
             // PID_txt
             // 
             this.PID_txt.Font = new System.Drawing.Font("TH SarabunPSK", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PID_txt.Location = new System.Drawing.Point(669, 113);
+            this.PID_txt.Location = new System.Drawing.Point(698, 113);
             this.PID_txt.Name = "PID_txt";
             this.PID_txt.Size = new System.Drawing.Size(276, 32);
             this.PID_txt.TabIndex = 4;
@@ -101,7 +101,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.LightCyan;
             this.label4.Font = new System.Drawing.Font("TH SarabunPSK", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(572, 173);
+            this.label4.Location = new System.Drawing.Point(601, 173);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 36);
             this.label4.TabIndex = 5;
@@ -110,7 +110,7 @@
             // PNAME_txt
             // 
             this.PNAME_txt.Font = new System.Drawing.Font("TH SarabunPSK", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PNAME_txt.Location = new System.Drawing.Point(669, 173);
+            this.PNAME_txt.Location = new System.Drawing.Point(698, 173);
             this.PNAME_txt.Name = "PNAME_txt";
             this.PNAME_txt.Size = new System.Drawing.Size(276, 32);
             this.PNAME_txt.TabIndex = 6;
@@ -118,7 +118,7 @@
             // PDes_txt
             // 
             this.PDes_txt.Font = new System.Drawing.Font("TH SarabunPSK", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PDes_txt.Location = new System.Drawing.Point(669, 237);
+            this.PDes_txt.Location = new System.Drawing.Point(698, 237);
             this.PDes_txt.Name = "PDes_txt";
             this.PDes_txt.Size = new System.Drawing.Size(276, 32);
             this.PDes_txt.TabIndex = 7;
@@ -126,7 +126,7 @@
             // Pamuont_txt
             // 
             this.Pamuont_txt.Font = new System.Drawing.Font("TH SarabunPSK", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Pamuont_txt.Location = new System.Drawing.Point(669, 303);
+            this.Pamuont_txt.Location = new System.Drawing.Point(698, 303);
             this.Pamuont_txt.Name = "Pamuont_txt";
             this.Pamuont_txt.Size = new System.Drawing.Size(276, 32);
             this.Pamuont_txt.TabIndex = 8;
@@ -134,7 +134,7 @@
             // Pcost_txt
             // 
             this.Pcost_txt.Font = new System.Drawing.Font("TH SarabunPSK", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Pcost_txt.Location = new System.Drawing.Point(669, 437);
+            this.Pcost_txt.Location = new System.Drawing.Point(698, 437);
             this.Pcost_txt.Name = "Pcost_txt";
             this.Pcost_txt.Size = new System.Drawing.Size(276, 32);
             this.Pcost_txt.TabIndex = 9;
@@ -142,7 +142,7 @@
             // Presfer_txt
             // 
             this.Presfer_txt.Font = new System.Drawing.Font("TH SarabunPSK", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Presfer_txt.Location = new System.Drawing.Point(669, 505);
+            this.Presfer_txt.Location = new System.Drawing.Point(698, 505);
             this.Presfer_txt.Name = "Presfer_txt";
             this.Presfer_txt.Size = new System.Drawing.Size(276, 32);
             this.Presfer_txt.TabIndex = 10;
@@ -152,7 +152,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.LightCyan;
             this.label5.Font = new System.Drawing.Font("TH SarabunPSK", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(509, 237);
+            this.label5.Location = new System.Drawing.Point(538, 237);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(155, 36);
             this.label5.TabIndex = 11;
@@ -163,7 +163,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.LightCyan;
             this.label6.Font = new System.Drawing.Font("TH SarabunPSK", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(541, 300);
+            this.label6.Location = new System.Drawing.Point(570, 300);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(123, 36);
             this.label6.TabIndex = 12;
@@ -174,7 +174,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.LightCyan;
             this.label7.Font = new System.Drawing.Font("TH SarabunPSK", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(569, 366);
+            this.label7.Location = new System.Drawing.Point(598, 366);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(94, 36);
             this.label7.TabIndex = 13;
@@ -185,7 +185,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.LightCyan;
             this.label8.Font = new System.Drawing.Font("TH SarabunPSK", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(552, 437);
+            this.label8.Location = new System.Drawing.Point(581, 437);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(111, 36);
             this.label8.TabIndex = 14;
@@ -196,7 +196,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.LightCyan;
             this.label9.Font = new System.Drawing.Font("TH SarabunPSK", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(541, 502);
+            this.label9.Location = new System.Drawing.Point(570, 502);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(123, 36);
             this.label9.TabIndex = 15;
@@ -207,7 +207,7 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.LightCyan;
             this.label10.Font = new System.Drawing.Font("TH SarabunPSK", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(536, 573);
+            this.label10.Location = new System.Drawing.Point(565, 573);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(128, 36);
             this.label10.TabIndex = 16;
@@ -217,7 +217,7 @@
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("TH SarabunPSK", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(645, 668);
+            this.button1.Location = new System.Drawing.Point(701, 629);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(115, 40);
             this.button1.TabIndex = 17;
@@ -229,7 +229,7 @@
             // 
             this.comboBox1.Font = new System.Drawing.Font("TH SarabunPSK", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(669, 573);
+            this.comboBox1.Location = new System.Drawing.Point(698, 573);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(276, 34);
             this.comboBox1.TabIndex = 18;
@@ -237,7 +237,7 @@
             // Pprice_txt
             // 
             this.Pprice_txt.Font = new System.Drawing.Font("TH SarabunPSK", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Pprice_txt.Location = new System.Drawing.Point(669, 370);
+            this.Pprice_txt.Location = new System.Drawing.Point(698, 370);
             this.Pprice_txt.Name = "Pprice_txt";
             this.Pprice_txt.Size = new System.Drawing.Size(276, 32);
             this.Pprice_txt.TabIndex = 19;
@@ -248,7 +248,7 @@
             this.label11.BackColor = System.Drawing.Color.LightCyan;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label11.Location = new System.Drawing.Point(450, 113);
+            this.label11.Location = new System.Drawing.Point(479, 113);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(18, 24);
             this.label11.TabIndex = 20;
@@ -260,7 +260,7 @@
             this.label12.BackColor = System.Drawing.Color.LightCyan;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label12.Location = new System.Drawing.Point(560, 176);
+            this.label12.Location = new System.Drawing.Point(589, 176);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(18, 24);
             this.label12.TabIndex = 21;
@@ -272,7 +272,7 @@
             this.label13.BackColor = System.Drawing.Color.LightCyan;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label13.Location = new System.Drawing.Point(529, 304);
+            this.label13.Location = new System.Drawing.Point(558, 304);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(18, 24);
             this.label13.TabIndex = 22;
@@ -284,7 +284,7 @@
             this.label14.BackColor = System.Drawing.Color.LightCyan;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label14.Location = new System.Drawing.Point(555, 368);
+            this.label14.Location = new System.Drawing.Point(584, 368);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(18, 24);
             this.label14.TabIndex = 23;
@@ -296,7 +296,7 @@
             this.label15.BackColor = System.Drawing.Color.LightCyan;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label15.Location = new System.Drawing.Point(538, 441);
+            this.label15.Location = new System.Drawing.Point(567, 441);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(18, 24);
             this.label15.TabIndex = 24;
@@ -308,7 +308,7 @@
             this.label16.BackColor = System.Drawing.Color.LightCyan;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label16.Location = new System.Drawing.Point(529, 505);
+            this.label16.Location = new System.Drawing.Point(558, 505);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(18, 24);
             this.label16.TabIndex = 25;
@@ -320,7 +320,7 @@
             this.label17.BackColor = System.Drawing.Color.LightCyan;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label17.Location = new System.Drawing.Point(538, 577);
+            this.label17.Location = new System.Drawing.Point(567, 577);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(18, 24);
             this.label17.TabIndex = 26;
@@ -332,7 +332,7 @@
             this.label18.BackColor = System.Drawing.Color.LightCyan;
             this.label18.Font = new System.Drawing.Font("TH SarabunPSK", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label18.Location = new System.Drawing.Point(668, 90);
+            this.label18.Location = new System.Drawing.Point(697, 90);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(276, 22);
             this.label18.TabIndex = 27;
@@ -372,7 +372,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "AddProdcutNew";
-            this.Size = new System.Drawing.Size(1440, 800);
+            this.Size = new System.Drawing.Size(1539, 713);
             this.Load += new System.EventHandler(this.AddProdcutNew_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

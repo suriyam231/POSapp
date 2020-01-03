@@ -48,9 +48,9 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(1, 1);
+            this.label1.Location = new System.Drawing.Point(0, -4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1440, 100);
+            this.label1.Size = new System.Drawing.Size(1540, 100);
             this.label1.TabIndex = 0;
             // 
             // button1
@@ -64,7 +64,7 @@
             this.button1.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Purple;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(16, 1);
+            this.button1.Location = new System.Drawing.Point(1, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(160, 90);
             this.button1.TabIndex = 1;
@@ -81,7 +81,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Purple;
-            this.button2.Location = new System.Drawing.Point(178, 1);
+            this.button2.Location = new System.Drawing.Point(167, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(156, 90);
             this.button2.TabIndex = 2;
@@ -98,7 +98,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.Purple;
-            this.button3.Location = new System.Drawing.Point(336, 1);
+            this.button3.Location = new System.Drawing.Point(329, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(156, 90);
             this.button3.TabIndex = 6;
@@ -115,7 +115,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button4.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.Purple;
-            this.button4.Location = new System.Drawing.Point(495, 1);
+            this.button4.Location = new System.Drawing.Point(491, 2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(156, 90);
             this.button4.TabIndex = 7;
@@ -130,9 +130,10 @@
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button5.Font = new System.Drawing.Font("TH SarabunPSK", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(1256, 12);
+            this.button5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button5.Location = new System.Drawing.Point(1357, 14);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(156, 79);
+            this.button5.Size = new System.Drawing.Size(156, 60);
             this.button5.TabIndex = 9;
             this.button5.Text = "หน้าขายของ";
             this.button5.UseVisualStyleBackColor = false;
@@ -142,43 +143,43 @@
             // 
             this.editProduct1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.editProduct1.BackColor = System.Drawing.Color.Thistle;
-            this.editProduct1.Location = new System.Drawing.Point(1, 97);
+            this.editProduct1.Location = new System.Drawing.Point(1, 82);
             this.editProduct1.Name = "editProduct1";
-            this.editProduct1.Size = new System.Drawing.Size(1440, 800);
+            this.editProduct1.Size = new System.Drawing.Size(1539, 713);
             this.editProduct1.TabIndex = 8;
             // 
             // typeProduct1
             // 
             this.typeProduct1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.typeProduct1.BackColor = System.Drawing.Color.LightYellow;
-            this.typeProduct1.Location = new System.Drawing.Point(1, 97);
+            this.typeProduct1.Location = new System.Drawing.Point(1, 82);
             this.typeProduct1.Name = "typeProduct1";
-            this.typeProduct1.Size = new System.Drawing.Size(1440, 800);
+            this.typeProduct1.Size = new System.Drawing.Size(1539, 713);
             this.typeProduct1.TabIndex = 5;
             // 
             // addProdcutNew1
             // 
             this.addProdcutNew1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.addProdcutNew1.BackColor = System.Drawing.Color.PowderBlue;
-            this.addProdcutNew1.Location = new System.Drawing.Point(1, 97);
+            this.addProdcutNew1.Location = new System.Drawing.Point(1, 82);
             this.addProdcutNew1.Name = "addProdcutNew1";
-            this.addProdcutNew1.Size = new System.Drawing.Size(1440, 800);
+            this.addProdcutNew1.Size = new System.Drawing.Size(1539, 713);
             this.addProdcutNew1.TabIndex = 4;
             // 
             // addQuantity1
             // 
             this.addQuantity1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.addQuantity1.BackColor = System.Drawing.Color.Linen;
-            this.addQuantity1.Location = new System.Drawing.Point(1, 97);
+            this.addQuantity1.Location = new System.Drawing.Point(1, 82);
             this.addQuantity1.Name = "addQuantity1";
-            this.addQuantity1.Size = new System.Drawing.Size(1440, 800);
+            this.addQuantity1.Size = new System.Drawing.Size(1539, 713);
             this.addQuantity1.TabIndex = 3;
             // 
             // Warehouse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1424, 861);
+            this.ClientSize = new System.Drawing.Size(1534, 791);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.editProduct1);
             this.Controls.Add(this.button4);

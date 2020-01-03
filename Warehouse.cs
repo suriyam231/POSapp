@@ -20,7 +20,7 @@ namespace POSTiw
             addProdcutNew1.Hide();
             typeProduct1.Hide();
             editProduct1.Hide();
-         
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace POSTiw
 
         private void Warehouse_Load(object sender, EventArgs e)
         {
-            
+            button1.PerformClick();
         }
 
         private void button2_Click(object sender, EventArgs e)
