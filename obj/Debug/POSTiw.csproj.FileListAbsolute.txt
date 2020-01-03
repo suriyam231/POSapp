@@ -30,5 +30,4 @@ D:\WinAppPOS\obj\Debug\POSTiw.PreviousBill.resources
 D:\WinAppPOS\bin\Debug\Dapper.dll
 D:\WinAppPOS\bin\Debug\Dapper.xml
 D:\WinAppPOS\obj\Debug\POSTiw.csproj.CopyComplete
-D:\WinAppPOS\obj\Debug\RdlCompile.cache
-D:\WinAppPOS\obj\Debug\RdlCompile.compiled
+D:\WinAppPOS\obj\Debug\POSTiw.csproj.CoreCompileInputs.cache
