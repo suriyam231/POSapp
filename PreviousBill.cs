@@ -26,7 +26,7 @@ namespace POSTiw
             InitializeComponent();
            // SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
             conn.Open();
-            string Text = "Select * from Receipt";
+            string Text = "Select * from Receipt ORDER BY ReceiptTime DESC";
             DataTable data = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter(Text, conn);
             adapter.Fill(data);
@@ -50,8 +50,11 @@ namespace POSTiw
             using (IDbConnection db = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd"))
             {
                 db.Open();
-                string qry = "Select *  from Receipt where ReceiptDate Between '" + date1 + "' and '" + date2 + "'";
-                dataGridView1.DataSource = db.Query<OrderDTO>(qry, conn).ToList();
+                string qry = "Select *  from Receipt where ReceiptDate Between '" + date1 + "' and '" + date2 + "' ORDER BY ReceiptTime DESC";
+                DataTable data = new DataTable();
+                SqlDataAdapter adapter = new SqlDataAdapter(qry, conn);
+                adapter.Fill(data);
+                dataGridView1.DataSource = data;
             }
 
         }
@@ -69,10 +72,10 @@ namespace POSTiw
                 List<OrderDetail> list = db.Query<OrderDetail>(qry, conn).ToList();
                 report.Name = "DataSet1";
                 report.Value = list;
-                //using (Form2 form = new Form2(this.OrderId,this.Date,this.Time, report)){
-                //    form.ShowDialog();
+                using (CheckReport check = new CheckReport(this.OrderId,this.Date,this.Time, report)){
+                    check.ShowDialog();
              
-                //}
+                }
  
             }
          

@@ -30,7 +30,7 @@ namespace POSTiw
             editProduct1.Hide();
             addQuantity1.Show();
             addQuantity1.BringToFront();
-           
+
         }
 
         private void Warehouse_Load(object sender, EventArgs e)

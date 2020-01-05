@@ -211,7 +211,7 @@ namespace POSTiw
                 button2.PerformClick();
                 
             }
-            else if(kea.KeyCode == Keys.Enter && textBox1.Text.ToString() == "")
+            else if(kea.KeyCode == Keys.Enter && textBox1.Text.ToString() == "" && label12.Text.ToString() != "0")
             {
                 
                 button3.PerformClick();
