@@ -1,6 +1,6 @@
-﻿namespace POSTiw.ModalPage
+﻿namespace POSTiw
 {
-    partial class FormPrint
+    partial class Form2
     {
         /// <summary>
         /// Required designer variable.
@@ -33,23 +33,23 @@
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "POSTiw.ReprotOrder.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Location = new System.Drawing.Point(1, -1);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
+            this.reportViewer1.Size = new System.Drawing.Size(473, 545);
             this.reportViewer1.TabIndex = 0;
+            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
-            // FormPrint
+            // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(443, 583);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "FormPrint";
-            this.Text = "FormPrint";
-            this.Load += new System.EventHandler(this.FormPrint_Load);
+            this.Name = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
 
         }

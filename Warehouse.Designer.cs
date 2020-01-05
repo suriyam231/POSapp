@@ -123,15 +123,16 @@
             // button5
             // 
             this.button5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button5.BackColor = System.Drawing.Color.White;
+            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("TH SarabunPSK", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button5.Location = new System.Drawing.Point(1357, 14);
+            this.button5.Location = new System.Drawing.Point(1455, 3);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(156, 60);
+            this.button5.Size = new System.Drawing.Size(72, 73);
             this.button5.TabIndex = 9;
-            this.button5.Text = "หน้าขายของ";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 

@@ -286,3 +286,4 @@ F:\ProjectPOS\obj\Debug\RdlCompile.compiled
 F:\ProjectPOS\obj\Debug\POSTiw.csproj.CopyComplete
 F:\ProjectPOS\obj\Debug\POSTiw.exe
 F:\ProjectPOS\obj\Debug\POSTiw.pdb
+F:\ProjectPOS\obj\Debug\POSTiw.Form2.resources

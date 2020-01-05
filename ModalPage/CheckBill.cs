@@ -21,6 +21,22 @@ namespace POSTiw.ModalPage
             }
 
         }
+        public string Getmoney
+        {
+            get
+            {
+                return textBox1.Text.ToString();
+            }
+
+        }
+        public string getLeft
+        {
+            get
+            {
+                return change_lab.Text.ToString();
+            }
+
+        }
         public CheckBill()
         {
             InitializeComponent();

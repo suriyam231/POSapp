@@ -1,4 +1,6 @@
 ﻿using Dapper;
+using Microsoft.Reporting.WinForms;
+using POSTiw.ModalPage;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +20,7 @@ namespace POSTiw
         string Date = null;
         string Time = null;
         SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
+        ReportDataSource report = new ReportDataSource();
         public PreviousBill()
         {
             InitializeComponent();
@@ -64,11 +67,32 @@ namespace POSTiw
                 db.Open();
                 string qry = "SELECT Products.ProductID,Products.ProductName,Products.ProductPrice, ReceiptDetail.Amount FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID Where ReceiptID = '" + this.OrderId + "'";
                 List<OrderDetail> list = db.Query<OrderDetail>(qry, conn).ToList();
-                using (ModalPage.FormPrint form = new ModalPage.FormPrint(this.OrderId,this.Date,this.Time, list)){
-                    form.ShowDialog();
-                }
+                report.Name = "DataSet1";
+                report.Value = list;
+                //using (Form2 form = new Form2(this.OrderId,this.Date,this.Time, report)){
+                //    form.ShowDialog();
+             
+                //}
+ 
             }
          
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Main ss = new Main();
+            ss.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

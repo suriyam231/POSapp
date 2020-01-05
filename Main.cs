@@ -1,6 +1,10 @@
-﻿using System;
+﻿using Dapper;
+using Microsoft.Reporting.WinForms;
+using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace POSTiw
@@ -11,6 +15,7 @@ namespace POSTiw
         string IDPause;
         string Type;
         string ProductIDsend;
+        ReportDataSource report = new ReportDataSource();
         public Main()
         {
             InitializeComponent();
@@ -407,6 +412,8 @@ namespace POSTiw
             
             string Type;
             string Active = "Y";
+            string Getmoney;
+            string GetLeft;
             using (ModalPage.CheckBill bill = new ModalPage.CheckBill())
             {
                 string a = label12.Text.ToString();
@@ -415,6 +422,8 @@ namespace POSTiw
                 if (bill.ShowDialog()== DialogResult.OK)
                 {
                     Type = bill.Getvalues;
+                    Getmoney = bill.Getmoney;
+                    GetLeft = bill.getLeft;
                     if (Type == "succes")
                     {
                         string textID = label20.Text.ToString();
@@ -476,6 +485,22 @@ namespace POSTiw
                         connn.Open();
                         string qry2 = "INSERT Receipt Values('" + textID + "','" + DateTime.Now.Date + "','" + DateTime.Now.TimeOfDay + "','" + label12.Text.ToString() + "','" + num + "','"+ Active+ "')";
                         SqlDataReader reader2 = new SqlCommand(qry2, connn).ExecuteReader();
+
+                        using (IDbConnection db = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd"))
+                        {
+                            db.Open();
+                            SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
+                            string qry = "SELECT Products.ProductID,Products.ProductName,Products.ProductPrice, ReceiptDetail.Amount FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID Where ReceiptID = '" + textID.ToString() + "'";
+                            List<OrderDetail> list = db.Query<OrderDetail>(qry, conn).ToList();
+                            report.Name = "DataSet1";
+                            report.Value = list;
+                            using (Form2 form = new Form2(textID, DateTime.Now.Date.ToString(), DateTime.Now.TimeOfDay.ToString(), report,GetLeft,Getmoney))
+                            {
+                                form.ShowDialog();
+
+                            }
+
+                        }
                         label20.Text = "";
                         namePro_lab.Text = "";
                         textBox3.Text = "";
@@ -491,6 +516,8 @@ namespace POSTiw
                         dataGridView1.Columns[3].Width = 110;
                         dataGridView1.Columns[4].Width = 110;
                         dataGridView1.Columns[5].Width = 110;
+
+                       
                     }
                 }
             }
