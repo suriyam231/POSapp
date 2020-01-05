@@ -10,6 +10,7 @@ namespace POSTiw
     {
         string IDPause;
         string Type;
+        string ProductIDsend;
         public Main()
         {
             InitializeComponent();
@@ -200,9 +201,15 @@ namespace POSTiw
         }
         public void Onkey(object sender, KeyEventArgs kea)
         {
-            if (kea.KeyCode == Keys.Enter)
+            if (kea.KeyCode == Keys.Enter && textBox1.Text.ToString() != "")
             {
                 button2.PerformClick();
+                
+            }
+            else if(kea.KeyCode == Keys.Enter && textBox1.Text.ToString() == "")
+            {
+                
+                button3.PerformClick();
             }
         }
 
@@ -262,10 +269,15 @@ namespace POSTiw
             dataGridView1.Columns[4].Width = 110;
             dataGridView1.Columns[5].Width = 110;
 
-        }
-        public void Check_bill(object sender, KeyEventArgs kea)
-        {
 
+        }
+
+        public void OnkeyCheckEnter(object sender, KeyEventArgs kea)
+        {
+            if (kea.KeyCode == Keys.Enter)
+            {
+             
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -548,9 +560,17 @@ namespace POSTiw
             }
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView2_MouseClick(object sender, MouseEventArgs e)
         {
-
+            
+            try
+            {
+                ProductIDsend = dataGridView2.SelectedRows[0].Cells[0].Value.ToString();
+            }
+            catch (Exception i)
+            {
+                MessageBox.Show("กรุณาคลิกที่หน้าสินค้าที่ต้องการแก้ไข");
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -646,6 +666,12 @@ namespace POSTiw
             this.Hide();
             PreviousBill Pbill = new PreviousBill();
             Pbill.Show();
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = ProductIDsend.ToString();
+            button2.PerformClick();
         }
     }
 }

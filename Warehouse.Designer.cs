@@ -68,7 +68,6 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(160, 90);
             this.button1.TabIndex = 1;
-            this.button1.Text = "เพิ่มจำนวนสินค้า";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -85,7 +84,6 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(156, 90);
             this.button2.TabIndex = 2;
-            this.button2.Text = "เพิ่มสินค้าใหม่";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -102,7 +100,6 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(156, 90);
             this.button3.TabIndex = 6;
-            this.button3.Text = "ข้อมูลสินค้า";
             this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -119,7 +116,6 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(156, 90);
             this.button4.TabIndex = 7;
-            this.button4.Text = "ประเภทสินค้า";
             this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);

@@ -126,9 +126,9 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(0, 0);
+            this.label4.Location = new System.Drawing.Point(-3, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1534, 49);
+            this.label4.Size = new System.Drawing.Size(1534, 54);
             this.label4.TabIndex = 4;
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
@@ -406,10 +406,10 @@
             // 
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label13.BackColor = System.Drawing.Color.White;
-            this.label13.Font = new System.Drawing.Font("TH SarabunPSK", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(9, 247);
+            this.label13.Font = new System.Drawing.Font("TH SarabunPSK", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(47, 272);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(154, 23);
+            this.label13.Size = new System.Drawing.Size(154, 40);
             this.label13.TabIndex = 24;
             this.label13.Text = "จัดการร้านค้า";
             this.label13.Click += new System.EventHandler(this.label13_Click);
@@ -417,14 +417,16 @@
             // button7
             // 
             this.button7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button7.BackColor = System.Drawing.Color.SeaShell;
+            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button7.Font = new System.Drawing.Font("TH SarabunPSK", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(12, 278);
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button7.Location = new System.Drawing.Point(47, 329);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(166, 93);
+            this.button7.Size = new System.Drawing.Size(160, 100);
             this.button7.TabIndex = 25;
-            this.button7.Text = "ตรวจสอบบิล";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -438,11 +440,10 @@
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button9.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.Color.Purple;
-            this.button9.Location = new System.Drawing.Point(12, 377);
+            this.button9.Location = new System.Drawing.Point(47, 428);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(166, 104);
+            this.button9.Size = new System.Drawing.Size(160, 100);
             this.button9.TabIndex = 27;
-            this.button9.Text = "คลังสินค้า";
             this.button9.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
@@ -450,66 +451,67 @@
             // button10
             // 
             this.button10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button10.BackColor = System.Drawing.Color.Cyan;
+            this.button10.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.button10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button10.BackgroundImage")));
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button10.Font = new System.Drawing.Font("TH SarabunPSK", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(196, 388);
+            this.button10.Location = new System.Drawing.Point(206, 428);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(166, 93);
+            this.button10.Size = new System.Drawing.Size(160, 100);
             this.button10.TabIndex = 28;
-            this.button10.Text = "สินค้าใกล้หมด";
             this.button10.UseVisualStyleBackColor = false;
             // 
             // button11
             // 
             this.button11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button11.BackColor = System.Drawing.Color.Thistle;
+            this.button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button11.BackgroundImage")));
+            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button11.Font = new System.Drawing.Font("TH SarabunPSK", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(12, 498);
+            this.button11.Location = new System.Drawing.Point(47, 528);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(166, 93);
+            this.button11.Size = new System.Drawing.Size(160, 100);
             this.button11.TabIndex = 29;
-            this.button11.Text = "รายงานการขาย";
             this.button11.UseVisualStyleBackColor = false;
             // 
             // button12
             // 
             this.button12.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button12.BackColor = System.Drawing.Color.MediumPurple;
+            this.button12.BackColor = System.Drawing.Color.Plum;
+            this.button12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button12.BackgroundImage")));
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button12.Font = new System.Drawing.Font("TH SarabunPSK", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.Location = new System.Drawing.Point(196, 499);
+            this.button12.Location = new System.Drawing.Point(206, 528);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(166, 93);
+            this.button12.Size = new System.Drawing.Size(160, 100);
             this.button12.TabIndex = 30;
-            this.button12.Text = "สินค้าขายดี";
             this.button12.UseVisualStyleBackColor = false;
             // 
             // button13
             // 
             this.button13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.button13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button13.BackgroundImage")));
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button13.Font = new System.Drawing.Font("TH SarabunPSK", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.Location = new System.Drawing.Point(12, 610);
+            this.button13.Location = new System.Drawing.Point(47, 628);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(166, 93);
+            this.button13.Size = new System.Drawing.Size(160, 100);
             this.button13.TabIndex = 31;
-            this.button13.Text = "เพิ่มผู้ใช้";
             this.button13.UseVisualStyleBackColor = false;
             // 
             // button14
             // 
             this.button14.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.button14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button14.BackgroundImage")));
             this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button14.Font = new System.Drawing.Font("TH SarabunPSK", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.Location = new System.Drawing.Point(196, 610);
+            this.button14.Location = new System.Drawing.Point(206, 628);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(166, 93);
+            this.button14.Size = new System.Drawing.Size(160, 100);
             this.button14.TabIndex = 32;
-            this.button14.Text = "วิธีใช้งาน";
             this.button14.UseVisualStyleBackColor = false;
             // 
             // label14
@@ -545,8 +547,9 @@
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(130, 34);
             this.button15.TabIndex = 35;
-            this.button15.Text = "ค้นหา";
+            this.button15.Text = "เพิ่มไปยังรายการ";
             this.button15.UseVisualStyleBackColor = false;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // label15
             // 
@@ -570,9 +573,9 @@
             this.dataGridView2.Location = new System.Drawing.Point(46, 138);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(436, 106);
+            this.dataGridView2.Size = new System.Drawing.Size(436, 131);
             this.dataGridView2.TabIndex = 37;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            this.dataGridView2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView2_MouseClick);
             // 
             // label16
             // 
@@ -731,7 +734,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ระบบบริหารจัดการร้านสะดวกซื้อทิวพาณิชย์";
             this.Load += new System.EventHandler(this.Main_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Check_bill);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnkeyCheckEnter);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
