@@ -700,5 +700,12 @@ namespace POSTiw
             textBox1.Text = ProductIDsend.ToString();
             button2.PerformClick();
         }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Users user = new Users();
+            user.Show();
+        }
     }
 }

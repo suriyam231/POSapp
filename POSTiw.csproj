@@ -142,6 +142,12 @@
       <DependentUpon>TypeProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users.Designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
+    </Compile>
     <Compile Include="Warehouse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +201,9 @@
       <DependentUpon>TypeProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Warehouse.resx">
       <DependentUpon>Warehouse.cs</DependentUpon>
     </EmbeddedResource>
