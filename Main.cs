@@ -704,8 +704,8 @@ namespace POSTiw
         private void button13_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Users user = new Users();
-            user.Show();
+            Users use = new Users();
+            use.Show();
         }
     }
 }
