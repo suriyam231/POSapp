@@ -26,7 +26,7 @@ namespace POSTiw
             InitializeComponent();
            // SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
             conn.Open();
-            string Text = "Select * from Receipt ORDER BY ReceiptTime DESC";
+            string Text = "Select * from Receipt ORDER BY  ReceiptDate DESC ,ReceiptTime DESC ";
             DataTable data = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter(Text, conn);
             adapter.Fill(data);
