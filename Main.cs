@@ -729,5 +729,33 @@ namespace POSTiw
             LowProduct ss = new LowProduct();
             ss.Show();
         }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            User ss = new User();
+            ss.Show();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ReportSale ss = new ReportSale();
+            ss.Show();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PopularProduct ss = new PopularProduct();
+            ss.Show();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Help ss = new Help();
+            ss.Show();
+        }
     }
 }

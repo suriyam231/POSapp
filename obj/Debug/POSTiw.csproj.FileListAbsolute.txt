@@ -289,3 +289,7 @@ F:\ProjectPOS\obj\Debug\POSTiw.pdb
 F:\ProjectPOS\obj\Debug\POSTiw.Form2.resources
 F:\ProjectPOS\obj\Debug\POSTiw.CheckReport.resources
 F:\ProjectPOS\obj\Debug\POSTiw.LowProduct.resources
+F:\ProjectPOS\obj\Debug\POSTiw.User.resources
+F:\ProjectPOS\obj\Debug\POSTiw.ReportSale.resources
+F:\ProjectPOS\obj\Debug\POSTiw.PopularProduct.resources
+F:\ProjectPOS\obj\Debug\POSTiw.Help.resources
