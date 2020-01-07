@@ -187,9 +187,10 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Warehouse";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Warehouse";
+            this.Text = "จัดการคลังสินค้า";
             this.Load += new System.EventHandler(this.Warehouse_Load);
             this.ResumeLayout(false);
 

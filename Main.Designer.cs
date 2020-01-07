@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -81,11 +82,15 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -460,6 +465,7 @@
             this.button10.Size = new System.Drawing.Size(160, 100);
             this.button10.TabIndex = 28;
             this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button11
             // 
@@ -680,12 +686,41 @@
             this.dataGridView3.Size = new System.Drawing.Size(632, 161);
             this.dataGridView3.TabIndex = 47;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox2.Location = new System.Drawing.Point(321, 431);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(42, 35);
+            this.pictureBox2.TabIndex = 48;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("TH SarabunPSK", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(184, 281);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(272, 37);
+            this.label3.TabIndex = 49;
+            this.label3.Text = "* มีสินค้าที่เหลือน้อยกว่า 10 ชิ้น";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(1534, 791);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
@@ -729,6 +764,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -741,6 +777,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -799,5 +836,8 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label3;
     }
 }

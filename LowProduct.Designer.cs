@@ -1,6 +1,6 @@
 ﻿namespace POSTiw
 {
-    partial class Form2
+    partial class LowProduct
     {
         /// <summary>
         /// Required designer variable.
@@ -28,36 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LowProduct));
             this.SuspendLayout();
             // 
-            // reportViewer1
-            // 
-            this.reportViewer1.Location = new System.Drawing.Point(1, -1);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(473, 545);
-            this.reportViewer1.TabIndex = 0;
-            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
-            // 
-            // Form2
+            // LowProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(443, 583);
-            this.Controls.Add(this.reportViewer1);
+            this.ClientSize = new System.Drawing.Size(1534, 791);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form2";
+            this.Name = "LowProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ใบเสร็จรับเงิน";
-            this.Load += new System.EventHandler(this.Form2_Load);
+            this.Text = "LowProduct";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

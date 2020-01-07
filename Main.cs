@@ -4,7 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace POSTiw
@@ -12,6 +14,7 @@ namespace POSTiw
   
     public partial class Main : Form
     {
+        SqlConnection sqlcon = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
         string IDPause;
         string Type;
         string ProductIDsend;
@@ -274,7 +277,21 @@ namespace POSTiw
             dataGridView1.Columns[4].Width = 110;
             dataGridView1.Columns[5].Width = 110;
 
-
+            pictureBox2.Hide();
+            label3.Hide();
+            sqlcon.Open();
+            SqlCommand command = new SqlCommand();
+            command.Connection = sqlcon;
+            command.CommandText = "select * from Products where ProductQuantity< 10";
+            DataTable data = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            adapter.Fill(data);
+            if(data.Rows.Count > 0)
+            {
+                pictureBox2.Show();
+                label3.Show();
+            }
+            
         }
 
         public void OnkeyCheckEnter(object sender, KeyEventArgs kea)
@@ -699,6 +716,18 @@ namespace POSTiw
         {
             textBox1.Text = ProductIDsend.ToString();
             button2.PerformClick();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LowProduct ss = new LowProduct();
+            ss.Show();
         }
     }
 }
