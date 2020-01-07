@@ -15,6 +15,8 @@ namespace POSTiw
         public User()
         {
             InitializeComponent();
+            edituser.Show();
+            edituser.BringToFront();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
