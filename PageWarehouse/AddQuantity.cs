@@ -227,5 +227,10 @@ namespace POSTiw
             adapter.Fill(data);
             dataGridView1.DataSource = data;
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

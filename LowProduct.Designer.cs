@@ -50,6 +50,9 @@
             this.Amount_lab = new System.Windows.Forms.Label();
             this.LaQu = new System.Windows.Forms.Label();
             this.Labutton = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -129,7 +132,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(792, 521);
             this.dataGridView1.TabIndex = 16;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
             // 
             // label4
             // 
@@ -193,6 +196,7 @@
             this.button1.TabIndex = 21;
             this.button1.Text = "พิมพ์รายการสินค้าที่ต้องซื้อ";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -214,22 +218,22 @@
             this.LaId.AutoSize = true;
             this.LaId.BackColor = System.Drawing.Color.LightYellow;
             this.LaId.Font = new System.Drawing.Font("TH SarabunPSK", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LaId.Location = new System.Drawing.Point(1017, 438);
+            this.LaId.Location = new System.Drawing.Point(1100, 438);
             this.LaId.Name = "LaId";
-            this.LaId.Size = new System.Drawing.Size(107, 36);
+            this.LaId.Size = new System.Drawing.Size(24, 36);
             this.LaId.TabIndex = 23;
-            this.LaId.Text = "รหัสสินค้า  :";
+            this.LaId.Text = "x";
             // 
             // LaName
             // 
             this.LaName.AutoSize = true;
             this.LaName.BackColor = System.Drawing.Color.LightYellow;
             this.LaName.Font = new System.Drawing.Font("TH SarabunPSK", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LaName.Location = new System.Drawing.Point(1276, 438);
+            this.LaName.Location = new System.Drawing.Point(1319, 438);
             this.LaName.Name = "LaName";
-            this.LaName.Size = new System.Drawing.Size(69, 36);
+            this.LaName.Size = new System.Drawing.Size(24, 36);
             this.LaName.TabIndex = 24;
-            this.LaName.Text = "สินค้า :";
+            this.LaName.Text = "x";
             // 
             // LaType2
             // 
@@ -291,11 +295,11 @@
             this.LaQu.BackColor = System.Drawing.Color.LightYellow;
             this.LaQu.Font = new System.Drawing.Font("TH SarabunPSK", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LaQu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.LaQu.Location = new System.Drawing.Point(966, 516);
+            this.LaQu.Location = new System.Drawing.Point(1126, 514);
             this.LaQu.Name = "LaQu";
-            this.LaQu.Size = new System.Drawing.Size(130, 36);
+            this.LaQu.Size = new System.Drawing.Size(24, 36);
             this.LaQu.TabIndex = 25;
-            this.LaQu.Text = "สินค้าเหลืออยู่ :";
+            this.LaQu.Text = "x";
             // 
             // Labutton
             // 
@@ -310,6 +314,41 @@
             this.Labutton.TabIndex = 31;
             this.Labutton.Text = "เพิ่ม";
             this.Labutton.UseVisualStyleBackColor = false;
+            this.Labutton.Click += new System.EventHandler(this.Labutton_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.LightYellow;
+            this.label7.Font = new System.Drawing.Font("TH SarabunPSK", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label7.Location = new System.Drawing.Point(994, 514);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(130, 36);
+            this.label7.TabIndex = 32;
+            this.label7.Text = "สินค้าเหลืออยู่ :";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.LightYellow;
+            this.label8.Font = new System.Drawing.Font("TH SarabunPSK", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(994, 438);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(107, 36);
+            this.label8.TabIndex = 33;
+            this.label8.Text = "รหัสสินค้า  :";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.LightYellow;
+            this.label9.Font = new System.Drawing.Font("TH SarabunPSK", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(1244, 438);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(69, 36);
+            this.label9.TabIndex = 34;
+            this.label9.Text = "สินค้า :";
             // 
             // LowProduct
             // 
@@ -317,6 +356,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
             this.ClientSize = new System.Drawing.Size(1534, 791);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.Labutton);
             this.Controls.Add(this.LaType2);
             this.Controls.Add(this.LaInput);
@@ -372,5 +414,8 @@
         private System.Windows.Forms.Label Amount_lab;
         private System.Windows.Forms.Label LaQu;
         private System.Windows.Forms.Button Labutton;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }

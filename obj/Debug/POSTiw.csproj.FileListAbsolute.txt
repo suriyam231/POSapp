@@ -380,3 +380,4 @@ C:\Users\Widsanu\Documents\BackupProject\obj\Debug\POSTiw.csproj.GenerateResourc
 C:\Users\Widsanu\Documents\BackupProject\obj\Debug\POSTiw.csproj.CopyComplete
 C:\Users\Widsanu\Documents\BackupProject\obj\Debug\POSTiw.exe
 C:\Users\Widsanu\Documents\BackupProject\obj\Debug\POSTiw.pdb
+F:\ProjectPOS\obj\Debug\POSTiw.ModalPage.ProductLowModal.resources

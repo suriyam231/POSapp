@@ -9,28 +9,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace POSTiw
+namespace POSTiw.ModalPage
 {
-    public partial class CheckReport : Form
+    public partial class ProductLowModal : Form
     {
-        public CheckReport(string OrderId, string Date, string Time, ReportDataSource report)
+        public ProductLowModal(ReportDataSource report)
         {
             InitializeComponent();
             this.reportViewer1.LocalReport.DataSources.Clear();
             this.reportViewer1.LocalReport.DataSources.Add(report);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "POSTiw.ReportAll.CheckReport.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "POSTiw.ReportAll.LowReport.rdlc";
             Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[]
            {
-                new Microsoft.Reporting.WinForms.ReportParameter("Pid",OrderId.ToString()),
-                new Microsoft.Reporting.WinForms.ReportParameter("Pdate",Date.ToString()),
-                new Microsoft.Reporting.WinForms.ReportParameter("Ptime",Time.ToString()),
+                new Microsoft.Reporting.WinForms.ReportParameter("Time",DateTime.Now.ToString())
+
            };
             this.reportViewer1.LocalReport.SetParameters(p);
         }
 
-        private void CheckReport_Load(object sender, EventArgs e)
+        private void ProductLowModal_Load(object sender, EventArgs e)
         {
-
             this.reportViewer1.RefreshReport();
         }
     }

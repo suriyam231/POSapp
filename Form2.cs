@@ -25,7 +25,7 @@ namespace POSTiw
 
             this.reportViewer1.LocalReport.DataSources.Clear();
             this.reportViewer1.LocalReport.DataSources.Add(report);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "POSTiw.Report1.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "POSTiw.ReportAll.Report1.rdlc";
             Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[]
             {
                 new Microsoft.Reporting.WinForms.ReportParameter("PID",OrderId.ToString()),
