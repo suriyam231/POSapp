@@ -18,18 +18,28 @@ namespace POSTiw
             InitializeComponent();
             edituser.Show();
             edituser.BringToFront();
-
+            fillComboBox();
+        }
+        public void fillComboBox()
+        {
             SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
-
-            conn.Open();
             string qry = "SELECT * FROM Users";
-
-            SqlDataReader reader = new SqlCommand(qry, conn).ExecuteReader();
-            while (reader.Read())
+            SqlCommand cmd = new SqlCommand(qry, conn);
+            SqlDataReader reader;
+            try
             {
-                comboBox3.Items.Add(reader.GetValue(1).ToString());
+                conn.Open();
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string fname = reader.GetString(3);
+                    comboBox3.Items.Add(fname);
+                }
             }
-            reader.Close();
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -72,12 +82,12 @@ namespace POSTiw
         {
             try
             {
-                int index = 0;
                 string ID = userID.Text.ToString();
                 string Password = passWord.Text.ToString();
                 string Firstname = firstName.Text.ToString();
                 string Lastname = lastName.Text.ToString();
                 string Status = status.SelectedItem.ToString();
+
 
                 if (ID != null && Password != null && Firstname != null && Lastname != null && Status != null)
                 {
@@ -85,20 +95,20 @@ namespace POSTiw
                     SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
 
                     conn.Open();
-                    index += 1;
-                    //string qry = "INSERT INTO Users (Username, Password, FirstName, LastName, Position) Values('" + ID + "','" + Password + "','" + Firstname + "','" + Lastname + "','" + Status + "')";
-                    string qry = "INSERT INTO TestID Values("+ index +",'" + ID + "','" + Password + "','" + Firstname + "','" + Lastname + "','" + Status + "')";
+                    string qry = "UPDATE Users SET Username = '" + ID.ToString()+ "', Password = '" + Password.ToString() + "', FirstName = '" + Firstname.ToString() + "', Lastname = '" + Lastname.ToString() + "', Position = '" + Status.ToString() + "' WHERE Firstname = '" + comboBox3.Text + "' ";
                     SqlDataReader reader = new SqlCommand(qry, conn).ExecuteReader();
-                    MessageBox.Show("เพิ่มผู้ใช้งาน : คุณ" + Firstname + " เรียบร้อยแล้ว");
-                    
+                    MessageBox.Show("แก้ไขผู้ใช้งาน : คุณ" + Firstname + " เรียบร้อยแล้ว");
                     userID.Text = null;
+                    passWord.Text = null;
                     firstName.Text = null;
                     lastName.Text = null;
                     status.SelectedItem = null;
-                }
-                else
-                {
-                    MessageBox.Show("กรุณากรอกข้อมูลให้ครบถ้วน ก่อนกดเพิ่มผู้ใช้งาน");
+                    comboBox3.SelectedItem = null;
+                    showID.Text = null;
+                    showPass.Text = null;
+                    showFname.Text = null;
+                    showLname.Text = null;
+                    showStatus.Text = null;
                 }
 
 
@@ -106,7 +116,7 @@ namespace POSTiw
             catch (SqlException error)
             {
                 string ID = userID.Text.ToString();
-                MessageBox.Show("มีรหัสผู้ใช้งาน : " + ID + " อยู่ในระบบแล้ว ไม่สามารถเพิ่มข้อมูลซ้ำได้");
+                MessageBox.Show("มีรหัสผู้ใช้งาน : " + ID + " อยู่ในระบบแล้ว ไม่สามารถแก้ไขข้อมูลซ้ำได้");
             }
             catch (NullReferenceException nul)
             {
@@ -117,7 +127,32 @@ namespace POSTiw
 
         private void ComboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
+            string qry = "SELECT * FROM Users WHERE Firstname = '"+comboBox3.Text+"';";
+            SqlCommand cmd = new SqlCommand(qry, conn);
+            SqlDataReader reader;
+            try
+            {
+                conn.Open();
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string ShowID = reader.GetString(1);
+                    string ShowPass = reader.GetString(2);
+                    string ShowFname = reader.GetString(3);
+                    string ShowLname = reader.GetString(4);
+                    string ShowStatus = reader.GetString(5);
+                    showID.Text = ShowID;
+                    showPass.Text = ShowPass;
+                    showFname.Text = ShowFname;
+                    showLname.Text = ShowLname;
+                    showStatus.Text = ShowStatus;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Button3_Click(object sender, EventArgs e)
@@ -142,6 +177,10 @@ namespace POSTiw
                         string qry = "INSERT INTO Users Values('" + ID + "','" + ID + "','" + Password + "','" + Firstname + "','" + Lastname + "','" + Status + "')";
                         SqlDataReader reader = new SqlCommand(qry, conn).ExecuteReader();
                         MessageBox.Show("เพิ่มผู้ใช้งาน : คุณ" + Firstname + " เรียบร้อยแล้ว");
+                        if (ID == null)
+                        {
+                            MessageBox.Show("ตามเงื่อนไข");
+                        }
 
                         addID.Text = null;
                         addPass.Text = null;
@@ -182,6 +221,103 @@ namespace POSTiw
             addFname.Text = null;
             addLname.Text = null;
             addStatus.SelectedItem = null;
+        }
+
+        private void label28_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label26_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label27_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
+            string qry = "SELECT * FROM Users WHERE Firstname = '" + comboBox3.Text + "';";
+            SqlCommand cmd = new SqlCommand(qry, conn);
+            SqlDataReader reader;
+            try
+            {
+                conn.Open();
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string ShowID = reader.GetString(1);
+                    string ShowPass = reader.GetString(2);
+                    string ShowFname = reader.GetString(3);
+                    string ShowLname = reader.GetString(4);
+                    string ShowStatus = reader.GetString(5);
+                    userID.Text = ShowID;
+                    passWord.Text = ShowPass;
+                    firstName.Text = ShowFname;
+                    lastName.Text = ShowLname;
+                    status.Text = ShowStatus;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            userID.Text = null;
+            passWord.Text = null;
+            firstName.Text = null;
+            lastName.Text = null;
+            status.SelectedItem = null;
+            comboBox3.SelectedItem = null;
+            showID.Text = null;
+            showPass.Text = null;
+            showFname.Text = null;
+            showLname.Text = null;
+            showStatus.Text = null;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+            if (comboBox3.Items.Count > 0)
+            {
+                try
+                {
+                    SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
+                    conn.Open();
+                    string qry = "DELETE Users WHERE Firstname = '" + comboBox3.Text + "';";
+                    SqlDataReader reader = new SqlCommand(qry, conn).ExecuteReader();
+                    SqlCommand cmd = new SqlCommand(qry, conn);
+                    MessageBox.Show("ลบรหัสผู้ใช้งานเรียบร้อย");
+                    userID.Text = null;
+                    passWord.Text = null;
+                    firstName.Text = null;
+                    lastName.Text = null;
+                    status.SelectedItem = null;
+                    comboBox3.SelectedItem = null;
+                    showID.Text = null;
+                    showPass.Text = null;
+                    showFname.Text = null;
+                    showLname.Text = null;
+                    showStatus.Text = null;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }
