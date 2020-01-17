@@ -509,3 +509,4 @@ F:\ProjectPOS\obj\Debug\POSTiw.ModalPage.ProductLowModal.resources
 >>>>>>> d716d31cc63ff74d20f2b87735c3558f945b42a9
 C:\Users\Widsanu\Documents\BackupProject\obj\Debug\POSTiw.ModalPage.ProductLowModal.resources
 F:\ProjectPOS\obj\Debug\POSTiw.สินค้าขายดี.resources
+F:\ProjectPOS\obj\Debug\POSTiw.ModalPage.EditStore.resources

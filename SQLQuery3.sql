@@ -32,9 +32,9 @@ Select TypeName from TypeProduct
 
 Select *  from ReceiptDetail where ReceiptDetail.Date between DateAdd(DD,-100,GETDATE() ) and GETDATE() 
 
-UPDATE ReceiptDetail
-SET Date = '2019-12-20'
-where ReceiptID = '983474326'
+UPDATE Store SET StoreName = 'x' ,Location = 'x', Owner ='x' where StoreID = '0000000001'
 
 
+
+Select * from Store
 

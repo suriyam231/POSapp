@@ -757,5 +757,11 @@ namespace POSTiw
             Help ss = new Help();
             ss.Show();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            ModalPage.EditStore store = new ModalPage.EditStore();
+            store.Show();
+        }
     }
 }
