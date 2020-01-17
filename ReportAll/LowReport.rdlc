@@ -404,7 +404,7 @@
             <Top>0.06944in</Top>
             <Left>1.02708in</Left>
             <Height>0.53124in</Height>
-            <Width>8.2646in</Width>
+            <Width>8.26461in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -415,7 +415,7 @@
         <Height>11.69in</Height>
         <Style />
       </Body>
-      <Width>10.23264in</Width>
+      <Width>11.48264in</Width>
       <Page>
         <PageHeader>
           <Height>1.28646in</Height>
@@ -577,7 +577,7 @@
         </PageHeader>
         <PageHeight>8.27in</PageHeight>
         <PageWidth>11.69in</PageWidth>
-        <LeftMargin>1in</LeftMargin>
+        <LeftMargin>0.5in</LeftMargin>
         <RightMargin>1in</RightMargin>
         <TopMargin>1in</TopMargin>
         <BottomMargin>1in</BottomMargin>
