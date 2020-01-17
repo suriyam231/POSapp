@@ -480,7 +480,7 @@ namespace POSTiw
 
                             SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
                             conn.Open();
-                            string qry = "INSERT ReceiptDetail Values('" + ProductID + "','" + ReceiptID + "'," + Price + "," + Amount + ",'" + Active + "')";
+                            string qry = "INSERT ReceiptDetail Values('" + ProductID + "','" + ReceiptID + "'," + Price + "," + Amount + ",'" + Active + "','" + DateTime.Now.Date + "')";
                             SqlDataReader reader = new SqlCommand(qry, conn).ExecuteReader();
                             conn.Close();
                             conn.Open();
@@ -568,7 +568,7 @@ namespace POSTiw
 
                         SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
                         conn.Open();
-                        string qry = "INSERT ReceiptDetail Values('" + ProductID + "','" + ReceiptID + "'," + Price + "," + Amount + ",'" + Active + "')";
+                        string qry = "INSERT ReceiptDetail Values('" + ProductID + "','" + ReceiptID + "'," + Price + "," + Amount + ",'" + Active + "','" + DateTime.Now.Date + "')";
                         SqlDataReader reader = new SqlCommand(qry, conn).ExecuteReader();
                         conn.Close();
 
@@ -747,7 +747,7 @@ namespace POSTiw
         private void button12_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PopularProduct ss = new PopularProduct();
+            สินค้าขายดี ss = new สินค้าขายดี();
             ss.Show();
         }
 

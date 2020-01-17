@@ -1,4 +1,6 @@
-﻿namespace POSTiw
+﻿using System;
+
+namespace POSTiw
 {
     partial class User
     {
@@ -387,7 +389,7 @@
             this.button6.TabIndex = 18;
             this.button6.Text = "ยกเลิก";
             this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            //this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -769,6 +771,11 @@
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
