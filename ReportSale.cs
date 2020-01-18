@@ -15,6 +15,9 @@ namespace POSTiw
         public ReportSale()
         {
             InitializeComponent();
+            dayReport1.Show();
+            monthReport1.Hide();
+            yearReport1.Hide();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -22,6 +25,35 @@ namespace POSTiw
             this.Close();
             Main ss = new Main();
             ss.Show();
+        }
+
+        private void ReportSale_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dayReport1.BringToFront();
+            dayReport1.Show();
+            monthReport1.Hide();
+            yearReport1.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            monthReport1.BringToFront();
+            dayReport1.Hide();
+            monthReport1.Show();
+            yearReport1.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            yearReport1.BringToFront();
+            dayReport1.Hide();
+            monthReport1.Hide();
+            yearReport1.Show();
         }
     }
 }

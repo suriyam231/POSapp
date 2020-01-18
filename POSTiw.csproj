@@ -123,6 +123,24 @@
     </Compile>
     <Compile Include="OrderDetail.cs" />
     <Compile Include="OrderDTO.cs" />
+    <Compile Include="PageReport\DayReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PageReport\DayReport.Designer.cs">
+      <DependentUpon>DayReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PageReport\MonthReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PageReport\MonthReport.Designer.cs">
+      <DependentUpon>MonthReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PageReport\YearReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PageReport\YearReport.Designer.cs">
+      <DependentUpon>YearReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="PageWarehouse\AddProdcutNew.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -197,6 +215,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModalPage\ProductLowModal.resx">
       <DependentUpon>ProductLowModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageReport\DayReport.resx">
+      <DependentUpon>DayReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageReport\MonthReport.resx">
+      <DependentUpon>MonthReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageReport\YearReport.resx">
+      <DependentUpon>YearReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportAll\CheckReport.rdlc" />
     <EmbeddedResource Include="CheckReport.resx">

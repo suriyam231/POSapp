@@ -89,9 +89,9 @@
             this.label2.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(335, 28);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 33);
+            this.label2.Size = new System.Drawing.Size(70, 33);
             this.label2.TabIndex = 4;
-            this.label2.Text = "ตั้งแต่วันที่ :";
+            this.label2.Text = "ถึงวันที่ :";
             // 
             // dataGridView1
             // 
