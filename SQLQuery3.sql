@@ -36,5 +36,5 @@ UPDATE Store SET StoreName = 'x' ,Location = 'x', Owner ='x' where StoreID = '00
 
 
 
-Select * from Store
+Select * from Users
 

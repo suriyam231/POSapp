@@ -727,7 +727,7 @@
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("TH SarabunPSK", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button8.Location = new System.Drawing.Point(337, 9);
+            this.button8.Location = new System.Drawing.Point(339, 8);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(35, 34);
             this.button8.TabIndex = 50;

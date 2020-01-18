@@ -36,7 +36,11 @@ namespace POSTiw
             dataGridView3.Hide();
             IDPause = null;
             Type = null;
-            
+            string qry = "Select * from Store";
+            DataTable data = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter(qry, sqlcon);
+            adapter.Fill(data);
+            label5.Text = data.Rows[0][1].ToString();
         }
 
         private void fileToolStripMenuItem1_Click(object sender, EventArgs e)

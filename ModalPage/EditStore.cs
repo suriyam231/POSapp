@@ -18,7 +18,7 @@ namespace POSTiw.ModalPage
         public EditStore()
         {
             InitializeComponent();
-             string Text = "Select * from Store";
+            string Text = "Select * from Store";
             DataTable data = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter(Text, conn);
             adapter.Fill(data);

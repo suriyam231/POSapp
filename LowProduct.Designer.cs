@@ -136,6 +136,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Ivory;
             this.label4.Font = new System.Drawing.Font("TH SarabunPSK", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -148,6 +149,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -186,6 +188,7 @@
             // 
             // button1
             // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -201,6 +204,7 @@
             // 
             // button2
             // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -216,6 +220,7 @@
             // 
             // LaId
             // 
+            this.LaId.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LaId.AutoSize = true;
             this.LaId.BackColor = System.Drawing.Color.LightYellow;
             this.LaId.Font = new System.Drawing.Font("TH SarabunPSK", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -227,6 +232,7 @@
             // 
             // LaName
             // 
+            this.LaName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LaName.AutoSize = true;
             this.LaName.BackColor = System.Drawing.Color.LightYellow;
             this.LaName.Font = new System.Drawing.Font("TH SarabunPSK", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -238,6 +244,7 @@
             // 
             // LaType2
             // 
+            this.LaType2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LaType2.AutoSize = true;
             this.LaType2.BackColor = System.Drawing.Color.LightYellow;
             this.LaType2.Font = new System.Drawing.Font("TH SarabunPSK", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -250,6 +257,7 @@
             // 
             // LaInput
             // 
+            this.LaInput.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LaInput.Font = new System.Drawing.Font("TH SarabunPSK", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LaInput.Location = new System.Drawing.Point(1330, 518);
             this.LaInput.Name = "LaInput";
@@ -258,6 +266,7 @@
             // 
             // LaUp
             // 
+            this.LaUp.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LaUp.AutoSize = true;
             this.LaUp.BackColor = System.Drawing.Color.LightYellow;
             this.LaUp.Font = new System.Drawing.Font("TH SarabunPSK", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -270,6 +279,7 @@
             // 
             // LaType
             // 
+            this.LaType.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LaType.AutoSize = true;
             this.LaType.BackColor = System.Drawing.Color.LightYellow;
             this.LaType.Font = new System.Drawing.Font("TH SarabunPSK", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -292,6 +302,7 @@
             // 
             // LaQu
             // 
+            this.LaQu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LaQu.AutoSize = true;
             this.LaQu.BackColor = System.Drawing.Color.LightYellow;
             this.LaQu.Font = new System.Drawing.Font("TH SarabunPSK", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -304,6 +315,7 @@
             // 
             // Labutton
             // 
+            this.Labutton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Labutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.Labutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Labutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -319,6 +331,7 @@
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.LightYellow;
             this.label7.Font = new System.Drawing.Font("TH SarabunPSK", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -331,6 +344,7 @@
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.LightYellow;
             this.label8.Font = new System.Drawing.Font("TH SarabunPSK", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -342,6 +356,7 @@
             // 
             // label9
             // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.LightYellow;
             this.label9.Font = new System.Drawing.Font("TH SarabunPSK", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
