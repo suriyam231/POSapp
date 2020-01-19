@@ -513,3 +513,4 @@ F:\ProjectPOS\obj\Debug\POSTiw.ModalPage.EditStore.resources
 F:\ProjectPOS\obj\Debug\POSTiw.PageReport.DayReport.resources
 F:\ProjectPOS\obj\Debug\POSTiw.PageReport.MonthReport.resources
 F:\ProjectPOS\obj\Debug\POSTiw.PageReport.YearReport.resources
+F:\ProjectPOS\obj\Debug\POSTiw.ModalPage.ProfitReport.resources

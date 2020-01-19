@@ -384,30 +384,7 @@ namespace POSTiw
                 button16.PerformClick();
             }
         }
-        //public void ad(string a, string textID)
-        //{
-           
 
-        //    if (a == "succes")
-        //    {
-        //        Main m = new Main();
-
-                
-        //    }
-        //    if (a == "fail")
-        //    {
-        //        SqlConnection connn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
-
-        //        connn.Open();
-        //        string qry2 = "delete ReceiptDetail where ReceiptID = '" + textID + "'";
-        //        string qry1 = "delete Receipt where ReceiptID = '" + textID + "'";
-        //        SqlDataReader reader2 = new SqlCommand(qry2, connn).ExecuteReader();
-
-        //        SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
-        //        conn.Open();
-        //        SqlDataReader reader1 = new SqlCommand(qry1, conn).ExecuteReader();
-        //    }
-        //}
         public void button6_Click(object sender, EventArgs e)
         {
             label20.Text = "";

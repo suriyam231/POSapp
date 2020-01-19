@@ -100,7 +100,7 @@
             this.dataGridView2.Location = new System.Drawing.Point(305, 510);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(405, 51);
+            this.dataGridView2.Size = new System.Drawing.Size(405, 70);
             this.dataGridView2.TabIndex = 6;
             // 
             // TotalRevenue

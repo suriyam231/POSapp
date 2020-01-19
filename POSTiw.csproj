@@ -73,6 +73,8 @@
       <DependentUpon>CheckReport.cs</DependentUpon>
     </Compile>
     <Compile Include="DTO\ProductLow.cs" />
+    <Compile Include="DTO\ReportAll.cs" />
+    <Compile Include="DTO\ReportCost.cs" />
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +116,12 @@
     </Compile>
     <Compile Include="ModalPage\ProductLowModal.Designer.cs">
       <DependentUpon>ProductLowModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModalPage\ProfitReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModalPage\ProfitReport.Designer.cs">
+      <DependentUpon>ProfitReport.cs</DependentUpon>
     </Compile>
     <Compile Include="ModalPage\SelecteBill.cs">
       <SubType>Form</SubType>
@@ -216,6 +224,9 @@
     <EmbeddedResource Include="ModalPage\ProductLowModal.resx">
       <DependentUpon>ProductLowModal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ModalPage\ProfitReport.resx">
+      <DependentUpon>ProfitReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PageReport\DayReport.resx">
       <DependentUpon>DayReport.cs</DependentUpon>
     </EmbeddedResource>
@@ -282,6 +293,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportAll\LowReport.rdlc" />
     <EmbeddedResource Include="ReportAll\Report1.rdlc" />
+    <EmbeddedResource Include="ReportAll\ReportAll.rdlc" />
     <EmbeddedResource Include="ReportSale.resx">
       <DependentUpon>ReportSale.cs</DependentUpon>
     </EmbeddedResource>
@@ -295,6 +307,8 @@
     <None Include="Properties\DataSources\OrderDetail.datasource" />
     <None Include="Properties\DataSources\OrderDTO.datasource" />
     <None Include="Properties\DataSources\POSTiw.DTO.ProductLow.datasource" />
+    <None Include="Properties\DataSources\POSTiw.DTO.ReportAll.datasource" />
+    <None Include="Properties\DataSources\POSTiw.DTO.ReportCost.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
