@@ -532,9 +532,9 @@
             this.label14.Font = new System.Drawing.Font("TH SarabunPSK", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(41, 71);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(154, 23);
+            this.label14.Size = new System.Drawing.Size(232, 23);
             this.label14.TabIndex = 33;
-            this.label14.Text = "ตรวจสอบจำนวนสินค้า";
+            this.label14.Text = "ค้นหาสินค้าโดยใส่ชื่อสินค้า";
             this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // textBox2

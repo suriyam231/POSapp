@@ -164,16 +164,18 @@ namespace POSTiw
                 string Repassword = addRepass.Text.ToString();
                 string Firstname = addFname.Text.ToString();
                 string Lastname = addLname.Text.ToString();
-                string Status = addStatus.SelectedItem.ToString();
+                
 
-                if (ID != null && Password != null && Repassword != null && Firstname != null && Lastname != null && Status != null)
+                if (ID != "" && Password != "" && Repassword != "" && Firstname != "" && Lastname != "" )
                 {
+                    string Status = addStatus.SelectedItem.ToString();
 
                     SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
 
                     conn.Open();
-                    if (Password == Repassword)
+                    if (Password == Repassword && Status != "")
                     {
+                        
                         string qry = "INSERT INTO Users Values('" + ID + "','" + ID + "','" + Password + "','" + Firstname + "','" + Lastname + "','" + Status + "')";
                         SqlDataReader reader = new SqlCommand(qry, conn).ExecuteReader();
                         MessageBox.Show("เพิ่มผู้ใช้งาน : คุณ" + Firstname + " เรียบร้อยแล้ว");
@@ -189,9 +191,13 @@ namespace POSTiw
                         addLname.Text = null;
                         addStatus.SelectedItem = null;
                     }
-                    else
+                    else if(Password != Repassword && Status != "")
                     {
                         MessageBox.Show("รหัสผ่านไม่ตรงกัน");
+                    }
+                    else if( Status == "")
+                    {
+                        MessageBox.Show("กรุณาเลือกตำแหน่ง");
                     }
 
                 }
@@ -209,7 +215,7 @@ namespace POSTiw
             }
             catch (NullReferenceException nul)
             {
-                MessageBox.Show("กรุณาเลือกสถานะทางร้าน");
+                MessageBox.Show("กรุณาเลือกตำแหน่ง");
             }
         }
 
@@ -318,6 +324,44 @@ namespace POSTiw
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void User_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+                try
+                {
+                    SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
+                    conn.Open();
+                    string qry = "DELETE Users WHERE Username = '" + showID.Text.ToString() + "'";
+                    SqlDataReader reader = new SqlCommand(qry, conn).ExecuteReader();
+                    SqlCommand cmd = new SqlCommand(qry, conn);
+                    MessageBox.Show("ลบรหัสผู้ใช้งานเรียบร้อย");
+                    userID.Text = null;
+                    passWord.Text = null;
+                    firstName.Text = null;
+                    lastName.Text = null;
+                    status.SelectedItem = null;
+                    comboBox3.SelectedItem = null;
+                    showID.Text = null;
+                    showPass.Text = null;
+                    showFname.Text = null;
+                    showLname.Text = null;
+                    showStatus.Text = null;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
         }
     }
 }

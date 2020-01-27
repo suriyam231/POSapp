@@ -320,7 +320,7 @@
             this.label17.BackColor = System.Drawing.Color.LightCyan;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label17.Location = new System.Drawing.Point(567, 577);
+            this.label17.Location = new System.Drawing.Point(552, 577);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(18, 24);
             this.label17.TabIndex = 26;
