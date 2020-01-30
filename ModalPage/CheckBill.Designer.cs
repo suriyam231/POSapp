@@ -122,6 +122,7 @@
             this.textBox1.Size = new System.Drawing.Size(145, 49);
             this.textBox1.TabIndex = 6;
             this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Onkey);
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             this.textBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keydown);
             // 
             // label5

@@ -64,7 +64,20 @@ namespace POSTiw.ModalPage
 
             int change = 0;
             change = Money - Total;
-            change_lab.Text = change.ToString();
+     
+            if (change > 0)
+            {
+                change_lab.Text = change.ToString();
+            }
+            else if (change == 0)
+            {
+                change_lab.Text = change.ToString();
+            }
+            else if (change < 0)
+            {
+                change_lab.Text = "ติดลบ";
+            }
+
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -103,6 +116,16 @@ namespace POSTiw.ModalPage
             //main.ad(a.ToString(), textID.ToString());
             //main.button6_Click("ยกเลิก", e);
             //this.Close();
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Char chr = e.KeyChar;
+            if(!Char.IsDigit(chr) && chr != 8)
+            {
+                e.Handled = true;
+                
+            }
         }
     }
 }
