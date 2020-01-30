@@ -412,110 +412,113 @@ namespace POSTiw
             string Active = "Y";
             string Getmoney;
             string GetLeft;
-            using (ModalPage.CheckBill bill = new ModalPage.CheckBill())
+            if(dataGridView1.Rows.Count > 1)
             {
-                string a = label12.Text.ToString();
-
-                bill.ad(a.ToString());
-                if (bill.ShowDialog()== DialogResult.OK)
+                using (ModalPage.CheckBill bill = new ModalPage.CheckBill())
                 {
-                    Type = bill.Getvalues;
-                    Getmoney = bill.Getmoney;
-                    GetLeft = bill.getLeft;
-                    if (Type == "succes")
+                    string a = label12.Text.ToString();
+
+                    bill.ad(a.ToString());
+                    if (bill.ShowDialog() == DialogResult.OK)
                     {
-                        string textID = label20.Text.ToString();
-                        if (this.Type == "เรียกบิล")
+                        Type = bill.Getvalues;
+                        Getmoney = bill.Getmoney;
+                        GetLeft = bill.getLeft;
+                        if (Type == "succes")
                         {
-                            SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
-                            conn.Open();
-                            string qry = "Delete PauseBill where ReceiptID = '" + this.IDPause + "'";
-                            SqlDataReader reader = new SqlCommand(qry, conn).ExecuteReader();
-                            conn.Close();
-                            conn.Open();
-                            string qry1 = "Delete Receipt where ReceiptID = '" + this.IDPause + "'";
-                            SqlDataReader reader1 = new SqlCommand(qry1, conn).ExecuteReader();
-                            conn.Close();
-                            conn.Open();
-                            string qry3 = "Delete ReceiptDetail where ReceiptID = '" + this.IDPause + "'";
-                            SqlDataReader reader3 = new SqlCommand(qry3, conn).ExecuteReader();
-                            conn.Close();
-                            textID = IDPause;
-                        }
-
-                        int num = 0;
-                        for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
-                        {
-
-                            string ReceiptID = textID.ToString();
-                            string ProductID = dataGridView1.Rows[i].Cells[1].Value.ToString();
-                            string txtPrice = dataGridView1.Rows[i].Cells[4].Value.ToString();
-                            string txtAmount = dataGridView1.Rows[i].Cells[3].Value.ToString();
-                            int Amount = 0;
-
-                            float Price = 0;
-                            Int32.TryParse(txtAmount, out Amount);
-                            float.TryParse(txtPrice, out Price);
-                           
-                            num = num + Amount;
-
-                            SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
-                            conn.Open();
-                            string qry = "INSERT ReceiptDetail Values('" + ProductID + "','" + ReceiptID + "'," + Price + "," + Amount + ",'" + Active + "','" + DateTime.Now.Date + "')";
-                            SqlDataReader reader = new SqlCommand(qry, conn).ExecuteReader();
-                            conn.Close();
-                            conn.Open();
-                            string Update = "select ProductQuantity from Products where ProductID= '" + ProductID + "'";
-                            DataTable data = new DataTable();
-                            SqlDataAdapter adapter = new SqlDataAdapter(Update, conn);
-                            int index;
-                            adapter.Fill(data);
-                            index = data.Rows[0].Field<int>(0);
-                            conn.Close();
-                            conn.Open();
-                            int TotalAmount = 0;
-                            TotalAmount = index - Amount;
-                            string Edit = "UPDATE Products SET ProductQuantity = " + TotalAmount + " Where ProductID = '" + ProductID + "'";
-                            SqlDataReader readerUdate = new SqlCommand(Edit, conn).ExecuteReader();    
-                        }
-                        SqlConnection connn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
-
-                        connn.Open();
-                        string qry2 = "INSERT Receipt Values('" + textID + "','" + DateTime.Now.Date + "','" + DateTime.Now.TimeOfDay + "','" + label12.Text.ToString() + "','" + num + "','"+ Active+ "')";
-                        SqlDataReader reader2 = new SqlCommand(qry2, connn).ExecuteReader();
-
-                        using (IDbConnection db = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd"))
-                        {
-                            db.Open();
-                            SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
-                            string qry = "SELECT Products.ProductID,Products.ProductName,Products.ProductPrice, ReceiptDetail.Amount FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID Where ReceiptID = '" + textID.ToString() + "'";
-                            List<OrderDetail> list = db.Query<OrderDetail>(qry, conn).ToList();
-                            report.Name = "DataSet1";
-                            report.Value = list;
-                            using (Form2 form = new Form2(textID, DateTime.Now.Date.ToString(), DateTime.Now.TimeOfDay.ToString(), report,GetLeft,Getmoney))
+                            string textID = label20.Text.ToString();
+                            if (this.Type == "เรียกบิล")
                             {
-                                form.ShowDialog();
-
+                                SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
+                                conn.Open();
+                                string qry = "Delete PauseBill where ReceiptID = '" + this.IDPause + "'";
+                                SqlDataReader reader = new SqlCommand(qry, conn).ExecuteReader();
+                                conn.Close();
+                                conn.Open();
+                                string qry1 = "Delete Receipt where ReceiptID = '" + this.IDPause + "'";
+                                SqlDataReader reader1 = new SqlCommand(qry1, conn).ExecuteReader();
+                                conn.Close();
+                                conn.Open();
+                                string qry3 = "Delete ReceiptDetail where ReceiptID = '" + this.IDPause + "'";
+                                SqlDataReader reader3 = new SqlCommand(qry3, conn).ExecuteReader();
+                                conn.Close();
+                                textID = IDPause;
                             }
 
-                        }
-                        label20.Text = "";
-                        namePro_lab.Text = "";
-                        textBox3.Text = "";
-                        label12.Text = "";
-                        this.Controls.Clear();
-                        this.InitializeComponent();
-                        this.ActiveControl = textBox1;
-                        label20.Hide();
-                        dataGridView3.Hide();
-                        dataGridView1.Columns[0].Width = 50;
-                        dataGridView1.Columns[1].Width = 150;
-                        dataGridView1.Columns[2].Width = 150;
-                        dataGridView1.Columns[3].Width = 110;
-                        dataGridView1.Columns[4].Width = 110;
-                        dataGridView1.Columns[5].Width = 110;
+                            int num = 0;
+                            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                            {
 
-                       
+                                string ReceiptID = textID.ToString();
+                                string ProductID = dataGridView1.Rows[i].Cells[1].Value.ToString();
+                                string txtPrice = dataGridView1.Rows[i].Cells[4].Value.ToString();
+                                string txtAmount = dataGridView1.Rows[i].Cells[3].Value.ToString();
+                                int Amount = 0;
+
+                                float Price = 0;
+                                Int32.TryParse(txtAmount, out Amount);
+                                float.TryParse(txtPrice, out Price);
+
+                                num = num + Amount;
+
+                                SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
+                                conn.Open();
+                                string qry = "INSERT ReceiptDetail Values('" + ProductID + "','" + ReceiptID + "'," + Price + "," + Amount + ",'" + Active + "','" + DateTime.Now.Date + "')";
+                                SqlDataReader reader = new SqlCommand(qry, conn).ExecuteReader();
+                                conn.Close();
+                                conn.Open();
+                                string Update = "select ProductQuantity from Products where ProductID= '" + ProductID + "'";
+                                DataTable data = new DataTable();
+                                SqlDataAdapter adapter = new SqlDataAdapter(Update, conn);
+                                int index;
+                                adapter.Fill(data);
+                                index = data.Rows[0].Field<int>(0);
+                                conn.Close();
+                                conn.Open();
+                                int TotalAmount = 0;
+                                TotalAmount = index - Amount;
+                                string Edit = "UPDATE Products SET ProductQuantity = " + TotalAmount + " Where ProductID = '" + ProductID + "'";
+                                SqlDataReader readerUdate = new SqlCommand(Edit, conn).ExecuteReader();
+                            }
+                            SqlConnection connn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
+
+                            connn.Open();
+                            string qry2 = "INSERT Receipt Values('" + textID + "','" + DateTime.Now.Date + "','" + DateTime.Now.TimeOfDay + "','" + label12.Text.ToString() + "','" + num + "','" + Active + "')";
+                            SqlDataReader reader2 = new SqlCommand(qry2, connn).ExecuteReader();
+
+                            using (IDbConnection db = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd"))
+                            {
+                                db.Open();
+                                SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
+                                string qry = "SELECT Products.ProductID,Products.ProductName,Products.ProductPrice, ReceiptDetail.Amount FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID Where ReceiptID = '" + textID.ToString() + "'";
+                                List<OrderDetail> list = db.Query<OrderDetail>(qry, conn).ToList();
+                                report.Name = "DataSet1";
+                                report.Value = list;
+                                using (Form2 form = new Form2(textID, DateTime.Now.Date.ToString(), DateTime.Now.TimeOfDay.ToString(), report, GetLeft, Getmoney))
+                                {
+                                    form.ShowDialog();
+
+                                }
+
+                            }
+                            label20.Text = "";
+                            namePro_lab.Text = "";
+                            textBox3.Text = "";
+                            label12.Text = "";
+                            this.Controls.Clear();
+                            this.InitializeComponent();
+                            this.ActiveControl = textBox1;
+                            label20.Hide();
+                            dataGridView3.Hide();
+                            dataGridView1.Columns[0].Width = 50;
+                            dataGridView1.Columns[1].Width = 150;
+                            dataGridView1.Columns[2].Width = 150;
+                            dataGridView1.Columns[3].Width = 110;
+                            dataGridView1.Columns[4].Width = 110;
+                            dataGridView1.Columns[5].Width = 110;
+
+
+                        }
                     }
                 }
             }

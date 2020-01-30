@@ -18,11 +18,11 @@ namespace POSTiw
     {
         private static List<Stream> m_streams;
         private static int m_currentPageIndex = 0;
-        
+        LocalReport rep = new LocalReport();
         public Form2(string OrderId,string Date, string Time, ReportDataSource report,string GetLeft, string Getmoney)
         {
             InitializeComponent();
-
+            
             this.reportViewer1.LocalReport.DataSources.Clear();
             this.reportViewer1.LocalReport.DataSources.Add(report);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "POSTiw.ReportAll.Report1.rdlc";
@@ -36,29 +36,45 @@ namespace POSTiw
             };
             
             this.reportViewer1.LocalReport.SetParameters(p);
-            LocalReport rep = new LocalReport();
+           
             var dt = report.Value;
             string path = Path.GetDirectoryName(Application.ExecutablePath);
             rep.ReportPath = Path.GetDirectoryName(Application.ExecutablePath).Remove(path.Length - 10) + @"\ReportAll\Report1.rdlc";
             rep.DataSources.Add(new ReportDataSource("DataSet1",dt));
             rep.SetParameters(p);
-            PrintToPrinter(rep);
+
+
+            this.ActiveControl = textBox1;
+
         }
 
         public void Form2_Load(object sender, EventArgs e)
         {
 
             this.reportViewer1.RefreshReport();
+            
         }
 
         public void reportViewer1_Load(object sender, EventArgs e)
         {
 
         }
+        public void Click_ESC(object sender, KeyEventArgs kea)
+        {
+            if (kea.KeyCode == Keys.Escape)
+            {
+                button1.PerformClick();
+            }
+            else if (kea.KeyCode == Keys.Enter)
+            {
+                button3.PerformClick();
 
+            }
+        }
         private void button3_Click(object sender, EventArgs e)
         {
-         
+            PrintToPrinter(rep);
+            this.Close();
 
         }
 
@@ -149,7 +165,13 @@ namespace POSTiw
                 foreach (Stream stream in m_streams)
                     stream.Close();
                 m_streams = null;
+            
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
