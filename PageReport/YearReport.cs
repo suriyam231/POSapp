@@ -32,7 +32,7 @@ namespace POSTiw.PageReport
             dateback = "31-12-" + yy;
 
             string qry = "SELECT  Products.ProductID,Products.ProductName,Products.TypeName,Products.CostPrice,Products.ProductPrice, SUM(ReceiptDetail.Amount) as Counts,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost  , Products.ProductPrice * SUM(ReceiptDetail.Amount) as TotalRevenue FROM Products " +
-                "LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) +0, 0) and DATEADD(MONTH, DATEDIFF(MONTH, 01, GETDATE())+12, 0) " +
+                "LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) +0, 0) and DATEADD(MONTH, DATEDIFF(MONTH, 01, GETDATE())+12, 0) and ReceiptDetail.Active = 'Y'" +
                 "GROUP BY Products.ProductName,Products.TypeName,Products.CostPrice,Products.ProductID,Products.ProductPrice,Products.ProductQuantity HAVING SUM(ReceiptDetail.Amount) > 0" +
                 "ORDER BY Products.TypeName DESC";
             DataTable data = new DataTable();
@@ -64,14 +64,15 @@ namespace POSTiw.PageReport
             dataGridView1.Columns["TotalRevenue"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
 
-            int totalRevenue = 0;
-            int totalCost = 0;
-            int totalProfit = 0;
+
+            float totalRevenue = 0;
+            float totalCost = 0;
+            float totalProfit = 0;
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 string text = dataGridView1.Rows[i].Cells[7].Value.ToString();
-                int number = 0;
-                Int32.TryParse(text, out number);
+                float number = 0;
+                float.TryParse(text, out number);
 
                 totalRevenue = totalRevenue + number;
             }
@@ -79,10 +80,10 @@ namespace POSTiw.PageReport
             {
                 string cost = dataGridView1.Rows[i].Cells[3].Value.ToString();
                 string count = dataGridView1.Rows[i].Cells[5].Value.ToString();
-                int costs = 0;
-                int counts = 0;
-                Int32.TryParse(cost, out costs);
-                Int32.TryParse(count, out counts);
+                float costs = 0;
+                float counts = 0;
+                float.TryParse(cost, out costs);
+                float.TryParse(count, out counts);
 
                 totalCost = totalCost + (costs * counts);
             }
@@ -105,6 +106,9 @@ namespace POSTiw.PageReport
                 dataGridView2.Rows[num].Cells[1].Value = Drow["TotalCost"].ToString();
                 dataGridView2.Rows[num].Cells[2].Value = Drow["TotalProfit"].ToString();
             }
+            dataGridView2.Columns["TotalRevenue"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView2.Columns["TotalCost"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView2.Columns["TotalProfit"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
         }
 

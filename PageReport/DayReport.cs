@@ -21,21 +21,21 @@ namespace POSTiw.PageReport
             dateTimePicker2.Value = DateTime.Now.Date;
             
             string qry = "SELECT  Products.ProductID,Products.ProductName,Products.TypeName,Products.CostPrice,Products.ProductPrice, SUM(ReceiptDetail.Amount) as Counts  , Products.ProductPrice * SUM(ReceiptDetail.Amount) as TotalRevenue " +
-                "FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date = '"+ DateTime.Now.Date + "'  GROUP BY Products.ProductName,Products.TypeName,Products.CostPrice,Products.ProductID,Products.ProductPrice,Products.ProductQuantity " +
+                "FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date = '"+ DateTime.Now.Date + "' and  ReceiptDetail.Active = 'Y'  GROUP BY Products.ProductName,Products.TypeName,Products.CostPrice,Products.ProductID,Products.ProductPrice,Products.ProductQuantity " +
                 "HAVING SUM(ReceiptDetail.Amount) > 0 ORDER BY TotalRevenue DESC";
             DataTable data = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter(qry, sqlcon);
             adapter.Fill(data);
             dataGridView1.DataSource = data;
             
-            int totalRevenue = 0;
-            int totalCost = 0;
-            int totalProfit = 0;
+            float totalRevenue = 0;
+            float totalCost = 0;
+            float totalProfit = 0;
             for (int i = 0; i < dataGridView1.Rows.Count ; i++)
             {
                 string text = dataGridView1.Rows[i].Cells[6].Value.ToString();
-                int number = 0;
-                Int32.TryParse(text, out number);
+                float number = 0;
+                float.TryParse(text, out number);
 
                 totalRevenue = totalRevenue + number;
             }
@@ -43,10 +43,10 @@ namespace POSTiw.PageReport
             {
                 string cost = dataGridView1.Rows[i].Cells[3].Value.ToString();
                 string count = dataGridView1.Rows[i].Cells[5].Value.ToString();
-                int costs = 0;
-                int counts = 0;
-                Int32.TryParse(cost, out costs);
-                Int32.TryParse(count, out counts);
+                float costs = 0;
+                float counts = 0;
+                float.TryParse(cost, out costs);
+                float.TryParse(count, out counts);
 
                 totalCost = totalCost + (costs*counts);
             }
@@ -125,21 +125,21 @@ namespace POSTiw.PageReport
 
             dataGridView2.Rows.Clear();
             string qry = "SELECT  Products.ProductID,Products.ProductName,Products.TypeName,Products.CostPrice,Products.ProductPrice, SUM(ReceiptDetail.Amount) as Counts  , Products.ProductPrice * SUM(ReceiptDetail.Amount) as TotalRevenue " +
-                "FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date = '" + date + "'  GROUP BY Products.ProductName,Products.TypeName,Products.CostPrice,Products.ProductID,Products.ProductPrice,Products.ProductQuantity " +
+                "FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date = '" + date + "' and ReceiptDetail.Active = 'Y'  GROUP BY Products.ProductName,Products.TypeName,Products.CostPrice,Products.ProductID,Products.ProductPrice,Products.ProductQuantity " +
                 "HAVING SUM(ReceiptDetail.Amount) > 0 ORDER BY TotalRevenue DESC";
             DataTable data = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter(qry, sqlcon);
             adapter.Fill(data);
             dataGridView1.DataSource = data;
 
-            int totalRevenue = 0;
-            int totalCost = 0;
-            int totalProfit = 0;
+            float totalRevenue = 0;
+            float totalCost = 0;
+            float totalProfit = 0;
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 string text = dataGridView1.Rows[i].Cells[6].Value.ToString();
-                int number = 0;
-                Int32.TryParse(text, out number);
+                float number = 0;
+                float.TryParse(text, out number);
 
                 totalRevenue = totalRevenue + number;
             }
@@ -147,10 +147,10 @@ namespace POSTiw.PageReport
             {
                 string cost = dataGridView1.Rows[i].Cells[3].Value.ToString();
                 string count = dataGridView1.Rows[i].Cells[5].Value.ToString();
-                int costs = 0;
-                int counts = 0;
-                Int32.TryParse(cost, out costs);
-                Int32.TryParse(count, out counts);
+                float costs = 0;
+                float counts = 0;
+                float.TryParse(cost, out costs);
+                float.TryParse(count, out counts);
 
                 totalCost = totalCost + (costs * counts);
             }

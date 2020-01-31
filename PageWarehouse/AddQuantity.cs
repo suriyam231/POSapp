@@ -96,6 +96,13 @@ namespace POSTiw
             dataGridView1.Columns["TypeName"].HeaderText = "ประเภทสินค้า";
             dataGridView1.Columns["Date"].HeaderText = "วันที่เพิ่มสินค้าล่าสุด";
 
+
+            dataGridView1.Columns["ProductQuantity"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView1.Columns["ProductPrice"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView1.Columns["CostPrice"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+
+
             dataGridView1.Columns[1].Width = 140;
             dataGridView1.Columns[7].Width = 200;
             dataGridView1.Columns[8].Width = 130;

@@ -134,6 +134,7 @@
             this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button4.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button4.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.ControlText;

@@ -23,7 +23,7 @@ namespace POSTiw
             dataGridView2.Hide();
             SqlCommand command = new SqlCommand();
             command.Connection = sqlcon;
-            command.CommandText = "SELECT  Products.ProductID,Products.ProductName,Products.TypeName,Products.CostPrice,Products.ProductPrice,Products.ProductQuantity,SUM(ReceiptDetail.Amount) as Counts FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID WHERE ReceiptDetail.Date between DateAdd(DD,-7,GETDATE() ) and GETDATE()  " +
+            command.CommandText = "SELECT  Products.ProductID,Products.ProductName,Products.TypeName,Products.CostPrice,Products.ProductPrice,Products.ProductQuantity,SUM(ReceiptDetail.Amount) as Counts FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID WHERE ReceiptDetail.Date between DateAdd(DD,-7,GETDATE() ) and GETDATE() and ReceiptDetail.Active = 'Y' " +
                 "GROUP BY Products.ProductName,Products.TypeName,Products.CostPrice,Products.ProductID,Products.ProductPrice,Products.ProductQuantity HAVING SUM(ReceiptDetail.Amount) > 1 ORDER BY Counts DESC";
             DataTable data = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter(command);
@@ -59,7 +59,7 @@ namespace POSTiw
 
                 SqlCommand commandType = new SqlCommand();
                 commandType.Connection = conn;
-                commandType.CommandText = "SELECT  SUM(ReceiptDetail.Amount) as Counts  FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID Where TypeName = '"+type+"'";
+                commandType.CommandText = "SELECT  SUM(ReceiptDetail.Amount) as Counts  FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID Where TypeName = '"+type+ "' and ReceiptDetail.Active = 'Y'";
                 DataTable dataType = new DataTable();
                 SqlDataAdapter adapterType = new SqlDataAdapter(commandType);
                 adapterType.Fill(dataType);
@@ -143,7 +143,7 @@ namespace POSTiw
             chart1.Series["s1"].Points.Clear();
             SqlCommand command = new SqlCommand();
             command.Connection = sqlcon;
-            command.CommandText = "SELECT  Products.ProductID,Products.ProductName,Products.TypeName,Products.CostPrice,Products.ProductPrice,Products.ProductQuantity,SUM(ReceiptDetail.Amount) as Counts FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID  WHERE ReceiptDetail.Date between DateAdd(DD,-7,GETDATE() ) and GETDATE() " +
+            command.CommandText = "SELECT  Products.ProductID,Products.ProductName,Products.TypeName,Products.CostPrice,Products.ProductPrice,Products.ProductQuantity,SUM(ReceiptDetail.Amount) as Counts FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID  WHERE ReceiptDetail.Date between DateAdd(DD,-7,GETDATE() ) and GETDATE() and ReceiptDetail.Active = 'Y' " +
                 "GROUP BY Products.ProductName,Products.TypeName,Products.CostPrice,Products.ProductID,Products.ProductPrice,Products.ProductQuantity HAVING SUM(ReceiptDetail.Amount) > 1 ORDER BY Counts DESC";
             DataTable data = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter(command);
@@ -179,7 +179,7 @@ namespace POSTiw
 
                 SqlCommand commandType = new SqlCommand();
                 commandType.Connection = conn;
-                commandType.CommandText = "SELECT  SUM(ReceiptDetail.Amount) as Counts  FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID Where TypeName = '" + type + "' and ReceiptDetail.Date between DateAdd(DD,-7,GETDATE() ) and GETDATE() ";
+                commandType.CommandText = "SELECT  SUM(ReceiptDetail.Amount) as Counts  FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID Where TypeName = '" + type + "' and ReceiptDetail.Date between DateAdd(DD,-7,GETDATE() ) and GETDATE() and ReceiptDetail.Active = 'Y'";
                 DataTable dataType = new DataTable();
                 SqlDataAdapter adapterType = new SqlDataAdapter(commandType);
                 adapterType.Fill(dataType);
@@ -205,7 +205,7 @@ namespace POSTiw
             chart1.Series["s1"].Points.Clear();
             SqlCommand command = new SqlCommand();
             command.Connection = sqlcon;
-            command.CommandText = "SELECT  Products.ProductID,Products.ProductName,Products.TypeName,Products.CostPrice,Products.ProductPrice,Products.ProductQuantity,SUM(ReceiptDetail.Amount) as Counts FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID  WHERE ReceiptDetail.Date between DateAdd(DD,-30,GETDATE() ) and GETDATE() " +
+            command.CommandText = "SELECT  Products.ProductID,Products.ProductName,Products.TypeName,Products.CostPrice,Products.ProductPrice,Products.ProductQuantity,SUM(ReceiptDetail.Amount) as Counts FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID  WHERE ReceiptDetail.Date between DateAdd(DD,-30,GETDATE() ) and GETDATE() and ReceiptDetail.Active = 'Y' " +
                 "GROUP BY Products.ProductName,Products.TypeName,Products.CostPrice,Products.ProductID,Products.ProductPrice,Products.ProductQuantity HAVING SUM(ReceiptDetail.Amount) > 1 ORDER BY Counts DESC";
             DataTable data = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter(command);
@@ -241,7 +241,7 @@ namespace POSTiw
 
                 SqlCommand commandType = new SqlCommand();
                 commandType.Connection = conn;
-                commandType.CommandText = "SELECT  SUM(ReceiptDetail.Amount) as Counts  FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID Where TypeName = '" + type + "' and ReceiptDetail.Date between DateAdd(DD,-30,GETDATE() ) and GETDATE() ";
+                commandType.CommandText = "SELECT  SUM(ReceiptDetail.Amount) as Counts  FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID Where TypeName = '" + type + "' and ReceiptDetail.Date between DateAdd(DD,-30,GETDATE() ) and GETDATE() and ReceiptDetail.Active = 'Y'";
                 DataTable dataType = new DataTable();
                 SqlDataAdapter adapterType = new SqlDataAdapter(commandType);
                 adapterType.Fill(dataType);
@@ -267,7 +267,7 @@ namespace POSTiw
             chart1.Series["s1"].Points.Clear();
             SqlCommand command = new SqlCommand();
             command.Connection = sqlcon;
-            command.CommandText = "SELECT  Products.ProductID,Products.ProductName,Products.TypeName,Products.CostPrice,Products.ProductPrice,Products.ProductQuantity,SUM(ReceiptDetail.Amount) as Counts FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID  WHERE ReceiptDetail.Date between DateAdd(DD,-90,GETDATE() ) and GETDATE() " +
+            command.CommandText = "SELECT  Products.ProductID,Products.ProductName,Products.TypeName,Products.CostPrice,Products.ProductPrice,Products.ProductQuantity,SUM(ReceiptDetail.Amount) as Counts FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID  WHERE ReceiptDetail.Date between DateAdd(DD,-90,GETDATE() ) and GETDATE() and ReceiptDetail.Active = 'Y'" +
                 "GROUP BY Products.ProductName,Products.TypeName,Products.CostPrice,Products.ProductID,Products.ProductPrice,Products.ProductQuantity HAVING SUM(ReceiptDetail.Amount) > 1 ORDER BY Counts DESC";
             DataTable data = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter(command);
@@ -303,7 +303,7 @@ namespace POSTiw
 
                 SqlCommand commandType = new SqlCommand();
                 commandType.Connection = conn;
-                commandType.CommandText = "SELECT  SUM(ReceiptDetail.Amount) as Counts  FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID Where TypeName = '" + type + "' and ReceiptDetail.Date between DateAdd(DD,-90,GETDATE() ) and GETDATE() ";
+                commandType.CommandText = "SELECT  SUM(ReceiptDetail.Amount) as Counts  FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID Where TypeName = '" + type + "' and ReceiptDetail.Date between DateAdd(DD,-90,GETDATE() ) and GETDATE() and ReceiptDetail.Active = 'Y'";
                 DataTable dataType = new DataTable();
                 SqlDataAdapter adapterType = new SqlDataAdapter(commandType);
                 adapterType.Fill(dataType);
@@ -342,7 +342,7 @@ namespace POSTiw
 
             SqlCommand command = new SqlCommand();
             command.Connection = sqlcon;
-            command.CommandText = "SELECT  Products.ProductID,Products.ProductName,Products.TypeName,Products.CostPrice,Products.ProductPrice,Products.ProductQuantity,SUM(ReceiptDetail.Amount) as Counts FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID  WHERE ReceiptDetail.Date between DateAdd(DD,"+day+",GETDATE() ) and GETDATE() and Products.TypeName = '"+values+"'" +
+            command.CommandText = "SELECT  Products.ProductID,Products.ProductName,Products.TypeName,Products.CostPrice,Products.ProductPrice,Products.ProductQuantity,SUM(ReceiptDetail.Amount) as Counts FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID  WHERE ReceiptDetail.Date between DateAdd(DD,"+day+",GETDATE() ) and GETDATE() and Products.TypeName = '"+values+ "' and ReceiptDetail.Active = 'Y'" +
                 "GROUP BY Products.ProductName,Products.TypeName,Products.CostPrice,Products.ProductID,Products.ProductPrice,Products.ProductQuantity HAVING SUM(ReceiptDetail.Amount) > 1 ORDER BY Counts DESC";
             DataTable data = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter(command);

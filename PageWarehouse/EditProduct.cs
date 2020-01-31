@@ -72,6 +72,11 @@ namespace POSTiw.Page
             dataGridView1.Columns["TypeName"].HeaderText = "ประเภทสินค้า";
             dataGridView1.Columns["Date"].HeaderText = "วันที่เพิ่มสินค้าล่าสุด";
 
+
+            dataGridView1.Columns["ProductQuantity"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView1.Columns["ProductPrice"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView1.Columns["CostPrice"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
         }
 
         public void search(object sender, KeyEventArgs kea)

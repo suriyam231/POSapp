@@ -61,6 +61,7 @@ namespace POSTiw
             dataGridView1.Columns["ProductFrom"].HeaderText = "ซื้อสินค้ามาจาก";
             dataGridView1.Columns["ProductQuantity"].HeaderText = "จำนวนสินค้า";
 
+            dataGridView1.Columns["ProductQuantity"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
 
             dataGridView1.Columns[0].Width = 150;

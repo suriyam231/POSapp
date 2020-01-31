@@ -24,6 +24,8 @@ namespace POSTiw
         public PreviousBill()
         {
             InitializeComponent();
+
+            dateTimePicker2.Value = DateTime.Now.Date;
            // SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
             conn.Open();
             string Text = "Select ReceiptID, ReceiptDate , ReceiptTime ,TotalPrice , ProductAmount from Receipt Where Active = 'Y' ORDER BY  ReceiptDate DESC , ReceiptTime DESC ";
@@ -40,6 +42,9 @@ namespace POSTiw
             dataGridView1.Columns["ReceiptTime"].HeaderText = "เวลาที่ซื้อสินค้า";
             dataGridView1.Columns["TotalPrice"].HeaderText = "ราคารวม";
             dataGridView1.Columns["ProductAmount"].HeaderText = "จำนวนที่ซื้อ";
+
+            dataGridView1.Columns["TotalPrice"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView1.Columns["ProductAmount"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -49,7 +54,7 @@ namespace POSTiw
             using (IDbConnection db = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd"))
             {
                 db.Open();
-                string qry = "Select ReceiptID, ReceiptDate , ReceiptTime ,TotalPrice , ProductAmount  from Receipt where ReceiptDate Between '" + date1 + "' and '" + date2 + "' and  Active = 'Y'  ORDER BY ReceiptTime DESC";
+                string qry = "Select ReceiptID, ReceiptDate , ReceiptTime ,TotalPrice , ProductAmount  from Receipt where ReceiptDate Between '" + date1 + "' and '" + date2 + "' and  Active = 'Y'  ORDER BY ReceiptDate DESC , ReceiptTime DESC";
                 DataTable data = new DataTable();
                 SqlDataAdapter adapter = new SqlDataAdapter(qry, conn);
                 adapter.Fill(data);

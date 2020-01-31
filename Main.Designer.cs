@@ -544,7 +544,7 @@
             this.textBox2.Font = new System.Drawing.Font("TH SarabunPSK", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(46, 98);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(300, 34);
+            this.textBox2.Size = new System.Drawing.Size(336, 34);
             this.textBox2.TabIndex = 34;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -554,7 +554,7 @@
             this.button15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button15.Font = new System.Drawing.Font("TH SarabunPSK", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.Location = new System.Drawing.Point(352, 97);
+            this.button15.Location = new System.Drawing.Point(388, 97);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(130, 34);
             this.button15.TabIndex = 35;
@@ -584,7 +584,7 @@
             this.dataGridView2.Location = new System.Drawing.Point(46, 138);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(436, 131);
+            this.dataGridView2.Size = new System.Drawing.Size(472, 131);
             this.dataGridView2.TabIndex = 37;
             this.dataGridView2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView2_MouseClick);
             // 

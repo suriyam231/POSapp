@@ -36,11 +36,7 @@ namespace POSTiw
             dataGridView3.Hide();
             IDPause = null;
             Type = null;
-            string qry = "Select * from Store";
-            DataTable data = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter(qry, sqlcon);
-            adapter.Fill(data);
-            label5.Text = data.Rows[0][1].ToString();
+           
         }
 
         private void fileToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -270,16 +266,29 @@ namespace POSTiw
             dataGridView2.Columns["ProductPrice"].HeaderText = "ราคาขาย";
             dataGridView2.Columns[2].Width = 105;
             dataGridView2.Columns[3].Width = 100;
+            dataGridView2.Columns["ProductQuantity"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView2.Columns["ProductPrice"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
         }
 
         private void Main_Load(object sender, EventArgs e)
         {
+
+            string qry2 = "Select * from Store";
+            DataTable data2 = new DataTable();
+            SqlDataAdapter adapter2 = new SqlDataAdapter(qry2, sqlcon);
+            adapter2.Fill(data2);
+            label5.Text = data2.Rows[0][1].ToString();
+
             dataGridView1.Columns[0].Width = 50;
             dataGridView1.Columns[1].Width = 150;
             dataGridView1.Columns[2].Width = 150;
             dataGridView1.Columns[3].Width = 110;
             dataGridView1.Columns[4].Width = 110;
             dataGridView1.Columns[5].Width = 110;
+
+            dataGridView1.Columns["Proamount"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView1.Columns["Proprice"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView1.Columns["total"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             pictureBox2.Hide();
             label3.Hide();
@@ -494,7 +503,7 @@ namespace POSTiw
                                 List<OrderDetail> list = db.Query<OrderDetail>(qry, conn).ToList();
                                 report.Name = "DataSet1";
                                 report.Value = list;
-                                using (Form2 form = new Form2(textID, DateTime.Now.Date.ToString(), DateTime.Now.TimeOfDay.ToString(), report, GetLeft, Getmoney))
+                                using (Form2 form = new Form2(textID, DateTime.Now.Date.ToString("dd-MM-yyyy"), DateTime.Now.TimeOfDay.ToString(), report, GetLeft, Getmoney))
                                 {
                                     form.ShowDialog();
 
@@ -698,8 +707,15 @@ namespace POSTiw
 
         private void button15_Click(object sender, EventArgs e)
         {
-            textBox1.Text = ProductIDsend.ToString();
-            button2.PerformClick();
+            try
+            {
+                textBox1.Text = ProductIDsend.ToString();
+                button2.PerformClick();
+            }
+            catch(Exception x)
+            {
+
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -744,8 +760,14 @@ namespace POSTiw
 
         private void button8_Click(object sender, EventArgs e)
         {
-            ModalPage.EditStore store = new ModalPage.EditStore();
-            store.Show();
+
+            using (ModalPage.EditStore edit = new ModalPage.EditStore())
+            {
+                if (edit.ShowDialog() == DialogResult.OK)
+                {
+                    button6.PerformClick();
+                }
+            }
         }
     }
 }

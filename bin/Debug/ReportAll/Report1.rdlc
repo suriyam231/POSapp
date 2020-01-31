@@ -375,86 +375,10 @@
       <Width>10.5537cm</Width>
       <Page>
         <PageHeader>
-          <Height>4.93889cm</Height>
+          <Height>4.46262cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
-            <Textbox Name="Textbox2">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>ร้านทิวพาณิชย์</Value>
-                      <Style>
-                        <FontStyle>Normal</FontStyle>
-                        <FontFamily>TH SarabunPSK</FontFamily>
-                        <FontSize>22pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                        <TextDecoration>None</TextDecoration>
-                        <Color>#000000</Color>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Left>0.15042in</Left>
-              <Height>0.39583in</Height>
-              <Width>3.9375in</Width>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox4">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>72 หมู่ 2 บ้านโพธิ์ตาก ตำบลโพธิ์ตาก อำเภอโพธิ์ตาก จังหวัดหนองคาย</Value>
-                      <Style>
-                        <FontStyle>Normal</FontStyle>
-                        <FontFamily>TH SarabunPSK</FontFamily>
-                        <FontSize>14pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                        <TextDecoration>None</TextDecoration>
-                        <Color>#000000</Color>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>0.46528in</Top>
-              <Left>0.15042in</Left>
-              <Height>0.25in</Height>
-              <Width>3.9375in</Width>
-              <ZIndex>1</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
             <Textbox Name="Textbox6">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
@@ -476,11 +400,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox4</rd:DefaultName>
-              <Top>0.78473in</Top>
-              <Left>0.15042in</Left>
+              <Top>0.61008in</Top>
+              <Left>0.15041in</Left>
               <Height>0.25in</Height>
               <Width>3.9375in</Width>
-              <ZIndex>2</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -512,11 +435,11 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox5</rd:DefaultName>
-              <Top>1.0625in</Top>
-              <Left>0.15042in</Left>
+              <Top>0.88786in</Top>
+              <Left>0.405in</Left>
               <Height>0.27083in</Height>
               <Width>1.91667in</Width>
-              <ZIndex>3</ZIndex>
+              <ZIndex>1</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -548,11 +471,11 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox5</rd:DefaultName>
-              <Top>1.375in</Top>
-              <Left>0.15042in</Left>
+              <Top>1.15869in</Top>
+              <Left>0.40041in</Left>
               <Height>0.27083in</Height>
               <Width>1.91667in</Width>
-              <ZIndex>4</ZIndex>
+              <ZIndex>2</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -584,10 +507,76 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox5</rd:DefaultName>
-              <Top>1.65972in</Top>
-              <Left>0.15042in</Left>
+              <Top>1.42952in</Top>
+              <Left>0.40041in</Left>
               <Height>0.27083in</Height>
               <Width>1.91667in</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Store">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Parameters!Store.Value</Value>
+                      <Style>
+                        <FontSize>15pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Store</rd:DefaultName>
+              <Top>0.12912cm</Top>
+              <Left>0.3937cm</Left>
+              <Height>0.78521cm</Height>
+              <Width>9.98959cm</Width>
+              <ZIndex>4</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Address">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Parameters!Address.Value</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Address</rd:DefaultName>
+              <Top>0.9496cm</Top>
+              <Left>0.91123cm</Left>
+              <Height>0.6cm</Height>
+              <Width>9.04872cm</Width>
               <ZIndex>5</ZIndex>
               <Style>
                 <Border>
@@ -599,7 +588,7 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="PorderID">
+            <Textbox Name="PID">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
@@ -613,11 +602,11 @@
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <rd:DefaultName>PorderID</rd:DefaultName>
-              <Top>1.08334in</Top>
-              <Left>2.08098in</Left>
-              <Height>0.25in</Height>
-              <Width>2.00694in</Width>
+              <rd:DefaultName>PID</rd:DefaultName>
+              <Top>2.34307cm</Top>
+              <Left>5.88538cm</Left>
+              <Height>0.6cm</Height>
+              <Width>2.5cm</Width>
               <ZIndex>6</ZIndex>
               <Style>
                 <Border>
@@ -629,7 +618,7 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Pdate">
+            <Textbox Name="Date">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
@@ -643,11 +632,11 @@
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <rd:DefaultName>Pdate</rd:DefaultName>
-              <Top>1.375in</Top>
-              <Left>2.08098in</Left>
-              <Height>0.25in</Height>
-              <Width>2.00694in</Width>
+              <rd:DefaultName>Date</rd:DefaultName>
+              <Top>3.01362cm</Top>
+              <Left>5.88538cm</Left>
+              <Height>0.6cm</Height>
+              <Width>2.5cm</Width>
               <ZIndex>7</ZIndex>
               <Style>
                 <Border>
@@ -659,7 +648,7 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Ptime">
+            <Textbox Name="Time">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
@@ -673,11 +662,11 @@
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <rd:DefaultName>Ptime</rd:DefaultName>
-              <Top>1.69444in</Top>
-              <Left>2.08098in</Left>
-              <Height>0.25in</Height>
-              <Width>2.00694in</Width>
+              <rd:DefaultName>Time</rd:DefaultName>
+              <Top>3.6489cm</Top>
+              <Left>5.95594cm</Left>
+              <Height>0.6cm</Height>
+              <Width>2.5cm</Width>
               <ZIndex>8</ZIndex>
               <Style>
                 <Border>
@@ -1067,6 +1056,14 @@
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
+    <ReportParameter Name="Store">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Address">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
@@ -1097,6 +1094,16 @@
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>1</RowIndex>
           <ParameterName>getLeft</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>Store</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>Address</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

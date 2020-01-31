@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Drawing.Printing;
@@ -19,15 +20,27 @@ namespace POSTiw
         private static List<Stream> m_streams;
         private static int m_currentPageIndex = 0;
         LocalReport rep = new LocalReport();
+        SqlConnection sqlcon = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
+        string Store;
+        string Address;
         public Form2(string OrderId,string Date, string Time, ReportDataSource report,string GetLeft, string Getmoney)
         {
             InitializeComponent();
-            
+            string Qry = "select * from Store";
+            DataTable data = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter(Qry, sqlcon);
+            adapter.Fill(data);
+            Store = data.Rows[0][1].ToString();
+            Address = data.Rows[0][2].ToString();
+            Date = Date.Substring(0,10);
+            Time = Time.Substring(0,5) + " น.";
             this.reportViewer1.LocalReport.DataSources.Clear();
             this.reportViewer1.LocalReport.DataSources.Add(report);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "POSTiw.ReportAll.Report1.rdlc";
             Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[]
             {
+                new Microsoft.Reporting.WinForms.ReportParameter("Store",Store.ToString()),
+                new Microsoft.Reporting.WinForms.ReportParameter("Address",Address.ToString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("PID",OrderId.ToString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("Date",Date.ToString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("Time",Time.ToString()),
