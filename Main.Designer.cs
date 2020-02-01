@@ -198,7 +198,6 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(240, 46);
             this.label8.TabIndex = 9;
-            this.label8.Text = "คุณนัฐพล จำปาทอง";
             this.label8.Click += new System.EventHandler(this.label7_Click);
             // 
             // label1
