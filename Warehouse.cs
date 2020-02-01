@@ -22,6 +22,10 @@ namespace POSTiw
             editProduct1.Hide();
 
         }
+        public void ad(string Username)
+        {
+            label2.Text = Username.ToString();
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -71,8 +75,10 @@ namespace POSTiw
 
         private void button5_Click(object sender, EventArgs e)
         {
-            this.Close();
             Main ss = new Main();
+            string Username = label2.Text.ToString();
+            ss.ad(Username.ToString());
+            this.Close();
             ss.Show();
         }
     }

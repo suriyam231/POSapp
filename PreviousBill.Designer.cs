@@ -41,6 +41,7 @@
             this.orderDTOBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.orderDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderDTOBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderDTOBindingSource)).BeginInit();
@@ -162,6 +163,15 @@
             this.dateTimePicker2.TabIndex = 11;
             this.dateTimePicker2.Value = new System.DateTime(2020, 1, 6, 0, 0, 0, 0);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(472, 516);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "label4";
+            // 
             // PreviousBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -177,6 +187,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.label4);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PreviousBill";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -203,5 +214,6 @@
         private System.Windows.Forms.BindingSource orderDTOBindingSource1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Label label4;
     }
 }

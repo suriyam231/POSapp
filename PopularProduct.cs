@@ -95,11 +95,16 @@ namespace POSTiw
             //chart1.Series["s1"].Points.AddXY("ขนมขบเคี้ยว", "10");
             //chart1.Series["s1"].Points.AddXY("เครื่องเขียน", "10");
         }
-
+        public void ad(string Username)
+        {
+            label5.Text = Username.ToString();
+        }
         private void button5_Click(object sender, EventArgs e)
         {
-            this.Close();
             Main ss = new Main();
+            string Username = label5.Text.ToString();
+            ss.ad(Username.ToString());
+            this.Close();
             ss.Show();
         }
 

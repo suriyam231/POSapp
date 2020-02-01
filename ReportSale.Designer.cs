@@ -36,6 +36,7 @@
             this.dayReport1 = new POSTiw.PageReport.DayReport();
             this.monthReport1 = new POSTiw.PageReport.MonthReport();
             this.yearReport1 = new POSTiw.PageReport.YearReport();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button5
@@ -132,6 +133,16 @@
             this.yearReport1.Size = new System.Drawing.Size(1550, 713);
             this.yearReport1.TabIndex = 18;
             // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(226, 397);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "label1";
+            // 
             // ReportSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -144,12 +155,14 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button5);
+            this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ReportSale";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReportSale";
             this.Load += new System.EventHandler(this.ReportSale_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -162,5 +175,6 @@
         private PageReport.DayReport dayReport1;
         private PageReport.MonthReport monthReport1;
         private PageReport.YearReport yearReport1;
+        private System.Windows.Forms.Label label1;
     }
 }

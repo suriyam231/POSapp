@@ -70,11 +70,16 @@ namespace POSTiw
         {
 
         }
-
+        public void ad(string Username)
+        {
+            label1.Text = Username.ToString();
+        }
         private void button9_Click(object sender, EventArgs e)
         {
-            this.Close();
             Main ss = new Main();
+            string Username = label1.Text.ToString();
+            ss.ad(Username.ToString());
+            this.Close();
             ss.Show();
         }
 

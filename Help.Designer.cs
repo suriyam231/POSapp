@@ -38,6 +38,7 @@
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.axAcroPDF1 = new AxAcroPDFLib.AxAcroPDF();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -173,6 +174,15 @@
             this.axAcroPDF1.Size = new System.Drawing.Size(1521, 686);
             this.axAcroPDF1.TabIndex = 33;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(729, 290);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "label1";
+            // 
             // Help
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,12 +198,14 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button5);
+            this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Help";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Help";
             ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -208,5 +220,6 @@
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
         private AxAcroPDFLib.AxAcroPDF axAcroPDF1;
+        private System.Windows.Forms.Label label1;
     }
 }

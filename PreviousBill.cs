@@ -34,6 +34,10 @@ namespace POSTiw
             adapter.Fill(data);
             dataGridView1.DataSource = data;
         }
+        public void ad(string Username)
+        {
+            label4.Text = Username.ToString();
+        }
 
         private void PreviousBill_Load(object sender, EventArgs e)
         {
@@ -87,8 +91,10 @@ namespace POSTiw
 
         private void button5_Click(object sender, EventArgs e)
         {
-            this.Close();
             Main ss = new Main();
+            string Username = label4.Text.ToString();
+            ss.ad(Username.ToString());
+            this.Close();
             ss.Show();
         }
 

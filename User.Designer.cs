@@ -54,6 +54,7 @@ namespace POSTiw
             this.addLname = new System.Windows.Forms.TextBox();
             this.edituser = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.button10 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.showStatus = new System.Windows.Forms.Label();
             this.showLname = new System.Windows.Forms.Label();
@@ -85,7 +86,7 @@ namespace POSTiw
             this.label18 = new System.Windows.Forms.Label();
             this.lastName = new System.Windows.Forms.TextBox();
             this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.adduser.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -371,6 +372,20 @@ namespace POSTiw
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(526, 488);
             this.panel5.TabIndex = 1;
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.Tomato;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button10.Font = new System.Drawing.Font("TH SarabunPSK", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.button10.Location = new System.Drawing.Point(110, 400);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(133, 54);
+            this.button10.TabIndex = 20;
+            this.button10.Text = "ลบ";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // panel1
             // 
@@ -737,19 +752,15 @@ namespace POSTiw
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
-            // button10
+            // label1
             // 
-            this.button10.BackColor = System.Drawing.Color.Tomato;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button10.Font = new System.Drawing.Font("TH SarabunPSK", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.button10.Location = new System.Drawing.Point(110, 400);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(133, 54);
-            this.button10.TabIndex = 20;
-            this.button10.Text = "ลบ";
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(258, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "label1";
             // 
             // User
             // 
@@ -762,6 +773,7 @@ namespace POSTiw
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "User";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -780,6 +792,7 @@ namespace POSTiw
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -844,5 +857,6 @@ namespace POSTiw
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Label label1;
     }
 }

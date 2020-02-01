@@ -243,8 +243,10 @@ namespace POSTiw
         private void button9_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Warehouse ss = new Warehouse();
-            ss.Show();
+            Warehouse warehouse = new Warehouse();
+            string Username = label8.Text.ToString();
+            warehouse.ad(Username.ToString());
+            warehouse.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -693,6 +695,8 @@ namespace POSTiw
         {
             this.Hide();
             PreviousBill Pbill = new PreviousBill();
+            string Username = label8.Text.ToString();
+            Pbill.ad(Username.ToString());
             Pbill.Show();
         }
 
@@ -717,36 +721,46 @@ namespace POSTiw
         private void button10_Click(object sender, EventArgs e)
         {
             this.Hide();
-            LowProduct ss = new LowProduct();
-            ss.Show();
+            LowProduct lowProduct = new LowProduct();
+            string Username = label8.Text.ToString();
+            lowProduct.ad(Username.ToString());
+            lowProduct.Show();
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
             this.Hide();
-            User ss = new User();
-            ss.Show();
+            User user = new User();
+            string Username = label8.Text.ToString();
+            user.ad(Username.ToString());
+            user.Show();
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ReportSale ss = new ReportSale();
-            ss.Show();
+            ReportSale reportSale = new ReportSale();
+            string Username = label8.Text.ToString();
+            reportSale.ad(Username.ToString());
+            reportSale.Show();
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
             this.Hide();
             สินค้าขายดี ss = new สินค้าขายดี();
+            string Username = label8.Text.ToString();
+            ss.ad(Username.ToString());
             ss.Show();
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Help ss = new Help();
-            ss.Show();
+            Help help = new Help();
+            string Username = label8.Text.ToString();
+            help.ad(Username.ToString());
+            help.Show();
         }
 
         private void button8_Click(object sender, EventArgs e)

@@ -42,6 +42,7 @@
             this.typeProduct1 = new POSTiw.TypeProduct();
             this.addProdcutNew1 = new POSTiw.AddProdcutNew();
             this.addQuantity1 = new POSTiw.AddQuantity();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -172,6 +173,15 @@
             this.addQuantity1.Size = new System.Drawing.Size(1539, 713);
             this.addQuantity1.TabIndex = 3;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(541, 132);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "label2";
+            // 
             // Warehouse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -187,12 +197,14 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Warehouse";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "จัดการคลังสินค้า";
             this.Load += new System.EventHandler(this.Warehouse_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -211,5 +223,6 @@
         private System.Windows.Forms.Button button4;
         private Page.EditProduct editProduct1;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label2;
     }
 }
