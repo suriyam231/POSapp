@@ -28,11 +28,11 @@ namespace POSTiw.PageReport
             label4.Text = "ประจำปี : " + yy;
             label5.Text = "ประจำปี : " + yy;
 
-            datefront = "01-01-" + yy;
-            dateback = "31-12-" + yy;
+            datefront = yy + "-01-01";
+            dateback = yy + "-12-31";
 
             string qry = "SELECT  Products.ProductID,Products.ProductName,Products.TypeName,Products.CostPrice,Products.ProductPrice, SUM(ReceiptDetail.Amount) as Counts,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost  , Products.ProductPrice * SUM(ReceiptDetail.Amount) as TotalRevenue FROM Products " +
-                "LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) +0, 0) and DATEADD(MONTH, DATEDIFF(MONTH, 01, GETDATE())+12, 0) and ReceiptDetail.Active = 'Y'" +
+                "LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between '" + datefront.ToString() + "' and '" + dateback.ToString() + "'  and ReceiptDetail.Active = 'Y'" +
                 "GROUP BY Products.ProductName,Products.TypeName,Products.CostPrice,Products.ProductID,Products.ProductPrice,Products.ProductQuantity HAVING SUM(ReceiptDetail.Amount) > 0" +
                 "ORDER BY Products.TypeName DESC";
             DataTable data = new DataTable();

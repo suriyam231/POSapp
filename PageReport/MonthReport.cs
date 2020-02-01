@@ -29,7 +29,9 @@ namespace POSTiw.PageReport
 
             string[] Month = new string[12];
 
-            string qry = "SELECT   SUM(Products.ProductPrice * ReceiptDetail.Amount) as TotalRevenue ,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) - 0, 0) and DATEADD(MONTH, DATEDIFF(MONTH, 01, GETDATE())+1, 0) and ReceiptDetail.Active = 'Y'  Group by Products.ProductPrice,  Products.ProductName,Products.ProductID";
+            string year = DateTime.Now.Year.ToString();
+
+            string qry = "SELECT   SUM(Products.ProductPrice * ReceiptDetail.Amount) as TotalRevenue ,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between '" + year + "-01-01' and '" + year + "-01-31' and ReceiptDetail.Active = 'Y'  Group by Products.ProductPrice,  Products.ProductName,Products.ProductID";
             DataTable data = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter(qry, sqlcon);
             adapter.Fill(data);
@@ -53,7 +55,7 @@ namespace POSTiw.PageReport
 
 
             string[] February = new string[3];
-            string qry2 = "SELECT   SUM(Products.ProductPrice * ReceiptDetail.Amount) as TotalRevenue ,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) +1, 0) and DATEADD(MONTH, DATEDIFF(MONTH, 01, GETDATE())+2, 0) and ReceiptDetail.Active = 'Y' Group by Products.ProductPrice,  Products.ProductName,Products.ProductID";
+            string qry2 = "SELECT   SUM(Products.ProductPrice * ReceiptDetail.Amount) as TotalRevenue ,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between '"+year+ "-02-01' and '" + year + "-02-29' and ReceiptDetail.Active = 'Y' Group by Products.ProductPrice,  Products.ProductName,Products.ProductID";
             DataTable data2 = new DataTable();
             SqlDataAdapter adapter2 = new SqlDataAdapter(qry2, sqlcon);
             adapter2.Fill(data2);
@@ -76,7 +78,7 @@ namespace POSTiw.PageReport
             February[2] = (TotalRevenue2 - TotalCost2).ToString();
 
             string[] March = new string[3];
-            string qry3 = "SELECT   SUM(Products.ProductPrice * ReceiptDetail.Amount) as TotalRevenue ,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) +2, 0) and DATEADD(MONTH, DATEDIFF(MONTH, 01, GETDATE())+3, 0) and ReceiptDetail.Active = 'Y' Group by Products.ProductPrice,  Products.ProductName,Products.ProductID";
+            string qry3 = "SELECT   SUM(Products.ProductPrice * ReceiptDetail.Amount) as TotalRevenue ,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between '" + year + "-03-01' and '" + year + "-03-31' and ReceiptDetail.Active = 'Y' Group by Products.ProductPrice,  Products.ProductName,Products.ProductID";
             DataTable data3 = new DataTable();
             SqlDataAdapter adapter3 = new SqlDataAdapter(qry3, sqlcon);
             adapter3.Fill(data3);
@@ -99,7 +101,7 @@ namespace POSTiw.PageReport
              March[2] = (TotalRevenue3 - TotalCost3).ToString();
 
             string[] April = new string[3];
-            string qry4 = "SELECT   SUM(Products.ProductPrice * ReceiptDetail.Amount) as TotalRevenue ,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) +3, 0) and DATEADD(MONTH, DATEDIFF(MONTH, 01, GETDATE())+4, 0) and ReceiptDetail.Active = 'Y' Group by Products.ProductPrice,  Products.ProductName,Products.ProductID";
+            string qry4 = "SELECT   SUM(Products.ProductPrice * ReceiptDetail.Amount) as TotalRevenue ,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between '" + year + "-04-01' and '" + year + "-04-30' and ReceiptDetail.Active = 'Y' Group by Products.ProductPrice,  Products.ProductName,Products.ProductID";
             DataTable data4 = new DataTable();
             SqlDataAdapter adapter4 = new SqlDataAdapter(qry4, sqlcon);
             adapter4.Fill(data4);
@@ -124,7 +126,7 @@ namespace POSTiw.PageReport
 
 
             string[] May = new string[3];
-            string qry5 = "SELECT   SUM(Products.ProductPrice * ReceiptDetail.Amount) as TotalRevenue ,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) +4, 0) and DATEADD(MONTH, DATEDIFF(MONTH, 01, GETDATE())+5, 0) and ReceiptDetail.Active = 'Y' Group by Products.ProductPrice,  Products.ProductName,Products.ProductID";
+            string qry5 = "SELECT   SUM(Products.ProductPrice * ReceiptDetail.Amount) as TotalRevenue ,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between '" + year + "-05-01' and '" + year + "-05-31' and ReceiptDetail.Active = 'Y' Group by Products.ProductPrice,  Products.ProductName,Products.ProductID";
             DataTable data5 = new DataTable();
             SqlDataAdapter adapter5 = new SqlDataAdapter(qry5, sqlcon);
             adapter5.Fill(data5);
@@ -148,7 +150,7 @@ namespace POSTiw.PageReport
 
 
             string[] June = new string[3];
-            string qry6 = "SELECT   SUM(Products.ProductPrice * ReceiptDetail.Amount) as TotalRevenue ,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) +5, 0) and DATEADD(MONTH, DATEDIFF(MONTH, 01, GETDATE())+6, 0) and ReceiptDetail.Active = 'Y' Group by Products.ProductPrice,  Products.ProductName,Products.ProductID";
+            string qry6 = "SELECT   SUM(Products.ProductPrice * ReceiptDetail.Amount) as TotalRevenue ,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between '" + year + "-06-01' and '" + year + "-06-30' and ReceiptDetail.Active = 'Y' Group by Products.ProductPrice,  Products.ProductName,Products.ProductID";
             DataTable data6 = new DataTable();
             SqlDataAdapter adapter6 = new SqlDataAdapter(qry6, sqlcon);
             adapter6.Fill(data6);
@@ -172,7 +174,7 @@ namespace POSTiw.PageReport
 
 
             string[] July = new string[3];
-            string qry7 = "SELECT   SUM(Products.ProductPrice * ReceiptDetail.Amount) as TotalRevenue ,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) +6, 0) and DATEADD(MONTH, DATEDIFF(MONTH, 01, GETDATE())+7, 0) and ReceiptDetail.Active = 'Y' Group by Products.ProductPrice,  Products.ProductName,Products.ProductID";
+            string qry7 = "SELECT   SUM(Products.ProductPrice * ReceiptDetail.Amount) as TotalRevenue ,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between '" + year + "-07-01' and '" + year + "-07-31' and ReceiptDetail.Active = 'Y' Group by Products.ProductPrice,  Products.ProductName,Products.ProductID";
             DataTable data7 = new DataTable();
             SqlDataAdapter adapter7 = new SqlDataAdapter(qry7, sqlcon);
             adapter7.Fill(data7);
@@ -196,7 +198,7 @@ namespace POSTiw.PageReport
 
 
             string[] August = new string[3];
-            string qry8 = "SELECT   SUM(Products.ProductPrice * ReceiptDetail.Amount) as TotalRevenue ,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) +7, 0) and DATEADD(MONTH, DATEDIFF(MONTH, 01, GETDATE())+8, 0) and ReceiptDetail.Active = 'Y' Group by Products.ProductPrice,  Products.ProductName,Products.ProductID";
+            string qry8 = "SELECT   SUM(Products.ProductPrice * ReceiptDetail.Amount) as TotalRevenue ,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between '" + year + "-08-01' and '" + year + "-08-31' and ReceiptDetail.Active = 'Y' Group by Products.ProductPrice,  Products.ProductName,Products.ProductID";
             DataTable data8 = new DataTable();
             SqlDataAdapter adapter8 = new SqlDataAdapter(qry8, sqlcon);
             adapter8.Fill(data8);
@@ -220,7 +222,7 @@ namespace POSTiw.PageReport
 
 
             string[] September = new string[3];
-            string qry9 = "SELECT   SUM(Products.ProductPrice * ReceiptDetail.Amount) as TotalRevenue ,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) +8, 0) and DATEADD(MONTH, DATEDIFF(MONTH, 01, GETDATE())+9, 0)and ReceiptDetail.Active = 'Y'  Group by Products.ProductPrice,  Products.ProductName,Products.ProductID";
+            string qry9 = "SELECT   SUM(Products.ProductPrice * ReceiptDetail.Amount) as TotalRevenue ,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between '" + year + "-09-01' and '" + year + "-09-30'and ReceiptDetail.Active = 'Y'  Group by Products.ProductPrice,  Products.ProductName,Products.ProductID";
             DataTable data9 = new DataTable();
             SqlDataAdapter adapter9 = new SqlDataAdapter(qry9, sqlcon);
             adapter9.Fill(data9);
@@ -244,7 +246,7 @@ namespace POSTiw.PageReport
 
 
             string[] October = new string[3];
-            string qry10 = "SELECT   SUM(Products.ProductPrice * ReceiptDetail.Amount) as TotalRevenue ,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) +9, 0) and DATEADD(MONTH, DATEDIFF(MONTH, 01, GETDATE())+10, 0) and ReceiptDetail.Active = 'Y' Group by Products.ProductPrice,  Products.ProductName,Products.ProductID";
+            string qry10 = "SELECT   SUM(Products.ProductPrice * ReceiptDetail.Amount) as TotalRevenue ,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between '" + year + "-10-01' and '" + year + "-10-31' and ReceiptDetail.Active = 'Y' Group by Products.ProductPrice,  Products.ProductName,Products.ProductID";
             DataTable data10 = new DataTable();
             SqlDataAdapter adapter10 = new SqlDataAdapter(qry10, sqlcon);
             adapter10.Fill(data10);
@@ -268,7 +270,7 @@ namespace POSTiw.PageReport
 
 
             string[] November = new string[3];
-            string qry11 = "SELECT   SUM(Products.ProductPrice * ReceiptDetail.Amount) as TotalRevenue ,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) +10, 0) and DATEADD(MONTH, DATEDIFF(MONTH, 01, GETDATE())+11, 0) and ReceiptDetail.Active = 'Y'  Group by Products.ProductPrice,  Products.ProductName,Products.ProductID";
+            string qry11 = "SELECT   SUM(Products.ProductPrice * ReceiptDetail.Amount) as TotalRevenue ,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between '" + year + "-11-01' and '" + year + "-11-30' and ReceiptDetail.Active = 'Y'  Group by Products.ProductPrice,  Products.ProductName,Products.ProductID";
             DataTable data11 = new DataTable();
             SqlDataAdapter adapter11 = new SqlDataAdapter(qry11, sqlcon);
             adapter11.Fill(data11);
@@ -292,7 +294,7 @@ namespace POSTiw.PageReport
 
 
             string[] December = new string[3];
-            string qry12 = "SELECT   SUM(Products.ProductPrice * ReceiptDetail.Amount) as TotalRevenue ,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) +10, 0) and DATEADD(MONTH, DATEDIFF(MONTH, 01, GETDATE())+11, 0) and ReceiptDetail.Active = 'Y' Group by Products.ProductPrice,  Products.ProductName,Products.ProductID";
+            string qry12 = "SELECT   SUM(Products.ProductPrice * ReceiptDetail.Amount) as TotalRevenue ,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between '" + year + "-12-01' and '" + year + "-12-31' and ReceiptDetail.Active = 'Y' Group by Products.ProductPrice,  Products.ProductName,Products.ProductID";
             DataTable data12 = new DataTable();
             SqlDataAdapter adapter12 = new SqlDataAdapter(qry12, sqlcon);
             adapter12.Fill(data12);
@@ -437,90 +439,90 @@ namespace POSTiw.PageReport
             {
                 fornt = 0;
                 back = 1;
-                datefront = "01-01-"+yy;
-                dateback = "31-01-" + yy;
+                datefront = yy+"-01-01";
+                dateback = yy +"-01-31" ;
             }
             else if (values == "กุมภาพันธ์")
             {
                 fornt = 1;
                 back = 2;
-                datefront = "01-02-" + yy;
-                dateback = "29-02-" + yy;
+                datefront = yy + "-02-01";
+                dateback = yy + "-02-29";
             }
             else if (values == "มีนาคม")
             {
                 fornt = 2;
                 back = 3;
-                datefront = "01-03-" + yy;
-                dateback = "31-03-" + yy;
+                datefront = yy + "-03-01";
+                dateback = yy + "-03-31";
             }
             else if (values == "เมษายน")
             {
                 fornt = 3;
                 back = 4;
-                datefront = "01-04-" + yy;
-                dateback = "30-04-" + yy;
+                datefront = yy + "-04-01";
+                dateback = yy + "-04-30";
             }
             else if (values == "พฤษภาคม")
             {
                 fornt = 4;
                 back = 5;
-                datefront = "01-05-" + yy;
-                dateback = "31-05-" + yy;
+                datefront = yy + "-05-01";
+                dateback = yy + "-05-31";
             }
             else if (values == "มิถุนายน")
             {
                 fornt = 5;
                 back = 6;
-                datefront = "01-06-" + yy;
-                dateback = "30-06-" + yy;
+                datefront = yy + "-06-01";
+                dateback = yy + "-06-30";
             }
             else if (values == "กรกฎาคม")
             {
                 fornt = 6;
                 back = 7;
-                datefront = "01-07-" + yy;
-                dateback = "31-07-" + yy;
+                datefront = yy + "-07-01";
+                dateback = yy + "-07-31";
             }
             else if (values == "สิงหาคม")
             {
                 fornt = 7;
                 back = 8;
-                datefront = "01-08-" + yy;
-                dateback = "31-08-" + yy;
+                datefront = yy + "-08-01";
+                dateback = yy + "-08-31";
             }
             else if (values == "กันยายน")
             {
                 fornt = 8;
                 back = 9;
-                datefront = "01-09-" + yy;
-                dateback = "30-09-" + yy;
+                datefront = yy + "-09-01";
+                dateback = yy + "-09-30";
             }
             else if (values == "ตุลาคม")
             {
                 fornt = 9;
                 back = 10;
-                datefront = "01-10-" + yy;
-                dateback = "31-10-" + yy;
+                datefront = yy + "-10-01";
+                dateback = yy + "-10-31";
             }
             else if (values == "พฤศจิกายน")
             {
                 fornt = 10;
                 back = 11;
-                datefront = "01-11-" + yy;
-                dateback = "30-11-" + yy;
+                datefront = yy + "-11-01";
+                dateback = yy + "-11-30";
             }
             else if (values == "ธันวาคม")
             {
                 fornt = 11;
                 back = 12;
-                datefront = "01-12-" + yy;
-                dateback = "31-12-" + yy;
+                datefront = yy + "-12-01";
+                dateback = yy + "-12-30";
             }
 
 
             string qry = "SELECT  Products.ProductID,Products.ProductName,Products.TypeName,Products.CostPrice,Products.ProductPrice, SUM(ReceiptDetail.Amount) as Counts ,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost  , Products.ProductPrice * SUM(ReceiptDetail.Amount) as TotalRevenue FROM Products " +
-                "LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) + "+fornt+", 0) and DATEADD(MONTH, DATEDIFF(MONTH, 01, GETDATE())+"+back+ ", 0) and ReceiptDetail.Active = 'Y'" +
+                "LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between '"+datefront.ToString()+"' and '"+dateback.ToString()+"'  and ReceiptDetail.Active = 'Y'" +
                 "GROUP BY Products.ProductName,Products.TypeName,Products.CostPrice,Products.ProductID,Products.ProductPrice,Products.ProductQuantity HAVING SUM(ReceiptDetail.Amount) > 0 " +
                 "ORDER BY Products.TypeName DESC";
             DataTable data = new DataTable();
