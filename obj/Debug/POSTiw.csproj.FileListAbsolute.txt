@@ -451,3 +451,4 @@ F:\ProjectPOS\obj\Debug\Interop.AcroPDFLib.dll
 F:\ProjectPOS\obj\Debug\AxInterop.AcroPDFLib.dll
 F:\ProjectPOS\obj\Debug\POSTiw.csproj.ResolveComReference.cache
 F:\ProjectPOS\bin\Debug\ReportAll\Report1.rdlc
+F:\ProjectPOS\obj\Debug\POSTiw.PageReport.ThreeMonthsResport.resources

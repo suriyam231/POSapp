@@ -20,16 +20,254 @@ namespace POSTiw.PageReport
         {
             InitializeComponent();
 
+            string years = DateTime.Now.Year.ToString();
+            int oldYear;
+            Int32.TryParse(years, out oldYear);
+            comboBox2.Items.Add(oldYear - 3);
+            comboBox2.Items.Add(oldYear - 2);
+            comboBox2.Items.Add(oldYear - 1);
+            comboBox2.Items.Add(oldYear);
+
+            comboBox2.Text = oldYear.ToString();
+
+            
+            comboBox1.Items.Add("มกราคม");
+            comboBox1.Items.Add("กุมภาพันธ์");
+            comboBox1.Items.Add("มีนาคม");
+            comboBox1.Items.Add("เมษายน");
+            comboBox1.Items.Add("พฤษภาคม");
+            comboBox1.Items.Add("มิถุนายน");
+            comboBox1.Items.Add("กรกฎาคม");
+            comboBox1.Items.Add("สิงหาคม");
+            comboBox1.Items.Add("กันยายน");
+            comboBox1.Items.Add("ตุลาคม");
+            comboBox1.Items.Add("พฤศจิกายน");
+            comboBox1.Items.Add("ธันวาคม");
+        }
+
+        private void MonthReport_Load(object sender, EventArgs e)
+        {
+            dataGridView1.Columns["January"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView1.Columns["February"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView1.Columns["March"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView1.Columns["April"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView1.Columns["May"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView1.Columns["June"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView1.Columns["July"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView1.Columns["August"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView1.Columns["September"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView1.Columns["October"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView1.Columns["November"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView1.Columns["December"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+
+
+            dataGridView1.Columns[1].Width = 60;
+            dataGridView1.Columns[2].Width = 60;
+            dataGridView1.Columns[3].Width = 60;
+            dataGridView1.Columns[4].Width = 60;
+            dataGridView1.Columns[5].Width = 60;
+            dataGridView1.Columns[6].Width = 60;
+            dataGridView1.Columns[7].Width = 60;
+            dataGridView1.Columns[8].Width = 60;
+            dataGridView1.Columns[9].Width = 60;
+            dataGridView1.Columns[10].Width = 60;
+            dataGridView1.Columns[11].Width = 60;
+            dataGridView1.Columns[12].Width = 60;
+
+
+
+            
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+        string datefront;
+        string dateback;
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string values = comboBox1.SelectedItem.ToString();
+            int fornt = 0;
+            int back = 0;
+            String sDate = DateTime.Now.ToString();
+            DateTime datevalue = (Convert.ToDateTime(sDate.ToString()));
+            
+              
+            String yy = comboBox2.SelectedItem.ToString();
+
+            if (values == "มกราคม")
+            {
+                fornt = 0;
+                back = 1;
+                datefront = yy+"-01-01";
+                dateback = yy +"-01-31" ;
+            }
+            else if (values == "กุมภาพันธ์")
+            {
+                fornt = 1;
+                back = 2;
+                datefront = yy + "-02-01";
+                dateback = yy + "-02-28";
+            }
+            else if (values == "มีนาคม")
+            {
+                fornt = 2;
+                back = 3;
+                datefront = yy + "-03-01";
+                dateback = yy + "-03-31";
+            }
+            else if (values == "เมษายน")
+            {
+                fornt = 3;
+                back = 4;
+                datefront = yy + "-04-01";
+                dateback = yy + "-04-30";
+            }
+            else if (values == "พฤษภาคม")
+            {
+                fornt = 4;
+                back = 5;
+                datefront = yy + "-05-01";
+                dateback = yy + "-05-31";
+            }
+            else if (values == "มิถุนายน")
+            {
+                fornt = 5;
+                back = 6;
+                datefront = yy + "-06-01";
+                dateback = yy + "-06-30";
+            }
+            else if (values == "กรกฎาคม")
+            {
+                fornt = 6;
+                back = 7;
+                datefront = yy + "-07-01";
+                dateback = yy + "-07-31";
+            }
+            else if (values == "สิงหาคม")
+            {
+                fornt = 7;
+                back = 8;
+                datefront = yy + "-08-01";
+                dateback = yy + "-08-31";
+            }
+            else if (values == "กันยายน")
+            {
+                fornt = 8;
+                back = 9;
+                datefront = yy + "-09-01";
+                dateback = yy + "-09-30";
+            }
+            else if (values == "ตุลาคม")
+            {
+                fornt = 9;
+                back = 10;
+                datefront = yy + "-10-01";
+                dateback = yy + "-10-31";
+            }
+            else if (values == "พฤศจิกายน")
+            {
+                fornt = 10;
+                back = 11;
+                datefront = yy + "-11-01";
+                dateback = yy + "-11-30";
+            }
+            else if (values == "ธันวาคม")
+            {
+                fornt = 11;
+                back = 12;
+                datefront = yy + "-12-01";
+                dateback = yy + "-12-30";
+            }
+
+
+            string qry = "SELECT  Products.ProductID,Products.ProductName,Products.TypeName,Products.CostPrice,Products.ProductPrice, SUM(ReceiptDetail.Amount) as Counts ,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost  , Products.ProductPrice * SUM(ReceiptDetail.Amount) as TotalRevenue FROM Products " +
+                "LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between '"+datefront.ToString()+"' and '"+dateback.ToString()+"'  and ReceiptDetail.Active = 'Y'" +
+                "GROUP BY Products.ProductName,Products.TypeName,Products.CostPrice,Products.ProductID,Products.ProductPrice,Products.ProductQuantity HAVING SUM(ReceiptDetail.Amount) > 0 " +
+                "ORDER BY Products.TypeName DESC";
+            DataTable data = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter(qry, sqlcon);
+            adapter.Fill(data);
+            dataGridView2.DataSource = data;
+
+            dataGridView2.Columns[1].Width = 120;
+            dataGridView2.Columns[2].Width = 170;
+            dataGridView2.Columns[3].Width = 120;
+            dataGridView2.Columns[4].Width = 120;
+            dataGridView2.Columns[5].Width = 140;
+            dataGridView2.Columns[6].Width = 100;
+            dataGridView2.Columns[7].Width = 100;
+
+            dataGridView2.Columns["ProductID"].HeaderText = "รหัสสินค้า";
+            dataGridView2.Columns["ProductName"].HeaderText = "ชื่อสินค้า";
+            dataGridView2.Columns["TypeName"].HeaderText = "ประเภทสินค้า";
+            dataGridView2.Columns["CostPrice"].HeaderText = "ราคาต้นทุน(บาท)";
+            dataGridView2.Columns["ProductPrice"].HeaderText = "ราคาขาย(บาท)";
+            dataGridView2.Columns["Counts"].HeaderText = "สินค้าที่ขายแล้ว(ชิ้น)";
+            dataGridView2.Columns["TotalCost"].HeaderText = "ราคาต้นทุนรวม(บาท)";
+            dataGridView2.Columns["TotalRevenue"].HeaderText = "ยอดขายสินค้ารวม(บาท)";
+
+            dataGridView2.Columns["CostPrice"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView2.Columns["ProductPrice"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView2.Columns["Counts"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView2.Columns["TotalCost"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView2.Columns["TotalRevenue"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            List<DTO.ReportCost> low = new List<DTO.ReportCost>();
+            for (int i = 0; i < dataGridView2.Rows.Count; i++)
+            {
+                float CostPrice = 0;
+                float ProductPrice = 0;
+                float Counts = 0;
+                float TotalCost = 0;
+                float TotalRevenue = 0;
+                float.TryParse(dataGridView2.Rows[i].Cells[3].Value.ToString(), out CostPrice);
+                float.TryParse(dataGridView2.Rows[i].Cells[4].Value.ToString(), out ProductPrice);
+                float.TryParse(dataGridView2.Rows[i].Cells[5].Value.ToString(), out Counts);
+                float.TryParse(dataGridView2.Rows[i].Cells[6].Value.ToString(), out TotalCost);
+                float.TryParse(dataGridView2.Rows[i].Cells[7].Value.ToString(), out TotalRevenue);
+
+                low.Add(new DTO.ReportCost()
+                {
+                    ProductID = dataGridView2.Rows[i].Cells[0].Value.ToString(),
+                    ProductName = dataGridView2.Rows[i].Cells[1].Value.ToString(),
+                    ProductType = dataGridView2.Rows[i].Cells[2].Value.ToString(),
+                    CostPrice = CostPrice,
+                    ProductPrice = ProductPrice,
+                    Counts= Counts,
+                    TotalCost = TotalCost,
+                    TotalRevenue = TotalRevenue
+
+                }); 
+
+            }
+            report.Name = "DataSet1";
+            report.Value = low;
+            using (ModalPage.ProfitReport modal = new ModalPage.ProfitReport(report,datefront,dateback))
+            {
+                modal.ShowDialog();
+
+            }
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
             string[] menu = new string[3];
             menu[0] = "ยอดขายรวม (บาท)";
             menu[1] = "ต้นทุนรวม (บาท)";
             menu[2] = "รายได้รวม (บาท)";
+            dataGridView1.Rows.Clear();
 
             string[] January = new string[3];
 
             string[] Month = new string[12];
 
-            string year = DateTime.Now.Year.ToString();
+            string year =  comboBox2.SelectedItem.ToString();
 
             string qry = "SELECT   SUM(Products.ProductPrice * ReceiptDetail.Amount) as TotalRevenue ,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between '" + year + "-01-01' and '" + year + "-01-31' and ReceiptDetail.Active = 'Y'  Group by Products.ProductPrice,  Products.ProductName,Products.ProductID";
             DataTable data = new DataTable();
@@ -39,10 +277,10 @@ namespace POSTiw.PageReport
             float TotalCost = 0;
             for (int i = 0; i < data.Rows.Count; i++)
             {
-               string text = data.Rows[i][0].ToString();
-               float number = 0;
-               float.TryParse(text, out number);
-               TotalRevenue = TotalRevenue + number;
+                string text = data.Rows[i][0].ToString();
+                float number = 0;
+                float.TryParse(text, out number);
+                TotalRevenue = TotalRevenue + number;
 
                 string text1 = data.Rows[i][1].ToString();
                 float number1 = 0;
@@ -55,7 +293,7 @@ namespace POSTiw.PageReport
 
 
             string[] February = new string[3];
-            string qry2 = "SELECT   SUM(Products.ProductPrice * ReceiptDetail.Amount) as TotalRevenue ,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between '"+year+ "-02-01' and '" + year + "-02-29' and ReceiptDetail.Active = 'Y' Group by Products.ProductPrice,  Products.ProductName,Products.ProductID";
+            string qry2 = "SELECT   SUM(Products.ProductPrice * ReceiptDetail.Amount) as TotalRevenue ,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between '" + year + "-02-01' and '" + year + "-02-28' and ReceiptDetail.Active = 'Y' Group by Products.ProductPrice,  Products.ProductName,Products.ProductID";
             DataTable data2 = new DataTable();
             SqlDataAdapter adapter2 = new SqlDataAdapter(qry2, sqlcon);
             adapter2.Fill(data2);
@@ -85,20 +323,20 @@ namespace POSTiw.PageReport
             float TotalRevenue3 = 0;
             float TotalCost3 = 0;
             for (int i = 0; i < data3.Rows.Count; i++)
-             {
-                 string text = data3.Rows[i][0].ToString();
-                 float number = 0;
-                 float.TryParse(text, out number);
-                 TotalRevenue3 = TotalRevenue3 + number;
+            {
+                string text = data3.Rows[i][0].ToString();
+                float number = 0;
+                float.TryParse(text, out number);
+                TotalRevenue3 = TotalRevenue3 + number;
 
-                 string text1 = data3.Rows[i][1].ToString();
-                 float number1 = 0;
-                 float.TryParse(text1, out number1);
-                 TotalCost3 = TotalCost3 + number1;
-             }
-             March[0] = TotalRevenue3.ToString();
-             March[1] = TotalCost3.ToString();
-             March[2] = (TotalRevenue3 - TotalCost3).ToString();
+                string text1 = data3.Rows[i][1].ToString();
+                float number1 = 0;
+                float.TryParse(text1, out number1);
+                TotalCost3 = TotalCost3 + number1;
+            }
+            March[0] = TotalRevenue3.ToString();
+            March[1] = TotalCost3.ToString();
+            March[2] = (TotalRevenue3 - TotalCost3).ToString();
 
             string[] April = new string[3];
             string qry4 = "SELECT   SUM(Products.ProductPrice * ReceiptDetail.Amount) as TotalRevenue ,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between '" + year + "-04-01' and '" + year + "-04-30' and ReceiptDetail.Active = 'Y' Group by Products.ProductPrice,  Products.ProductName,Products.ProductID";
@@ -368,228 +606,6 @@ namespace POSTiw.PageReport
                     dataGridView1.Rows[num].Cells[11].Value = Drow["November"].ToString();
                     dataGridView1.Rows[num].Cells[12].Value = Drow["December"].ToString();
                 }
-            }
-            comboBox1.Items.Add("มกราคม");
-            comboBox1.Items.Add("กุมภาพันธ์");
-            comboBox1.Items.Add("มีนาคม");
-            comboBox1.Items.Add("เมษายน");
-            comboBox1.Items.Add("พฤษภาคม");
-            comboBox1.Items.Add("มิถุนายน");
-            comboBox1.Items.Add("กรกฎาคม");
-            comboBox1.Items.Add("สิงหาคม");
-            comboBox1.Items.Add("กันยายน");
-            comboBox1.Items.Add("ตุลาคม");
-            comboBox1.Items.Add("พฤศจิกายน");
-            comboBox1.Items.Add("ธันวาคม");
-        }
-
-        private void MonthReport_Load(object sender, EventArgs e)
-        {
-            dataGridView1.Columns["January"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridView1.Columns["February"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridView1.Columns["March"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridView1.Columns["April"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridView1.Columns["May"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridView1.Columns["June"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridView1.Columns["July"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridView1.Columns["August"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridView1.Columns["September"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridView1.Columns["October"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridView1.Columns["November"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridView1.Columns["December"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
-
-
-            dataGridView1.Columns[1].Width = 60;
-            dataGridView1.Columns[2].Width = 60;
-            dataGridView1.Columns[3].Width = 60;
-            dataGridView1.Columns[4].Width = 60;
-            dataGridView1.Columns[5].Width = 60;
-            dataGridView1.Columns[6].Width = 60;
-            dataGridView1.Columns[7].Width = 60;
-            dataGridView1.Columns[8].Width = 60;
-            dataGridView1.Columns[9].Width = 60;
-            dataGridView1.Columns[10].Width = 60;
-            dataGridView1.Columns[11].Width = 60;
-            dataGridView1.Columns[12].Width = 60;
-
-
-
-            
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-        string datefront;
-        string dateback;
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string values = comboBox1.SelectedItem.ToString();
-            int fornt = 0;
-            int back = 0;
-            String sDate = DateTime.Now.ToString();
-            DateTime datevalue = (Convert.ToDateTime(sDate.ToString()));
-            
-              
-            String yy = datevalue.Year.ToString();
-
-            if (values == "มกราคม")
-            {
-                fornt = 0;
-                back = 1;
-                datefront = yy+"-01-01";
-                dateback = yy +"-01-31" ;
-            }
-            else if (values == "กุมภาพันธ์")
-            {
-                fornt = 1;
-                back = 2;
-                datefront = yy + "-02-01";
-                dateback = yy + "-02-29";
-            }
-            else if (values == "มีนาคม")
-            {
-                fornt = 2;
-                back = 3;
-                datefront = yy + "-03-01";
-                dateback = yy + "-03-31";
-            }
-            else if (values == "เมษายน")
-            {
-                fornt = 3;
-                back = 4;
-                datefront = yy + "-04-01";
-                dateback = yy + "-04-30";
-            }
-            else if (values == "พฤษภาคม")
-            {
-                fornt = 4;
-                back = 5;
-                datefront = yy + "-05-01";
-                dateback = yy + "-05-31";
-            }
-            else if (values == "มิถุนายน")
-            {
-                fornt = 5;
-                back = 6;
-                datefront = yy + "-06-01";
-                dateback = yy + "-06-30";
-            }
-            else if (values == "กรกฎาคม")
-            {
-                fornt = 6;
-                back = 7;
-                datefront = yy + "-07-01";
-                dateback = yy + "-07-31";
-            }
-            else if (values == "สิงหาคม")
-            {
-                fornt = 7;
-                back = 8;
-                datefront = yy + "-08-01";
-                dateback = yy + "-08-31";
-            }
-            else if (values == "กันยายน")
-            {
-                fornt = 8;
-                back = 9;
-                datefront = yy + "-09-01";
-                dateback = yy + "-09-30";
-            }
-            else if (values == "ตุลาคม")
-            {
-                fornt = 9;
-                back = 10;
-                datefront = yy + "-10-01";
-                dateback = yy + "-10-31";
-            }
-            else if (values == "พฤศจิกายน")
-            {
-                fornt = 10;
-                back = 11;
-                datefront = yy + "-11-01";
-                dateback = yy + "-11-30";
-            }
-            else if (values == "ธันวาคม")
-            {
-                fornt = 11;
-                back = 12;
-                datefront = yy + "-12-01";
-                dateback = yy + "-12-30";
-            }
-
-
-            string qry = "SELECT  Products.ProductID,Products.ProductName,Products.TypeName,Products.CostPrice,Products.ProductPrice, SUM(ReceiptDetail.Amount) as Counts ,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost  , Products.ProductPrice * SUM(ReceiptDetail.Amount) as TotalRevenue FROM Products " +
-                "LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between '"+datefront.ToString()+"' and '"+dateback.ToString()+"'  and ReceiptDetail.Active = 'Y'" +
-                "GROUP BY Products.ProductName,Products.TypeName,Products.CostPrice,Products.ProductID,Products.ProductPrice,Products.ProductQuantity HAVING SUM(ReceiptDetail.Amount) > 0 " +
-                "ORDER BY Products.TypeName DESC";
-            DataTable data = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter(qry, sqlcon);
-            adapter.Fill(data);
-            dataGridView2.DataSource = data;
-
-            dataGridView2.Columns[1].Width = 120;
-            dataGridView2.Columns[2].Width = 170;
-            dataGridView2.Columns[3].Width = 120;
-            dataGridView2.Columns[4].Width = 120;
-            dataGridView2.Columns[5].Width = 140;
-            dataGridView2.Columns[6].Width = 100;
-            dataGridView2.Columns[7].Width = 100;
-
-            dataGridView2.Columns["ProductID"].HeaderText = "รหัสสินค้า";
-            dataGridView2.Columns["ProductName"].HeaderText = "ชื่อสินค้า";
-            dataGridView2.Columns["TypeName"].HeaderText = "ประเภทสินค้า";
-            dataGridView2.Columns["CostPrice"].HeaderText = "ราคาต้นทุน(บาท)";
-            dataGridView2.Columns["ProductPrice"].HeaderText = "ราคาขาย(บาท)";
-            dataGridView2.Columns["Counts"].HeaderText = "สินค้าที่ขายแล้ว(ชิ้น)";
-            dataGridView2.Columns["TotalCost"].HeaderText = "ราคาต้นทุนรวม(บาท)";
-            dataGridView2.Columns["TotalRevenue"].HeaderText = "ยอดขายสินค้ารวม(บาท)";
-
-            dataGridView2.Columns["CostPrice"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridView2.Columns["ProductPrice"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridView2.Columns["Counts"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridView2.Columns["TotalCost"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridView2.Columns["TotalRevenue"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            List<DTO.ReportCost> low = new List<DTO.ReportCost>();
-            for (int i = 0; i < dataGridView2.Rows.Count; i++)
-            {
-                float CostPrice = 0;
-                float ProductPrice = 0;
-                float Counts = 0;
-                float TotalCost = 0;
-                float TotalRevenue = 0;
-                float.TryParse(dataGridView2.Rows[i].Cells[3].Value.ToString(), out CostPrice);
-                float.TryParse(dataGridView2.Rows[i].Cells[4].Value.ToString(), out ProductPrice);
-                float.TryParse(dataGridView2.Rows[i].Cells[5].Value.ToString(), out Counts);
-                float.TryParse(dataGridView2.Rows[i].Cells[6].Value.ToString(), out TotalCost);
-                float.TryParse(dataGridView2.Rows[i].Cells[7].Value.ToString(), out TotalRevenue);
-
-                low.Add(new DTO.ReportCost()
-                {
-                    ProductID = dataGridView2.Rows[i].Cells[0].Value.ToString(),
-                    ProductName = dataGridView2.Rows[i].Cells[1].Value.ToString(),
-                    ProductType = dataGridView2.Rows[i].Cells[2].Value.ToString(),
-                    CostPrice = CostPrice,
-                    ProductPrice = ProductPrice,
-                    Counts= Counts,
-                    TotalCost = TotalCost,
-                    TotalRevenue = TotalRevenue
-
-                }); 
-
-            }
-            report.Name = "DataSet1";
-            report.Value = low;
-            using (ModalPage.ProfitReport modal = new ModalPage.ProfitReport(report,datefront,dateback))
-            {
-                modal.ShowDialog();
-
             }
         }
     }

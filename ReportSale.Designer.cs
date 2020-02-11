@@ -33,10 +33,12 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.dayReport1 = new POSTiw.PageReport.DayReport();
-            this.monthReport1 = new POSTiw.PageReport.MonthReport();
-            this.yearReport1 = new POSTiw.PageReport.YearReport();
             this.label1 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.threeMonthsResport1 = new POSTiw.PageReport.ThreeMonthsResport();
+            this.yearReport1 = new POSTiw.PageReport.YearReport();
+            this.monthReport1 = new POSTiw.PageReport.MonthReport();
+            this.dayReport1 = new POSTiw.PageReport.DayReport();
             this.SuspendLayout();
             // 
             // button5
@@ -63,7 +65,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.Purple;
-            this.button3.Location = new System.Drawing.Point(318, 1);
+            this.button3.Location = new System.Drawing.Point(471, 1);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(156, 90);
             this.button3.TabIndex = 15;
@@ -106,33 +108,6 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dayReport1
-            // 
-            this.dayReport1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dayReport1.BackColor = System.Drawing.Color.Linen;
-            this.dayReport1.Location = new System.Drawing.Point(2, 82);
-            this.dayReport1.Name = "dayReport1";
-            this.dayReport1.Size = new System.Drawing.Size(1550, 713);
-            this.dayReport1.TabIndex = 16;
-            // 
-            // monthReport1
-            // 
-            this.monthReport1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.monthReport1.BackColor = System.Drawing.Color.PowderBlue;
-            this.monthReport1.Location = new System.Drawing.Point(2, 82);
-            this.monthReport1.Name = "monthReport1";
-            this.monthReport1.Size = new System.Drawing.Size(1550, 713);
-            this.monthReport1.TabIndex = 17;
-            // 
-            // yearReport1
-            // 
-            this.yearReport1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.yearReport1.BackColor = System.Drawing.Color.Thistle;
-            this.yearReport1.Location = new System.Drawing.Point(2, 82);
-            this.yearReport1.Name = "yearReport1";
-            this.yearReport1.Size = new System.Drawing.Size(1550, 713);
-            this.yearReport1.TabIndex = 18;
-            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -143,11 +118,64 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "label1";
             // 
+            // button4
+            // 
+            this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button4.BackColor = System.Drawing.Color.LightCyan;
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button4.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.Purple;
+            this.button4.Location = new System.Drawing.Point(315, 1);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(156, 90);
+            this.button4.TabIndex = 21;
+            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // threeMonthsResport1
+            // 
+            this.threeMonthsResport1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.threeMonthsResport1.BackColor = System.Drawing.Color.LightCyan;
+            this.threeMonthsResport1.Location = new System.Drawing.Point(-15, 82);
+            this.threeMonthsResport1.Name = "threeMonthsResport1";
+            this.threeMonthsResport1.Size = new System.Drawing.Size(1550, 713);
+            this.threeMonthsResport1.TabIndex = 20;
+            // 
+            // yearReport1
+            // 
+            this.yearReport1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.yearReport1.BackColor = System.Drawing.Color.Thistle;
+            this.yearReport1.Location = new System.Drawing.Point(2, 82);
+            this.yearReport1.Name = "yearReport1";
+            this.yearReport1.Size = new System.Drawing.Size(1550, 713);
+            this.yearReport1.TabIndex = 18;
+            // 
+            // monthReport1
+            // 
+            this.monthReport1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.monthReport1.BackColor = System.Drawing.Color.PowderBlue;
+            this.monthReport1.Location = new System.Drawing.Point(2, 82);
+            this.monthReport1.Name = "monthReport1";
+            this.monthReport1.Size = new System.Drawing.Size(1550, 713);
+            this.monthReport1.TabIndex = 17;
+            // 
+            // dayReport1
+            // 
+            this.dayReport1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dayReport1.BackColor = System.Drawing.Color.Linen;
+            this.dayReport1.Location = new System.Drawing.Point(2, 82);
+            this.dayReport1.Name = "dayReport1";
+            this.dayReport1.Size = new System.Drawing.Size(1550, 713);
+            this.dayReport1.TabIndex = 16;
+            // 
             // ReportSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1534, 791);
+            this.Controls.Add(this.threeMonthsResport1);
             this.Controls.Add(this.yearReport1);
             this.Controls.Add(this.monthReport1);
             this.Controls.Add(this.dayReport1);
@@ -156,6 +184,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.button4);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ReportSale";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -176,5 +205,7 @@
         private PageReport.MonthReport monthReport1;
         private PageReport.YearReport yearReport1;
         private System.Windows.Forms.Label label1;
+        private PageReport.ThreeMonthsResport threeMonthsResport1;
+        private System.Windows.Forms.Button button4;
     }
 }

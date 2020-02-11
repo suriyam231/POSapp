@@ -143,6 +143,12 @@
     <Compile Include="PageReport\MonthReport.Designer.cs">
       <DependentUpon>MonthReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="PageReport\ThreeMonthsResport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PageReport\ThreeMonthsResport.Designer.cs">
+      <DependentUpon>ThreeMonthsResport.cs</DependentUpon>
+    </Compile>
     <Compile Include="PageReport\YearReport.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -232,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PageReport\MonthReport.resx">
       <DependentUpon>MonthReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageReport\ThreeMonthsResport.resx">
+      <DependentUpon>ThreeMonthsResport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PageReport\YearReport.resx">
       <DependentUpon>YearReport.cs</DependentUpon>

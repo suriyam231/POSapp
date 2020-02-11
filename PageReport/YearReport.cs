@@ -18,18 +18,76 @@ namespace POSTiw.PageReport
         ReportDataSource report = new ReportDataSource();
         string datefront;
         string dateback;
+        string year;
         public YearReport()
         {
             InitializeComponent();
-            String sDate = DateTime.Now.ToString();
-            DateTime datevalue = (Convert.ToDateTime(sDate.ToString()));
 
-            String yy = datevalue.Year.ToString();
-            label4.Text = "ประจำปี : " + yy;
-            label5.Text = "ประจำปี : " + yy;
+            string years = DateTime.Now.Year.ToString();
+            int oldYear;
+            Int32.TryParse(years, out oldYear);
+            comboBox2.Items.Add(oldYear - 3);
+            comboBox2.Items.Add(oldYear - 2);
+            comboBox2.Items.Add(oldYear - 1);
+            comboBox2.Items.Add(oldYear);
 
-            datefront = yy + "-01-01";
-            dateback = yy + "-12-31";
+            comboBox2.Text = oldYear.ToString();
+            year = comboBox2.SelectedItem.ToString();
+
+           
+        }
+
+        private void YearReport_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            List<DTO.ReportCost> low = new List<DTO.ReportCost>();
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                float CostPrice = 0;
+                float ProductPrice = 0;
+                float Counts = 0;
+                float TotalCost = 0;
+                float TotalRevenue = 0;
+                float.TryParse(dataGridView1.Rows[i].Cells[3].Value.ToString(), out CostPrice);
+                float.TryParse(dataGridView1.Rows[i].Cells[4].Value.ToString(), out ProductPrice);
+                float.TryParse(dataGridView1.Rows[i].Cells[5].Value.ToString(), out Counts);
+                float.TryParse(dataGridView1.Rows[i].Cells[6].Value.ToString(), out TotalCost);
+                float.TryParse(dataGridView1.Rows[i].Cells[7].Value.ToString(), out TotalRevenue);
+
+                low.Add(new DTO.ReportCost()
+                {
+                    ProductID = dataGridView1.Rows[i].Cells[0].Value.ToString(),
+                    ProductName = dataGridView1.Rows[i].Cells[1].Value.ToString(),
+                    ProductType = dataGridView1.Rows[i].Cells[2].Value.ToString(),
+                    CostPrice = CostPrice,
+                    ProductPrice = ProductPrice,
+                    Counts = Counts,
+                    TotalCost = TotalCost,
+                    TotalRevenue = TotalRevenue
+
+                });
+
+            }
+            report.Name = "DataSet1";
+            report.Value = low;
+            using (ModalPage.ProfitReport modal = new ModalPage.ProfitReport(report, datefront, dateback))
+            {
+                modal.ShowDialog();
+
+            }
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            dataGridView2.Rows.Clear();
+            year = comboBox2.SelectedItem.ToString();
+            datefront = year + "-01-01";
+            dateback = year + "-12-31";
 
             string qry = "SELECT  Products.ProductID,Products.ProductName,Products.TypeName,Products.CostPrice,Products.ProductPrice, SUM(ReceiptDetail.Amount) as Counts,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost  , Products.ProductPrice * SUM(ReceiptDetail.Amount) as TotalRevenue FROM Products " +
                 "LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between '" + datefront.ToString() + "' and '" + dateback.ToString() + "'  and ReceiptDetail.Active = 'Y'" +
@@ -110,50 +168,6 @@ namespace POSTiw.PageReport
             dataGridView2.Columns["TotalCost"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dataGridView2.Columns["TotalProfit"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-        }
-
-        private void YearReport_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            List<DTO.ReportCost> low = new List<DTO.ReportCost>();
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            {
-                float CostPrice = 0;
-                float ProductPrice = 0;
-                float Counts = 0;
-                float TotalCost = 0;
-                float TotalRevenue = 0;
-                float.TryParse(dataGridView1.Rows[i].Cells[3].Value.ToString(), out CostPrice);
-                float.TryParse(dataGridView1.Rows[i].Cells[4].Value.ToString(), out ProductPrice);
-                float.TryParse(dataGridView1.Rows[i].Cells[5].Value.ToString(), out Counts);
-                float.TryParse(dataGridView1.Rows[i].Cells[6].Value.ToString(), out TotalCost);
-                float.TryParse(dataGridView1.Rows[i].Cells[7].Value.ToString(), out TotalRevenue);
-
-                low.Add(new DTO.ReportCost()
-                {
-                    ProductID = dataGridView1.Rows[i].Cells[0].Value.ToString(),
-                    ProductName = dataGridView1.Rows[i].Cells[1].Value.ToString(),
-                    ProductType = dataGridView1.Rows[i].Cells[2].Value.ToString(),
-                    CostPrice = CostPrice,
-                    ProductPrice = ProductPrice,
-                    Counts = Counts,
-                    TotalCost = TotalCost,
-                    TotalRevenue = TotalRevenue
-
-                });
-
-            }
-            report.Name = "DataSet1";
-            report.Value = low;
-            using (ModalPage.ProfitReport modal = new ModalPage.ProfitReport(report, datefront, dateback))
-            {
-                modal.ShowDialog();
-
-            }
         }
     }
 }
