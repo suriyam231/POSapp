@@ -101,5 +101,10 @@ namespace POSTiw
             axAcroPDF1.src = path;
             axAcroPDF1.Show();
         }
+
+        private void Help_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
