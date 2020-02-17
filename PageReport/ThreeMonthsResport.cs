@@ -19,6 +19,7 @@ namespace POSTiw.PageReport
         ReportDataSource report = new ReportDataSource();
         string datefront;
         string dateback;
+        DataTable database = new DataTable();
         public ThreeMonthsResport()
         {
             InitializeComponent();
@@ -40,6 +41,15 @@ namespace POSTiw.PageReport
             comboBox1.Items.Add("ไตรมาส 3");
             comboBox1.Items.Add("ไตรมาส 4");
 
+            string qry = "SELECT * FROM TypeProduct";
+            sqlcon.Open();
+            SqlDataReader reader = new SqlCommand(qry, sqlcon).ExecuteReader();
+            while (reader.Read())
+            {
+                comboBox3.Items.Add(reader.GetValue(1).ToString());
+            }
+            reader.Close();
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -52,9 +62,12 @@ namespace POSTiw.PageReport
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        public void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string values = comboBox1.SelectedItem.ToString();
+            string values;
+
+            values = comboBox1.SelectedItem.ToString();
+
             if (values == "ไตรมาส 1")
             {
                 datefront = year + "-01-01";
@@ -63,6 +76,7 @@ namespace POSTiw.PageReport
                 DataTable data = new DataTable();
                 SqlDataAdapter adapter = new SqlDataAdapter(qry, sqlcon);
                 adapter.Fill(data);
+                database = data;
 
                 dataGridView1.DataSource = data;
 
@@ -116,7 +130,7 @@ namespace POSTiw.PageReport
                 DataTable data = new DataTable();
                 SqlDataAdapter adapter = new SqlDataAdapter(qry, sqlcon);
                 adapter.Fill(data);
-
+                database = data;
                 dataGridView1.DataSource = data;
 
                 dataGridView1.Columns[1].Width = 120;
@@ -169,7 +183,7 @@ namespace POSTiw.PageReport
                 DataTable data = new DataTable();
                 SqlDataAdapter adapter = new SqlDataAdapter(qry, sqlcon);
                 adapter.Fill(data);
-
+                database = data;
                 dataGridView1.DataSource = data;
 
                 dataGridView1.Columns[1].Width = 120;
@@ -222,7 +236,7 @@ namespace POSTiw.PageReport
                 DataTable data = new DataTable();
                 SqlDataAdapter adapter = new SqlDataAdapter(qry, sqlcon);
                 adapter.Fill(data);
-
+                database = data;
                 dataGridView1.DataSource = data;
 
                 dataGridView1.Columns[1].Width = 120;
@@ -412,6 +426,30 @@ namespace POSTiw.PageReport
             using (ModalPage.ProfitReport modal = new ModalPage.ProfitReport(report, datefront, dateback))
             {
                 modal.ShowDialog();
+
+            }
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                database.DefaultView.RowFilter = string.Format("TypeName Like '%{0}%'", comboBox3.SelectedItem.ToString());
+                dataGridView1.DataSource = database;
+            }catch(Exception x)
+            {
+                MessageBox.Show("กรุณาเลือกไตรมาสที่ต้องการดู");
+            }
+        }
+        public void Onkey(object sender, KeyEventArgs kea)
+        {
+            try
+            {
+                database.DefaultView.RowFilter = string.Format("TypeName  Like '%{0}%'", "");
+                dataGridView1.DataSource = database;
+            }
+            catch(Exception x)
+            {
 
             }
         }

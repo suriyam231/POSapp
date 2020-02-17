@@ -94,7 +94,7 @@ namespace POSTiw
                 string Status = status.SelectedItem.ToString();
 
 
-                if (ID != null && Password != null && Firstname != null && Lastname != null && Status != null)
+                if (ID != "" && Password != "" && Firstname != "" && Lastname != "" && Status != "")
                 {
 
                     SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
@@ -115,6 +115,10 @@ namespace POSTiw
                     showLname.Text = null;
                     showStatus.Text = null;
                 }
+                else
+                {
+                    MessageBox.Show("กรุณากรอกข้อมูลให้ครบ");
+                }
 
 
             }
@@ -125,7 +129,7 @@ namespace POSTiw
             }
             catch (NullReferenceException nul)
             {
-                MessageBox.Show("กรุณาเลือกประเภทสินค้า");
+                MessageBox.Show("กรุณาเลือกตำแหน่ง");
             }
 
         }
