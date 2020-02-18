@@ -36,7 +36,7 @@ namespace POSTiw
             Time = Time.Substring(0,5) + " น.";
             this.reportViewer1.LocalReport.DataSources.Clear();
             this.reportViewer1.LocalReport.DataSources.Add(report);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "POSTiw.ReportAll.Report1.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "POSTiw.Report1.rdlc";
             Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[]
             {
                 new Microsoft.Reporting.WinForms.ReportParameter("Store",Store.ToString()),
@@ -52,7 +52,7 @@ namespace POSTiw
            
             var dt = report.Value;
             string path = Path.GetDirectoryName(Application.ExecutablePath);
-            rep.ReportPath = Path.GetDirectoryName(Application.ExecutablePath).Remove(path.Length - 10) + @"\ReportAll\Report1.rdlc";
+            rep.ReportPath = System.IO.Directory.GetCurrentDirectory() + "\\Report1.rdlc";
             rep.DataSources.Add(new ReportDataSource("DataSet1",dt));
             rep.SetParameters(p);
 

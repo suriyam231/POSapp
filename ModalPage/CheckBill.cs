@@ -127,5 +127,10 @@ namespace POSTiw.ModalPage
                 
             }
         }
+
+        private void CheckBill_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

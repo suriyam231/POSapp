@@ -188,6 +188,7 @@
             this.Name = "CheckBill";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CheckBill";
+            this.Load += new System.EventHandler(this.CheckBill_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

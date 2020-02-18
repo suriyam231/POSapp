@@ -34,7 +34,7 @@ namespace POSTiw
         private void button7_Click(object sender, EventArgs e)
         {
 
-            string path = System.IO.Directory.GetCurrentDirectory() + "\\PDF\\การใช้งานหน้าขาย.pdf";
+            string path = System.IO.Directory.GetCurrentDirectory() + "\\PDF\\Sale.pdf";
 
             axAcroPDF1.setShowToolbar(false);
             axAcroPDF1.Visible = true;
@@ -44,7 +44,7 @@ namespace POSTiw
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string path = System.IO.Directory.GetCurrentDirectory() + "\\PDF\\การใช้งานหน้าตรวจสอบบิล.pdf";
+            string path = System.IO.Directory.GetCurrentDirectory() + "\\PDF\\CheckBill.pdf";
 
             axAcroPDF1.setShowToolbar(false);
             axAcroPDF1.Visible = true;
@@ -54,7 +54,7 @@ namespace POSTiw
 
         private void button9_Click(object sender, EventArgs e)
         {
-            string path = System.IO.Directory.GetCurrentDirectory() + "\\PDF\\การใช้งานหน้าคลังสินค้า.pdf";
+            string path = System.IO.Directory.GetCurrentDirectory() + "\\PDF\\Werehous.pdf";
 
             axAcroPDF1.setShowToolbar(false);
             axAcroPDF1.Visible = true;
@@ -64,7 +64,7 @@ namespace POSTiw
 
         private void button10_Click(object sender, EventArgs e)
         {
-            string path = System.IO.Directory.GetCurrentDirectory() + "\\PDF\\การใช้งานหน้าสินค้าใกล้หมด.pdf";
+            string path = System.IO.Directory.GetCurrentDirectory() + "\\PDF\\LowProduct.pdf";
 
             axAcroPDF1.setShowToolbar(false);
             axAcroPDF1.Visible = true;
@@ -74,7 +74,7 @@ namespace POSTiw
 
         private void button11_Click(object sender, EventArgs e)
         {
-            string path = System.IO.Directory.GetCurrentDirectory() + "\\PDF\\การใช้งานหน้ารายงานการขาย.pdf";
+            string path = System.IO.Directory.GetCurrentDirectory() + "\\PDF\\Report.pdf";
 
             axAcroPDF1.setShowToolbar(false);
             axAcroPDF1.Visible = true;
@@ -84,7 +84,7 @@ namespace POSTiw
 
         private void button12_Click(object sender, EventArgs e)
         {
-            string path = System.IO.Directory.GetCurrentDirectory() + "\\PDF\\การใช้งานหน้าสินค้าขายดี.pdf";
+            string path = System.IO.Directory.GetCurrentDirectory() + "\\PDF\\Popula.pdf";
 
             axAcroPDF1.setShowToolbar(false);
             axAcroPDF1.Visible = true;
@@ -94,7 +94,7 @@ namespace POSTiw
 
         private void button13_Click(object sender, EventArgs e)
         {
-            string path = System.IO.Directory.GetCurrentDirectory() + "\\PDF\\การใช้งานหน้าเพิ่มผู้ใช้งาน.pdf";
+            string path = System.IO.Directory.GetCurrentDirectory() + "\\PDF\\Users.pdf";
 
             axAcroPDF1.setShowToolbar(false);
             axAcroPDF1.Visible = true;
