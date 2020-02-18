@@ -341,22 +341,33 @@ namespace POSTiw
 
         private void button16_Click(object sender, EventArgs e)
         {
-            
             string ProduceName = namePro_lab.Text.ToString();
             string number = textBox3.Text.ToString();
-
+            SqlConnection connn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
+            SqlCommand command = new SqlCommand();
+            command.Connection = connn;
+            command.CommandText = "SELECT ProductQuantity FROM [dbo].[Products] WHERE ProductName = '"+ProduceName+"'";
+            DataTable data = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            adapter.Fill(data);
+            string Left = data.Rows[0][0].ToString();
+            int numberLeft;
+            int numberRight;
+            Int32.TryParse(Left, out numberLeft);
+            Int32.TryParse(number, out numberRight);
             string text = null;
-
+            if (numberRight <= numberLeft)
+            {
                 foreach (DataGridViewRow row in dataGridView1.SelectedRows)
                 {
-                    if(number == "0" || number == "")
+                    if (number == "0" || number == "")
                     {
-                    dataGridView1.Rows.RemoveAt(this.dataGridView1.SelectedRows[0].Index);
-                    namePro_lab.Text = "";
-                    textBox3.Text = "";
+                        dataGridView1.Rows.RemoveAt(this.dataGridView1.SelectedRows[0].Index);
+                        namePro_lab.Text = "";
+                        textBox3.Text = "";
                     }
                     text = row.Cells[2].Value.ToString();
- 
+
                     if (ProduceName == text)
                     {
                         string textPrice = row.Cells[4].Value.ToString();
@@ -368,10 +379,17 @@ namespace POSTiw
                         total = amount * price;
                         row.Cells[3].Value = amount.ToString();
                         row.Cells[5].Value = total.ToString();
-                 
+
                         break;
                     }
                 }
+            }
+            else
+            {
+                MessageBox.Show("จำนวนสินค้าไม่พอ มีอยู่" + numberLeft.ToString());
+            }
+
+                
            // }
             int Total = 0;
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
