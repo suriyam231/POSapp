@@ -69,22 +69,34 @@ namespace POSTiw
 
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
         {
-           OrderId_lab.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
-           OrderId = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
-           Date = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
-           Time = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
-            using (IDbConnection db = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd"))
+            try
             {
-                db.Open();
-                string qry = "SELECT Products.ProductID,Products.ProductName,Products.ProductPrice, ReceiptDetail.Amount FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID Where ReceiptID = '" + this.OrderId + "'";
-                List<OrderDetail> list = db.Query<OrderDetail>(qry, conn).ToList();
-                report.Name = "DataSet1";
-                report.Value = list;
-                using (CheckReport check = new CheckReport(this.OrderId,this.Date,this.Time, report)){
-                    check.ShowDialog();
-             
+                OrderId_lab.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+                OrderId = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+                Date = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+                Time = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
+                using (IDbConnection db = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd"))
+                {
+                    db.Open();
+                    string qry = "SELECT Products.ProductID,Products.ProductName,Products.ProductPrice, ReceiptDetail.Amount FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID Where ReceiptID = '" + this.OrderId + "'";
+                    List<OrderDetail> list = db.Query<OrderDetail>(qry, conn).ToList();
+                    report.Name = "DataSet1";
+                    report.Value = list;
+                    using (CheckReport check = new CheckReport(this.OrderId, this.Date, this.Time, report))
+                    {
+                        check.ShowDialog();
+                        string Text = "Select ReceiptID, ReceiptDate , ReceiptTime ,TotalPrice , ProductAmount from Receipt Where Active = 'Y' ORDER BY  ReceiptDate DESC , ReceiptTime DESC ";
+                        DataTable data = new DataTable();
+                        SqlDataAdapter adapter = new SqlDataAdapter(Text, conn);
+                        adapter.Fill(data);
+                        dataGridView1.DataSource = data;
+                    }
+
                 }
- 
+            }
+           catch (Exception x)
+            {
+
             }
          
         }
