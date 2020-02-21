@@ -360,8 +360,15 @@ namespace POSTiw
            
             foreach (DataGridViewRow row in dataGridView1.SelectedRows)
             {
-                namePro_lab.Text = row.Cells[2].Value.ToString();
-                textBox3.Text = row.Cells[3].Value.ToString();
+                try
+                {
+                    namePro_lab.Text = row.Cells[2].Value.ToString();
+                    textBox3.Text = row.Cells[3].Value.ToString();
+                }catch(Exception ex)
+                {
+
+                }
+                
             }
         }
 
