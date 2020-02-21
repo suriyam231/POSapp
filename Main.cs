@@ -72,28 +72,34 @@ namespace POSTiw
         {
             try
             {
-            int billID = 0;
-            string RID =null;
-            string amount=null;
-            string ProID = null;
-            SqlConnection connn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
+                int billID = 0;
+                string RID = null;
+                string amount = null;
+                string ProID = null;
+                SqlConnection connn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
 
-            string check = "select COUNT(ReceiptID) from ReceiptDetail where Active = 'N'";
-            DataTable data = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter(check, connn);
-            adapter.Fill(data);
-            if (data.Rows[0][0].ToString() == "0")
-            {
-                Random rand = new Random();
-                billID = rand.Next(000000000, 999999999);
-              
-            }
+                string check = "select COUNT(ReceiptID) from ReceiptDetail where Active = 'N'";
+                DataTable data = new DataTable();
+                SqlDataAdapter adapter = new SqlDataAdapter(check, connn);
+                adapter.Fill(data);
+                if (data.Rows[0][0].ToString() == "0")
+                {
+                    Random rand = new Random();
+                    billID = rand.Next(000000000, 999999999);
+                    string checkID = "Select COUNT(ReceiptID) from Receipt   where ReceiptID = '" + billID + "'";
+                    DataTable dataID = new DataTable();
+                    SqlDataAdapter adapterID = new SqlDataAdapter(checkID, connn);
+                    adapterID.Fill(dataID);
+                    if (billID.ToString() == dataID.Rows[0][0].ToString())
+                    {
+                        billID = rand.Next(000000000, 999999999);
+                    }
+                }
 
-           
                 string ReceiptID = billID.ToString();
-               
+
                 label20.Text = ReceiptID.ToString();
-               
+
                 string getProduct = "Select * from Products where ProductID = '" + textBox1.Text.ToString() + "'";
                 SqlDataAdapter adapterGet = new SqlDataAdapter(getProduct, connn);
                 DataTable Product = new DataTable();
@@ -101,109 +107,129 @@ namespace POSTiw
                 string ProductID = Product.Rows[0][0].ToString();
                 string ProductName = Product.Rows[0][1].ToString();
                 string ProductPrice = Product.Rows[0][4].ToString();
+                int Amount;
+                Int32.TryParse(Product.Rows[0][3].ToString(), out Amount);
 
                 int Price;
                 Int32.TryParse(ProductPrice, out Price);
-           
-
-            DataTable dataOrder = new DataTable();
-
-
-
-            dataOrder.Columns.Add("index");
-            dataOrder.Columns.Add("ProID");
-            dataOrder.Columns.Add("Proname");
-            dataOrder.Columns.Add("Proamount");
-            dataOrder.Columns.Add("Proprice");
-            dataOrder.Columns.Add("total");
-
-            //dataOrder.Rows.Add(1, ProductID, ProductName, 1, ProductPrice, 1 * Price);
-            //dataGridView1.DataSource = dataOrder;
-            DataRow row  = dataOrder.NewRow();
-            int index = dataGridView1.Rows.Count;
-            
-            row["index"] =  index;
-            row["ProID"] = ProductID;
-            row["Proname"] = ProductName;
-            row["Proamount"] = 1;
-            row["Proprice"] = ProductPrice;
-            row["total"] = ProductPrice;
-            dataOrder.Rows.Add(row);
-
-            foreach(DataRow Drow in dataOrder.Rows)
-            {
-                int num = dataGridView1.Rows.Add();
-                int x = num;
-                int y = num;
-                string text = null;
-                string text2 = null;
-                string Proamount = null;
-                string Proprice = null;
-                string total = null;
-                if (num > 0) 
+                
+                if (Amount > 0)
                 {
-                    x = num - 1;
-                    text = dataGridView1.Rows[x].Cells[1].Value.ToString();
-                    for (int i = 1; i <= num; i++)
+                    DataTable dataOrder = new DataTable();
+
+
+
+                    dataOrder.Columns.Add("index");
+                    dataOrder.Columns.Add("ProID");
+                    dataOrder.Columns.Add("Proname");
+                    dataOrder.Columns.Add("Proamount");
+                    dataOrder.Columns.Add("Proprice");
+                    dataOrder.Columns.Add("total");
+
+                    //dataOrder.Rows.Add(1, ProductID, ProductName, 1, ProductPrice, 1 * Price);
+                    //dataGridView1.DataSource = dataOrder;
+                    DataRow row = dataOrder.NewRow();
+                    int index = dataGridView1.Rows.Count;
+
+                    row["index"] = index;
+                    row["ProID"] = ProductID;
+                    row["Proname"] = ProductName;
+                    row["Proamount"] = 1;
+                    row["Proprice"] = ProductPrice;
+                    row["total"] = ProductPrice;
+                    dataOrder.Rows.Add(row);
+
+                    foreach (DataRow Drow in dataOrder.Rows)
                     {
-                        x = num - i;
-                        text = dataGridView1.Rows[x].Cells[1].Value.ToString();
-                        if(ProductID == text)
+                        int num = dataGridView1.Rows.Add();
+                        int x = num;
+                        int y = num;
+                        string text = null;
+                        string text2 = null;
+                        string Proamount = null;
+                        string Proprice = null;
+                        string total = null;
+                        if (num > 0)
+                        {
+                            x = num - 1;
+                            text = dataGridView1.Rows[x].Cells[1].Value.ToString();
+                            for (int i = 1; i <= num; i++)
+                            {
+                                x = num - i;
+                                text = dataGridView1.Rows[x].Cells[1].Value.ToString();
+                                if (ProductID == text)
+                                {
+                                    break;
+                                }
+                            }
+
+                        }
+
+                        if (ProductID == text)
+                        {
+                            
+                            int CheckAoumut;
+                            Int32.TryParse(dataGridView1.Rows[x].Cells[3].Value.ToString(), out CheckAoumut);
+                            CheckAoumut = CheckAoumut;
+                            if(Amount == CheckAoumut)
+                            {
+                                dataGridView1.Rows.Remove(dataGridView1.Rows[num]);
+                                MessageBox.Show("สินค้ามีจำนวนไม่พอ");
+                                break;
+                            }
+                            Proamount = dataGridView1.Rows[x].Cells[3].Value.ToString();
+                            Proprice = dataGridView1.Rows[x].Cells[4].Value.ToString();
+                            total = dataGridView1.Rows[x].Cells[5].Value.ToString();
+                            int amounts;
+                            Int32.TryParse(Proamount, out amounts);
+                            int price;
+                            Int32.TryParse(Proprice, out price);
+                            int totals;
+                            Int32.TryParse(total, out totals);
+                            amounts = amounts + 1;
+                            totals = price * amounts;
+                            dataGridView1.Rows[x].Cells[3].Value = amounts.ToString();
+                            dataGridView1.Rows[x].Cells[5].Value = totals.ToString();
+                            dataGridView1.Rows.Remove(dataGridView1.Rows[num]);
+
+                            break;
+                        }
+
+                        dataGridView1.Rows[num].Cells[0].Value = Drow["index"].ToString();
+                        dataGridView1.Rows[num].Cells[1].Value = Drow["ProID"].ToString();
+                        dataGridView1.Rows[num].Cells[2].Value = Drow["Proname"].ToString();
+                        dataGridView1.Rows[num].Cells[3].Value = Drow["Proamount"].ToString();
+                        dataGridView1.Rows[num].Cells[4].Value = Drow["Proprice"].ToString();
+                        dataGridView1.Rows[num].Cells[5].Value = Drow["total"].ToString();
+
+                       
+                    }
+
+                    textBox1.Text = "";
+                    int Total = 0;
+                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                    {
+                        try
+                        {
+                            string gettext = dataGridView1.Rows[i].Cells[5].Value.ToString();
+                            int texts;
+                            Int32.TryParse(gettext, out texts);
+                            Total = Total + texts;
+                        }
+                        catch (Exception er)
                         {
                             break;
                         }
                     }
-
+                    label12.Text = Total.ToString();
+                    //8850987128400
+                    //8851932378567
                 }
-                if (ProductID == text)
+                else
                 {
-                    Proamount = dataGridView1.Rows[x].Cells[3].Value.ToString();
-                    Proprice = dataGridView1.Rows[x].Cells[4].Value.ToString();
-                    total = dataGridView1.Rows[x].Cells[5].Value.ToString();
-                    int amounts;
-                    Int32.TryParse(Proamount, out amounts);
-                    int price;
-                    Int32.TryParse(Proprice, out price);
-                    int totals;
-                    Int32.TryParse(total, out totals);
-                    amounts = amounts + 1;
-                    totals = price * amounts;
-                    dataGridView1.Rows[x].Cells[3].Value = amounts.ToString();
-                    dataGridView1.Rows[x].Cells[5].Value = totals.ToString();
-                    dataGridView1.Rows.Remove(dataGridView1.Rows[num]);
-
-                    break;
+                    MessageBox.Show("สินค้ามีจำนวนไม่พอ");
+                    textBox1.Text = "";
                 }
-                
-                dataGridView1.Rows[num].Cells[0].Value = Drow["index"].ToString();
-                dataGridView1.Rows[num].Cells[1].Value = Drow["ProID"].ToString();
-                dataGridView1.Rows[num].Cells[2].Value = Drow["Proname"].ToString();
-                dataGridView1.Rows[num].Cells[3].Value = Drow["Proamount"].ToString();
-                dataGridView1.Rows[num].Cells[4].Value = Drow["Proprice"].ToString();
-                dataGridView1.Rows[num].Cells[5].Value = Drow["total"].ToString();
-
-               
-            }
-
-            textBox1.Text = "";
-            int Total = 0;
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            {
-                try
-                {
-                    string gettext = dataGridView1.Rows[i].Cells[5].Value.ToString();
-                    int texts;
-                    Int32.TryParse(gettext, out texts);
-                    Total = Total + texts;
-                }
-                catch (Exception er)
-                {
-                    break;
-                }
-            }
-            label12.Text = Total.ToString();
-            //8850987128400
-            //8851932378567
             }
             catch (Exception s)
             {
@@ -261,7 +287,7 @@ namespace POSTiw
             SqlConnection connn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
             SqlCommand command = new SqlCommand();
             command.Connection = connn;
-            command.CommandText = "SELECT ProductID , ProductName , ProductQuantity , ProductPrice FROM [dbo].[Products] WHERE ProductName LIKE '%" + textBox2.Text.ToString() + "%'";
+            command.CommandText = "SELECT ProductID , ProductName , ProductQuantity , ProductPrice FROM [dbo].[Products] WHERE ProductName LIKE '%" + textBox2.Text.ToString() + "%' or ProductID LIKE '%" + textBox2.Text.ToString() + "%'";
             DataTable data = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             adapter.Fill(data);
