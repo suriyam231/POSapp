@@ -28,6 +28,10 @@ namespace POSTiw
                 comboBox1.Items.Add(reader.GetValue(1).ToString());
             }
             reader.Close();
+            PID_txt.MaxLength = 30;
+            PNAME_txt.MaxLength = 30;
+            PDes_txt.MaxLength = 50;
+            Presfer_txt.MaxLength = 50;
         }
 
         private void AddProdcutNew_Load(object sender, EventArgs e)
@@ -51,7 +55,7 @@ namespace POSTiw
                 string Des = PDes_txt.Text.ToString();
                 string From = Presfer_txt.Text.ToString();
 
-                if (Amount != 0 && Price != 0 && CostPrice != 0 && ID != null && Name != null && From != null)
+                if (Amount != 0 && Price != 0 && CostPrice != 0 && ID != "" && Name != null && From != null)
                 {
                     string type = comboBox1.SelectedItem.ToString();
                     SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
@@ -71,6 +75,7 @@ namespace POSTiw
                     Pprice_txt.Text = null;
                     Pcost_txt.Text = null;
                     comboBox1.SelectedItem = null;
+                    conn.Close();
                 }
                 else
                 {

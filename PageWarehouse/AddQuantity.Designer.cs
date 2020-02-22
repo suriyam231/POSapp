@@ -49,6 +49,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,7 +116,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Linen;
             this.label4.Font = new System.Drawing.Font("TH SarabunPSK", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(945, 118);
+            this.label4.Location = new System.Drawing.Point(912, 118);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 36);
             this.label4.TabIndex = 5;
@@ -125,7 +126,7 @@
             // 
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("TH SarabunPSK", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(1071, 125);
+            this.textBox2.Location = new System.Drawing.Point(1038, 125);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(246, 25);
             this.textBox2.TabIndex = 6;
@@ -270,17 +271,31 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("TH SarabunPSK", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label11.Location = new System.Drawing.Point(1054, 96);
+            this.label11.Location = new System.Drawing.Point(1021, 96);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(276, 22);
             this.label11.TabIndex = 19;
             this.label11.Text = "* กรุณาเปลื่อนภาษาให้เป็นภาษา English ก่อนจะสแกนสินค้า";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(1335, 632);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(180, 40);
+            this.button2.TabIndex = 20;
+            this.button2.Text = "แยกแพ็คของสินค้า";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // AddQuantity
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label10);
@@ -333,5 +348,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button button2;
     }
 }

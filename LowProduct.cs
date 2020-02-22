@@ -216,6 +216,7 @@ namespace POSTiw
                 Total = number + addAmuont;
 
 
+
                 string update = "UPDATE Products SET ProductQuantity = '" + Total + "',Date = '" + DateTime.Now + "' WHERE ProductID = '" + ID + "'";
 
 

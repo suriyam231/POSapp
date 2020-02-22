@@ -28,7 +28,7 @@ namespace POSTiw
 
             adapter.Fill(data);
             dataGridView1.DataSource = data;
-
+            textBox1.MaxLength = 30;
             button2.Hide();
             button3.Hide();
             label5.Hide();

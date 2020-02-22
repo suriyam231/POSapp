@@ -49,21 +49,18 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>0.62493in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>0.48749in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>0.48749in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.25in</Height>
+                  <Height>0.18863in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -75,7 +72,11 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>ชื่อสินค้า</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>th SarabunPSK</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -107,47 +108,19 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>จำนวน</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>th SarabunPSK</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Right</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox3</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>White</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox5">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>ราคา</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Right</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox5</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>White</Color>
@@ -170,8 +143,12 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>รวม</Value>
-                                  <Style />
+                                  <Value>ราคา</Value>
+                                  <Style>
+                                    <FontFamily>th SarabunPSK</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -196,7 +173,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.25in</Height>
+                  <Height>0.18863in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -208,10 +185,16 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!ProductName.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>th SarabunPSK</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>ProductName</rd:DefaultName>
@@ -238,43 +221,19 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Amount.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>th SarabunPSK</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Amount</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>White</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="ProductPrice">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!ProductPrice.Value</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>ProductPrice</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>White</Color>
@@ -298,10 +257,16 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Total.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>th SarabunPSK</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Total</rd:DefaultName>
@@ -327,7 +292,6 @@
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
-                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
@@ -341,30 +305,210 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
-            <Top>0.19667in</Top>
-            <Left>0.155in</Left>
-            <Height>0.5in</Height>
-            <Width>4in</Width>
+            <Top>0.05556in</Top>
+            <Left>0.14505in</Left>
+            <Height>0.37726in</Height>
+            <Width>1.59991in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
             </Style>
           </Tablix>
-          <Line Name="Line1">
-            <Top>0.3175cm</Top>
-            <Left>0cm</Left>
-            <Height>0cm</Height>
-            <Width>10.5537cm</Width>
+          <Textbox Name="Textbox12">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>รวมราคา :   </Value>
+                    <Style>
+                      <FontFamily>th SarabunPSK</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Sum(Fields!Total.Value, "DataSet1")</Value>
+                    <Style>
+                      <FontFamily>th SarabunPSK</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>  บาท</Value>
+                    <Style>
+                      <FontFamily>th SarabunPSK</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox5</rd:DefaultName>
+            <Top>0.48994in</Top>
+            <Left>0.50818in</Left>
+            <Height>0.17899in</Height>
+            <Width>1.23679in</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
-                <Style>Solid</Style>
+                <Style>None</Style>
               </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
             </Style>
-          </Line>
+          </Textbox>
+          <Textbox Name="getMoney">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>รับเงิน : </Value>
+                    <Style>
+                      <FontFamily>th SarabunPSK</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Parameters!getMoney.Value</Value>
+                    <Style>
+                      <FontFamily>th SarabunPSK</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>  บาท</Value>
+                    <Style>
+                      <FontFamily>th SarabunPSK</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>getMoney</rd:DefaultName>
+            <Top>1.50296cm</Top>
+            <Left>1.29081cm</Left>
+            <Height>0.51362cm</Height>
+            <Width>3.14143cm</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="getLeft">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>ทอนเงิน : </Value>
+                    <Style>
+                      <FontFamily>th SarabunPSK</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Parameters!getLeft.Value</Value>
+                    <Style>
+                      <FontFamily>th SarabunPSK</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>  บาท</Value>
+                    <Style>
+                      <FontFamily>th SarabunPSK</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>getLeft</rd:DefaultName>
+            <Top>1.76963cm</Top>
+            <Left>1.29081cm</Left>
+            <Height>0.53729cm</Height>
+            <Width>3.14146cm</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox13">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>*****ขอบคุณที่ใช้บริการ*****</Value>
+                    <Style>
+                      <FontFamily>th SarabunPSK</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox5</rd:DefaultName>
+            <Top>0.90823in</Top>
+            <Left>0.31396in</Left>
+            <Height>0.17899in</Height>
+            <Width>1.23679in</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
-        <Height>2.38125cm</Height>
+        <Height>1.16874in</Height>
         <Style>
           <Border>
             <Style>None</Style>
@@ -372,10 +516,10 @@
           <BackgroundColor>White</BackgroundColor>
         </Style>
       </Body>
-      <Width>10.5537cm</Width>
+      <Width>1.89in</Width>
       <Page>
         <PageHeader>
-          <Height>4.46262cm</Height>
+          <Height>1.06793in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -389,7 +533,7 @@
                       <Value>ใบเสร็จรับเงิน/ใบกำกับภาษี</Value>
                       <Style>
                         <FontFamily>th SarabunPSK</FontFamily>
-                        <FontSize>14pt</FontSize>
+                        <FontSize>8pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -400,118 +544,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox4</rd:DefaultName>
-              <Top>0.61008in</Top>
-              <Left>0.15041in</Left>
-              <Height>0.25in</Height>
-              <Width>3.9375in</Width>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox8">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>เลขที่ใบเสร็จ : </Value>
-                      <Style>
-                        <FontFamily>th SarabunPSK</FontFamily>
-                        <FontSize>14pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Right</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox5</rd:DefaultName>
-              <Top>0.88786in</Top>
-              <Left>0.405in</Left>
-              <Height>0.27083in</Height>
-              <Width>1.91667in</Width>
-              <ZIndex>1</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox9">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>วันที่ออกใบเสร็จ : </Value>
-                      <Style>
-                        <FontFamily>th SarabunPSK</FontFamily>
-                        <FontSize>14pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Right</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox5</rd:DefaultName>
-              <Top>1.15869in</Top>
-              <Left>0.40041in</Left>
-              <Height>0.27083in</Height>
-              <Width>1.91667in</Width>
-              <ZIndex>2</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox10">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>เวลาที่ออกใบเสร็จ : </Value>
-                      <Style>
-                        <FontFamily>th SarabunPSK</FontFamily>
-                        <FontSize>14pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Right</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox5</rd:DefaultName>
-              <Top>1.42952in</Top>
-              <Left>0.40041in</Left>
-              <Height>0.27083in</Height>
-              <Width>1.91667in</Width>
-              <ZIndex>3</ZIndex>
+              <Top>0.39914in</Top>
+              <Left>0.14504in</Left>
+              <Height>0.16667in</Height>
+              <Width>1.59991in</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -530,9 +566,7 @@
                   <TextRuns>
                     <TextRun>
                       <Value>=Parameters!Store.Value</Value>
-                      <Style>
-                        <FontSize>15pt</FontSize>
-                      </Style>
+                      <Style />
                     </TextRun>
                   </TextRuns>
                   <Style>
@@ -541,11 +575,11 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Store</rd:DefaultName>
-              <Top>0.12912cm</Top>
-              <Left>0.3937cm</Left>
-              <Height>0.78521cm</Height>
-              <Width>9.98959cm</Width>
-              <ZIndex>4</ZIndex>
+              <Top>0.15875cm</Top>
+              <Left>0.36842cm</Left>
+              <Height>0.60813cm</Height>
+              <Width>3.81713cm</Width>
+              <ZIndex>1</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -564,7 +598,11 @@
                   <TextRuns>
                     <TextRun>
                       <Value>=Parameters!Address.Value</Value>
-                      <Style />
+                      <Style>
+                        <FontFamily>th SarabunPSK</FontFamily>
+                        <FontSize>7pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
                     </TextRun>
                   </TextRuns>
                   <Style>
@@ -573,11 +611,11 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Address</rd:DefaultName>
-              <Top>0.9496cm</Top>
-              <Left>0.91123cm</Left>
-              <Height>0.6cm</Height>
-              <Width>9.04872cm</Width>
-              <ZIndex>5</ZIndex>
+              <Top>0.57999cm</Top>
+              <Left>0.98154cm</Left>
+              <Height>0.43383cm</Height>
+              <Width>2.95736cm</Width>
+              <ZIndex>2</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -595,19 +633,32 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
+                      <Value>เลขที่ใบเสร็จ : </Value>
+                      <Style>
+                        <FontFamily>th SarabunPSK</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
                       <Value>=Parameters!PID.Value</Value>
-                      <Style />
+                      <Style>
+                        <FontFamily>th SarabunPSK</FontFamily>
+                        <FontSize>8pt</FontSize>
+                      </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>PID</rd:DefaultName>
-              <Top>2.34307cm</Top>
-              <Left>5.88538cm</Left>
-              <Height>0.6cm</Height>
-              <Width>2.5cm</Width>
-              <ZIndex>6</ZIndex>
+              <Top>1.29604cm</Top>
+              <Left>0.36842cm</Left>
+              <Height>0.52325cm</Height>
+              <Width>4.06378cm</Width>
+              <ZIndex>3</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -625,19 +676,32 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
+                      <Value>วันที่ออกใบเสร็จ : </Value>
+                      <Style>
+                        <FontFamily>th SarabunPSK</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
                       <Value>=Parameters!Date.Value</Value>
-                      <Style />
+                      <Style>
+                        <FontFamily>th SarabunPSK</FontFamily>
+                        <FontSize>8pt</FontSize>
+                      </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Date</rd:DefaultName>
-              <Top>3.01362cm</Top>
-              <Left>5.88538cm</Left>
-              <Height>0.6cm</Height>
-              <Width>2.5cm</Width>
-              <ZIndex>7</ZIndex>
+              <Top>1.57826cm</Top>
+              <Left>0.36842cm</Left>
+              <Height>0.48619cm</Height>
+              <Width>4.06378cm</Width>
+              <ZIndex>4</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -655,19 +719,32 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
+                      <Value>เวลาที่ออกใบเสร็จ : </Value>
+                      <Style>
+                        <FontFamily>th SarabunPSK</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
                       <Value>=Parameters!Time.Value</Value>
-                      <Style />
+                      <Style>
+                        <FontFamily>th SarabunPSK</FontFamily>
+                        <FontSize>8pt</FontSize>
+                      </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Time</rd:DefaultName>
-              <Top>3.6489cm</Top>
-              <Left>5.95594cm</Left>
-              <Height>0.6cm</Height>
-              <Width>2.5cm</Width>
-              <ZIndex>8</ZIndex>
+              <Top>1.88985cm</Top>
+              <Left>0.36839cm</Left>
+              <Height>0.48755cm</Height>
+              <Width>4.06378cm</Width>
+              <ZIndex>5</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -685,352 +762,8 @@
             </Border>
           </Style>
         </PageHeader>
-        <PageFooter>
-          <Height>3.04271cm</Height>
-          <PrintOnFirstPage>true</PrintOnFirstPage>
-          <PrintOnLastPage>true</PrintOnLastPage>
-          <ReportItems>
-            <Textbox Name="Textbox11">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>รวมราคา : </Value>
-                      <Style>
-                        <FontFamily>th SarabunPSK</FontFamily>
-                        <FontSize>14pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Right</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox5</rd:DefaultName>
-              <Top>0.11458in</Top>
-              <Left>0.86333in</Left>
-              <Height>0.27083in</Height>
-              <Width>1.91667in</Width>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox12">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>=Sum(Fields!Total.Value, "DataSet1")</Value>
-                      <Style>
-                        <FontFamily>th SarabunPSK</FontFamily>
-                        <FontSize>14pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Right</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox5</rd:DefaultName>
-              <Top>0.11458in</Top>
-              <Left>2.78in</Left>
-              <Height>0.27083in</Height>
-              <Width>0.67833in</Width>
-              <ZIndex>1</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox13">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>รับเงิน : </Value>
-                      <Style>
-                        <FontFamily>th SarabunPSK</FontFamily>
-                        <FontSize>14pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Right</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox5</rd:DefaultName>
-              <Top>0.45486in</Top>
-              <Left>0.86333in</Left>
-              <Height>0.27083in</Height>
-              <Width>1.91667in</Width>
-              <ZIndex>2</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="getMoney">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>=Parameters!getMoney.Value</Value>
-                      <Style />
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Right</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>getMoney</rd:DefaultName>
-              <Top>1.15534cm</Top>
-              <Left>7.09648cm</Left>
-              <Height>0.68791cm</Height>
-              <Width>1.68767cm</Width>
-              <ZIndex>3</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox14">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>ทอนเงิน : </Value>
-                      <Style>
-                        <FontFamily>th SarabunPSK</FontFamily>
-                        <FontSize>14pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Right</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox5</rd:DefaultName>
-              <Top>0.79513in</Top>
-              <Left>0.8665in</Left>
-              <Height>0.27083in</Height>
-              <Width>1.91667in</Width>
-              <ZIndex>4</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="getLeft">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>=Parameters!getLeft.Value</Value>
-                      <Style />
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Right</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>getLeft</rd:DefaultName>
-              <Top>2.0417cm</Top>
-              <Left>7.0612cm</Left>
-              <Height>0.66585cm</Height>
-              <Width>1.72295cm</Width>
-              <ZIndex>5</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox15">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>บาท </Value>
-                      <Style>
-                        <FontFamily>th SarabunPSK</FontFamily>
-                        <FontSize>14pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Right</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox5</rd:DefaultName>
-              <Top>0.11459in</Top>
-              <Left>3.51388in</Left>
-              <Height>0.27083in</Height>
-              <Width>0.57403in</Width>
-              <ZIndex>6</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox16">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>บาท </Value>
-                      <Style>
-                        <FontFamily>th SarabunPSK</FontFamily>
-                        <FontSize>14pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Right</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox5</rd:DefaultName>
-              <Top>0.80382in</Top>
-              <Left>3.51389in</Left>
-              <Height>0.27083in</Height>
-              <Width>0.57403in</Width>
-              <ZIndex>7</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox17">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>บาท </Value>
-                      <Style>
-                        <FontFamily>th SarabunPSK</FontFamily>
-                        <FontSize>14pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Right</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox5</rd:DefaultName>
-              <Top>0.46354in</Top>
-              <Left>3.51388in</Left>
-              <Height>0.27083in</Height>
-              <Width>0.57403in</Width>
-              <ZIndex>8</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Line Name="Line2">
-              <Top>0cm</Top>
-              <Left>0cm</Left>
-              <Height>0cm</Height>
-              <Width>10.5537cm</Width>
-              <ZIndex>9</ZIndex>
-              <Style>
-                <Border>
-                  <Style>Solid</Style>
-                </Border>
-              </Style>
-            </Line>
-          </ReportItems>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </PageFooter>
-        <PageHeight>14.8cm</PageHeight>
-        <PageWidth>10.5cm</PageWidth>
-        <LeftMargin>2.54cm</LeftMargin>
-        <RightMargin>2.54cm</RightMargin>
-        <TopMargin>2.54cm</TopMargin>
-        <BottomMargin>2.54cm</BottomMargin>
-        <ColumnSpacing>1.27cm</ColumnSpacing>
+        <PageHeight>5.83in</PageHeight>
+        <PageWidth>1.89in</PageWidth>
         <Style />
       </Page>
     </ReportSection>
@@ -1108,6 +841,6 @@
       </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
-  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>6a9c3641-d8e2-437e-9ae4-b93f37d992ad</rd:ReportID>
 </Report>

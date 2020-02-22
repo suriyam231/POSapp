@@ -188,6 +188,12 @@
     <Compile Include="PageWarehouse\EditProduct.Designer.cs">
       <DependentUpon>EditProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="PageWarehouse\ShareProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageWarehouse\ShareProduct.Designer.cs">
+      <DependentUpon>ShareProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="PopularProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -247,6 +253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PageReport\YearReport.resx">
       <DependentUpon>YearReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageWarehouse\ShareProduct.resx">
+      <DependentUpon>ShareProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

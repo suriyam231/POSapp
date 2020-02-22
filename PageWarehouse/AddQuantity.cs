@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using POSTiw.PageWarehouse;
 
 namespace POSTiw
 {
@@ -182,7 +183,7 @@ namespace POSTiw
                 SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
 
                 conn.Open();
-                string qry = "SELECT ProductQuantity FROM Products WHERE ProductID = '"+ID+"'";
+                string qry = "SELECT ProductQuantity , Description FROM Products WHERE ProductID = '" + ID+"'";
 
 
 
@@ -192,15 +193,70 @@ namespace POSTiw
                 adapter.Fill(data);
                 number = data.Rows[0].Field<int>(0);
 
-               
+                string Descrip = data.Rows[0][1].ToString();
+                string Strsup;
+                try
+                {
+                    Strsup = Descrip.Substring(0, 4).ToString();
+                }
+                catch (Exception ex)
+                {
+                    Strsup = "NOTS";
+                }
 
+
+                //if (Strsup == "Pack")
+                //{
+                    
+                //    string str = ID.Substring(1);
+                //    string Pack = "select ProductQuantity from Products where ProductID= '" + str + "'";
+                //    DataTable PackData = new DataTable();
+                //    SqlDataAdapter AdapterPack = new SqlDataAdapter(Pack, conn);
+                //    int piece;
+                //    int Packnumber;
+                //    Int32.TryParse(Descrip.Substring(5), out Packnumber);
+                //    AdapterPack.Fill(PackData);
+                //    piece = PackData.Rows[0].Field<int>(0);
+                //    int Totals = piece + (Packnumber * addAmuont);
+
+                //    string ChangPack = "UPDATE Products SET ProductQuantity = '" + Totals + "', Date = '" + DateTime.Now + "' WHERE ProductID = '" + str + "'";
+                    
+                //    SqlDataReader PackUdate = new SqlCommand(ChangPack, conn).ExecuteReader();
+                //    conn.Close();
+                //}
+                //else if (Strsup != "Pack")
+                //{
+                   
+                //    string str = "1" + ID;
+                //    string Pack = "select ProductQuantity ,Description from Products where ProductID= '" + str + "'";
+                //    DataTable PackData = new DataTable();
+                //    SqlDataAdapter AdapterPack = new SqlDataAdapter(Pack, conn);
+                //    int piece;
+                //    int PackNumber;
+                //    AdapterPack.Fill(PackData);
+                //    if (PackData.Rows.Count != 0)
+                //    {
+                //        Int32.TryParse(PackData.Rows[0][1].ToString().Substring(5), out PackNumber);
+                //        piece = PackData.Rows[0].Field<int>(0);
+
+                //        int TotalPack = piece * PackNumber;
+                //        int Totals = TotalPack + addAmuont;
+                       
+                            
+                //            string ChangPack = "UPDATE Products SET ProductQuantity = '" + Totals/PackNumber + "', Date = '" + DateTime.Now + "' WHERE ProductID = '" + str + "'";
+                //            SqlDataReader PackUdate = new SqlCommand(ChangPack, conn).ExecuteReader();
+                        
+
+                //    }
+                //    conn.Close();
+                //}
                 int Total = 0;
                 Total = number + addAmuont;
 
                
                 string update = "UPDATE Products SET ProductQuantity = '"+Total+"',Date = '"+DateTime.Now+"' WHERE ProductID = '"+ID+"'";
 
-               
+                
                 SqlDataReader reader = new SqlCommand(update, conn).ExecuteReader();
                 MessageBox.Show("เพิ่มจำนวนสินค้า : " + Name + "เป็นจำนวน : " + Total + " เรียบร้อยแล้ว");
 
@@ -238,6 +294,28 @@ namespace POSTiw
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string test = "";
+            using (ShareProduct share = new ShareProduct())
+            {
+                share.ShowDialog();
+
+                SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
+
+
+                SqlCommand command = new SqlCommand();
+                command.Connection = conn;
+                command.CommandText = "SELECT * FROM [dbo].[Products]";
+
+                DataTable data = new DataTable();
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+
+                adapter.Fill(data);
+                dataGridView1.DataSource = data;
+            }
         }
     }
 }

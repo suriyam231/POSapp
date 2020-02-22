@@ -4,12 +4,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -109,8 +111,8 @@ namespace POSTiw
             string deviceInfo =
              @"<DeviceInfo>
                     <OutputFormat>EMF</OutputFormat>
-                    <PageWidth>0in</PageWidth>
-                    <PageHeight>0in</PageHeight>
+                    <PageWidth>1.89in</PageWidth>
+                    <PageHeight>8.27in</PageHeight>
                     <MarginTop>0in</MarginTop>
                     <MarginLeft>0in</MarginLeft>
                     <MarginRight>0in</MarginRight>
@@ -162,10 +164,13 @@ namespace POSTiw
 
             // Draw a white background for the report
             ev.Graphics.FillRectangle(Brushes.White, adjustedRect);
-
             // Draw the report content
             ev.Graphics.DrawImage(pageImage, adjustedRect);
 
+            PaperSize customPaperSize = new PaperSize();
+            customPaperSize.PaperName = "Custom Size";
+            customPaperSize.Height = 200;
+            customPaperSize.Width = 100;
             // Prepare for the next page. Make sure we haven't hit the end.
             m_currentPageIndex++;
             ev.HasMorePages = (m_currentPageIndex < m_streams.Count);
@@ -186,5 +191,7 @@ namespace POSTiw
         {
             this.Close();
         }
+
+
     }
 }

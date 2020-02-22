@@ -19,6 +19,17 @@ namespace POSTiw
             edituser.Show();
             edituser.BringToFront();
             fillComboBox();
+
+            addID.MaxLength = 30;
+            addPass.MaxLength = 8;
+            addRepass.MaxLength = 8;
+            addFname.MaxLength = 30;
+            addLname.MaxLength = 30;
+
+            userID.MaxLength = 30;
+            passWord.MaxLength = 8;
+            firstName.MaxLength = 30;
+            lastName.MaxLength = 30;
         }
         public void fillComboBox()
         {

@@ -352,7 +352,7 @@ namespace POSTiw
             this.edituser.Controls.Add(this.panel5);
             this.edituser.Controls.Add(this.panel6);
             this.edituser.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.edituser.Location = new System.Drawing.Point(1, 89);
+            this.edituser.Location = new System.Drawing.Point(1, 86);
             this.edituser.Name = "edituser";
             this.edituser.Size = new System.Drawing.Size(1535, 707);
             this.edituser.TabIndex = 7;

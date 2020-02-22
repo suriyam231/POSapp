@@ -38,10 +38,12 @@
             // reportViewer1
             // 
             this.reportViewer1.Location = new System.Drawing.Point(1, -1);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(473, 545);
+            this.reportViewer1.Size = new System.Drawing.Size(443, 545);
             this.reportViewer1.TabIndex = 0;
+            this.reportViewer1.ZoomPercent = 200;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // button3

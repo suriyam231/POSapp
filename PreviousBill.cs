@@ -19,6 +19,7 @@ namespace POSTiw
         string OrderId = null;
         string Date = null;
         string Time = null;
+        DataTable database = new DataTable();
         SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
         ReportDataSource report = new ReportDataSource();
         public PreviousBill()
@@ -33,6 +34,7 @@ namespace POSTiw
             SqlDataAdapter adapter = new SqlDataAdapter(Text, conn);
             adapter.Fill(data);
             dataGridView1.DataSource = data;
+            database = data;
         }
         public void ad(string Username)
         {
@@ -118,6 +120,12 @@ namespace POSTiw
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            database.DefaultView.RowFilter = string.Format("ReceiptID Like '%{0}%'", textBox2.Text.ToString());
+            dataGridView1.DataSource = database;
         }
     }
 }
