@@ -204,52 +204,6 @@ namespace POSTiw
                     Strsup = "NOTS";
                 }
 
-
-                //if (Strsup == "Pack")
-                //{
-                    
-                //    string str = ID.Substring(1);
-                //    string Pack = "select ProductQuantity from Products where ProductID= '" + str + "'";
-                //    DataTable PackData = new DataTable();
-                //    SqlDataAdapter AdapterPack = new SqlDataAdapter(Pack, conn);
-                //    int piece;
-                //    int Packnumber;
-                //    Int32.TryParse(Descrip.Substring(5), out Packnumber);
-                //    AdapterPack.Fill(PackData);
-                //    piece = PackData.Rows[0].Field<int>(0);
-                //    int Totals = piece + (Packnumber * addAmuont);
-
-                //    string ChangPack = "UPDATE Products SET ProductQuantity = '" + Totals + "', Date = '" + DateTime.Now + "' WHERE ProductID = '" + str + "'";
-                    
-                //    SqlDataReader PackUdate = new SqlCommand(ChangPack, conn).ExecuteReader();
-                //    conn.Close();
-                //}
-                //else if (Strsup != "Pack")
-                //{
-                   
-                //    string str = "1" + ID;
-                //    string Pack = "select ProductQuantity ,Description from Products where ProductID= '" + str + "'";
-                //    DataTable PackData = new DataTable();
-                //    SqlDataAdapter AdapterPack = new SqlDataAdapter(Pack, conn);
-                //    int piece;
-                //    int PackNumber;
-                //    AdapterPack.Fill(PackData);
-                //    if (PackData.Rows.Count != 0)
-                //    {
-                //        Int32.TryParse(PackData.Rows[0][1].ToString().Substring(5), out PackNumber);
-                //        piece = PackData.Rows[0].Field<int>(0);
-
-                //        int TotalPack = piece * PackNumber;
-                //        int Totals = TotalPack + addAmuont;
-                       
-                            
-                //            string ChangPack = "UPDATE Products SET ProductQuantity = '" + Totals/PackNumber + "', Date = '" + DateTime.Now + "' WHERE ProductID = '" + str + "'";
-                //            SqlDataReader PackUdate = new SqlCommand(ChangPack, conn).ExecuteReader();
-                        
-
-                //    }
-                //    conn.Close();
-                //}
                 int Total = 0;
                 Total = number + addAmuont;
 

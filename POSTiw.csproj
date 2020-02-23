@@ -158,6 +158,12 @@
     <Compile Include="PageReport\YearReport.Designer.cs">
       <DependentUpon>YearReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="PageWarehouse\addPack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageWarehouse\addPack.Designer.cs">
+      <DependentUpon>addPack.cs</DependentUpon>
+    </Compile>
     <Compile Include="PageWarehouse\AddProdcutNew.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -253,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PageReport\YearReport.resx">
       <DependentUpon>YearReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageWarehouse\addPack.resx">
+      <DependentUpon>addPack.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PageWarehouse\ShareProduct.resx">
       <DependentUpon>ShareProduct.cs</DependentUpon>
