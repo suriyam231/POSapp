@@ -188,7 +188,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ReportSale";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ReportSale";
+            this.Text = "รายงานการขาย";
             this.Load += new System.EventHandler(this.ReportSale_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

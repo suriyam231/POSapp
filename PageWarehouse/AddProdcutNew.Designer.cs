@@ -130,6 +130,7 @@
             this.Pamuont_txt.Name = "Pamuont_txt";
             this.Pamuont_txt.Size = new System.Drawing.Size(276, 32);
             this.Pamuont_txt.TabIndex = 8;
+            this.Pamuont_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Pamuont_txt_KeyPress);
             // 
             // Pcost_txt
             // 
@@ -138,6 +139,7 @@
             this.Pcost_txt.Name = "Pcost_txt";
             this.Pcost_txt.Size = new System.Drawing.Size(276, 32);
             this.Pcost_txt.TabIndex = 9;
+            this.Pcost_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Pcost_txt_KeyPress);
             // 
             // Presfer_txt
             // 
@@ -241,6 +243,7 @@
             this.Pprice_txt.Name = "Pprice_txt";
             this.Pprice_txt.Size = new System.Drawing.Size(276, 32);
             this.Pprice_txt.TabIndex = 19;
+            this.Pprice_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Pprice_txt_KeyPress);
             // 
             // label11
             // 

@@ -79,7 +79,7 @@ namespace POSTiw
                 }
                 else
                 {
-                    MessageBox.Show("กรุณากรอกข้อมูลให้ครบถ้วน ก่อนกดเพิ่มสินค้า");
+                    MessageBox.Show("กรุณากรอกข้อมูลให้ครบถ้วน และตรวจสอบความถูกต้องของข้อมูล ก่อนกดเพิ่มสินค้า");
                 }
 
                
@@ -99,6 +99,36 @@ namespace POSTiw
         private void label18_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Pamuont_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Char chr = e.KeyChar;
+            if (!Char.IsDigit(chr) && chr != 8)
+            {
+                e.Handled = true;
+
+            }
+        }
+
+        private void Pprice_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Char chr = e.KeyChar;
+            if (!Char.IsDigit(chr) && chr != 8)
+            {
+                e.Handled = true;
+
+            }
+        }
+
+        private void Pcost_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Char chr = e.KeyChar;
+            if (!Char.IsDigit(chr) && chr != 8)
+            {
+                e.Handled = true;
+
+            }
         }
     }
 }

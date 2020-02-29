@@ -680,21 +680,7 @@ namespace POSTiw
                     connn.Close();
 
 
-                    label20.Text = "";
-                    namePro_lab.Text = "";
-                    textBox3.Text = "";
-                    label12.Text = "";
-                    this.Controls.Clear();
-                    this.InitializeComponent();
-                    this.ActiveControl = textBox1;
-                    label20.Hide();
-                    dataGridView3.Hide();
-                    dataGridView1.Columns[0].Width = 50;
-                    dataGridView1.Columns[1].Width = 150;
-                    dataGridView1.Columns[2].Width = 150;
-                    dataGridView1.Columns[3].Width = 110;
-                    dataGridView1.Columns[4].Width = 110;
-                    dataGridView1.Columns[5].Width = 110;
+                    button6.PerformClick();
                 }
             }
         }

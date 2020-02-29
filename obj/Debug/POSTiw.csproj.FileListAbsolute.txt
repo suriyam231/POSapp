@@ -570,5 +570,4 @@ D:\POSTiw\obj\Debug\POSTiw.csproj.CopyComplete
 D:\POSTiw\obj\Debug\POSTiw.exe
 D:\POSTiw\obj\Debug\POSTiw.pdb
 D:\POSTiw\obj\Debug\POSTiw.PageWarehouse.ShareProduct.resources
-D:\POSTiw\obj\Debug\POSTiw.csprojAssemblyReference.cache
 D:\POSTiw\obj\Debug\POSTiw.PageWarehouse.addPack.resources

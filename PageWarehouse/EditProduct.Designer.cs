@@ -60,6 +60,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.TotalProduct_lab = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -206,6 +207,7 @@
             this.Pamuont_txt.Name = "Pamuont_txt";
             this.Pamuont_txt.Size = new System.Drawing.Size(276, 32);
             this.Pamuont_txt.TabIndex = 28;
+            this.Pamuont_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Pamuont_txt_KeyPress);
             // 
             // Pprice_txt
             // 
@@ -214,6 +216,8 @@
             this.Pprice_txt.Name = "Pprice_txt";
             this.Pprice_txt.Size = new System.Drawing.Size(276, 32);
             this.Pprice_txt.TabIndex = 29;
+            this.Pprice_txt.TextChanged += new System.EventHandler(this.Pprice_txt_TextChanged);
+            this.Pprice_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Pprice_txt_KeyPress);
             // 
             // Pcost_txt
             // 
@@ -222,6 +226,8 @@
             this.Pcost_txt.Name = "Pcost_txt";
             this.Pcost_txt.Size = new System.Drawing.Size(276, 32);
             this.Pcost_txt.TabIndex = 30;
+            this.Pcost_txt.TextChanged += new System.EventHandler(this.Pcost_txt_TextChanged);
+            this.Pcost_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Pcost_txt_KeyPress);
             // 
             // Presfer_txt
             // 
@@ -396,11 +402,25 @@
             this.label18.TabIndex = 46;
             this.label18.Text = "ชิ้น";
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("TH SarabunPSK", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(673, 614);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(115, 40);
+            this.button2.TabIndex = 47;
+            this.button2.Text = "ลบสินค้า";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // EditProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.TotalProduct_lab);
             this.Controls.Add(this.label17);
@@ -476,5 +496,6 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label TotalProduct_lab;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button button2;
     }
 }

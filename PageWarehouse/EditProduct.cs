@@ -28,7 +28,7 @@ namespace POSTiw.Page
 
             adapter.Fill(data);
             dataGridView1.DataSource = data;
-
+            button2.Hide();
             conn.Open();
             string qry = "SELECT * FROM TypeProduct";
 
@@ -133,6 +133,7 @@ namespace POSTiw.Page
         {
             try
             {
+                button2.Show();
                 ID_lab.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
                 PNAME_txt.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
                 PDes_txt.Text = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
@@ -150,6 +151,7 @@ namespace POSTiw.Page
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 int Amount = 0;
@@ -197,6 +199,7 @@ namespace POSTiw.Page
                 else
                 {
                     MessageBox.Show("กรุณากรอกข้อมูลให้ครบถ้วน ก่อนกดเพิ่มสินค้า");
+                    button2.Hide();
                 }
 
 
@@ -215,6 +218,82 @@ namespace POSTiw.Page
         private void label15_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Pamuont_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Char chr = e.KeyChar;
+            if (!Char.IsDigit(chr) && chr != 8)
+            {
+                e.Handled = true;
+
+            }
+        }
+
+        private void Pprice_txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Pcost_txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Pprice_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Char chr = e.KeyChar;
+            if (!Char.IsDigit(chr) && chr != 8)
+            {
+                e.Handled = true;
+
+            }
+        }
+
+        private void Pcost_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Char chr = e.KeyChar;
+            if (!Char.IsDigit(chr) && chr != 8)
+            {
+                e.Handled = true;
+
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("ยินยันในการลบข้อมูลสินค้าออกจากคลังสินค้าหรือไม่ ?", "ลบสินค้า", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (result.Equals(DialogResult.OK))
+            {
+                SqlConnection connn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
+                SqlCommand command = new SqlCommand();
+                command.Connection = connn;
+                connn.Open();
+                string Text = "Delete Products Where ProductID = '"+ ID_lab.Text.ToString()+ "'";
+                SqlDataReader reader = new SqlCommand(Text, connn).ExecuteReader();
+                connn.Close();
+                connn.Open();
+                command.Connection = connn;
+                command.CommandText = "SELECT * FROM [dbo].[Products]";
+                DataTable data2 = new DataTable();
+                SqlDataAdapter adapter2 = new SqlDataAdapter(command);
+                adapter2.Fill(data2);
+                dataGridView1.DataSource = data2;
+                ID_lab.Text = null;
+                PNAME_txt.Text = null;
+                PDes_txt.Text = null;
+                Presfer_txt.Text = null;
+                Pamuont_txt.Text = null;
+                Pprice_txt.Text = null;
+                Pcost_txt.Text = null;
+                comboBox1.SelectedItem = null;
+                button2.Hide();
+            }
+            else
+            {
+
+            }
+            
         }
     }
 }

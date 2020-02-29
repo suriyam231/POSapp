@@ -777,7 +777,7 @@ namespace POSTiw
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "User";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "User";
+            this.Text = "ผู้ใช้งาน";
             this.Load += new System.EventHandler(this.User_Load);
             this.adduser.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
