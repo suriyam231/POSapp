@@ -57,12 +57,12 @@ namespace POSTiw.ModalPage
             string textTotal = Total_lab.Text.ToString();
             string textMoney = textBox1.Text.ToString();
 
-            int Total = 0;
-            int Money = 0;
-            Int32.TryParse(textTotal, out Total);
-            Int32.TryParse(textMoney, out Money);
+            float Total = 0;
+            float Money = 0;
+            float.TryParse(textTotal.ToString(), out Total);
+            float.TryParse(textMoney, out Money);
 
-            int change = 0;
+            float change = 0;
             change = Money - Total;
      
             if (change > 0)

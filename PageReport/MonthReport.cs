@@ -61,7 +61,6 @@ namespace POSTiw.PageReport
             dataGridView1.Columns["December"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
 
-
             dataGridView1.Columns[1].Width = 60;
             dataGridView1.Columns[2].Width = 60;
             dataGridView1.Columns[3].Width = 60;
@@ -182,6 +181,7 @@ namespace POSTiw.PageReport
                 dateback = yy + "-12-30";
             }
 
+            
 
             string qry = "SELECT  Products.ProductID,Products.ProductName,Products.TypeName,Products.CostPrice,Products.ProductPrice, SUM(ReceiptDetail.Amount) as Counts ,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost  , Products.ProductPrice * SUM(ReceiptDetail.Amount) as TotalRevenue FROM Products " +
                 "LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between '"+datefront.ToString()+"' and '"+dateback.ToString()+"'  and ReceiptDetail.Active = 'Y'" +
@@ -214,6 +214,10 @@ namespace POSTiw.PageReport
             dataGridView2.Columns["Counts"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dataGridView2.Columns["TotalCost"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dataGridView2.Columns["TotalRevenue"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            dataGridView2.Columns["TotalCost"].DefaultCellStyle.Format = "N2";
+            dataGridView2.Columns["TotalRevenue"].DefaultCellStyle.Format = "N2";
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -287,9 +291,9 @@ namespace POSTiw.PageReport
                 float.TryParse(text1, out number1);
                 TotalCost = TotalCost + number1;
             }
-            January[0] = TotalRevenue.ToString();
-            January[1] = TotalCost.ToString();
-            January[2] = (TotalRevenue - TotalCost).ToString();
+            January[0] = String.Format("{0:0,0.00}", TotalRevenue).ToString();
+            January[1] = String.Format("{0:0,0.00}", TotalCost).ToString();
+            January[2] = String.Format("{0:0,0.00}", (TotalRevenue - TotalCost)).ToString();
 
 
             string[] February = new string[3];
@@ -311,9 +315,9 @@ namespace POSTiw.PageReport
                 float.TryParse(text1, out number1);
                 TotalCost2 = TotalCost2 + number1;
             }
-            February[0] = TotalRevenue2.ToString();
-            February[1] = TotalCost2.ToString();
-            February[2] = (TotalRevenue2 - TotalCost2).ToString();
+            February[0] = String.Format("{0:0,0.00}", TotalRevenue2).ToString();
+            February[1] = String.Format("{0:0,0.00}", TotalCost2).ToString();
+            February[2] = String.Format("{0:0,0.00}", (TotalRevenue2 - TotalCost2)).ToString();
 
             string[] March = new string[3];
             string qry3 = "SELECT   SUM(Products.ProductPrice * ReceiptDetail.Amount) as TotalRevenue ,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between '" + year + "-03-01' and '" + year + "-03-31' and ReceiptDetail.Active = 'Y' Group by Products.ProductPrice,  Products.ProductName,Products.ProductID";
@@ -334,9 +338,9 @@ namespace POSTiw.PageReport
                 float.TryParse(text1, out number1);
                 TotalCost3 = TotalCost3 + number1;
             }
-            March[0] = TotalRevenue3.ToString();
-            March[1] = TotalCost3.ToString();
-            March[2] = (TotalRevenue3 - TotalCost3).ToString();
+            March[0] = String.Format("{0:0,0.00}", TotalRevenue3).ToString();
+            March[1] = String.Format("{0:0,0.00}", TotalCost3).ToString();
+            March[2] = String.Format("{0:0,0.00}", (TotalRevenue3 - TotalCost3)).ToString();
 
             string[] April = new string[3];
             string qry4 = "SELECT   SUM(Products.ProductPrice * ReceiptDetail.Amount) as TotalRevenue ,SUM(Products.CostPrice*ReceiptDetail.Amount) as TotalCost FROM Products LEFT JOIN ReceiptDetail ON Products.ProductID = ReceiptDetail.ProductID where ReceiptDetail.Date between '" + year + "-04-01' and '" + year + "-04-30' and ReceiptDetail.Active = 'Y' Group by Products.ProductPrice,  Products.ProductName,Products.ProductID";
@@ -357,9 +361,9 @@ namespace POSTiw.PageReport
                 float.TryParse(text1, out number1);
                 TotalCost4 = TotalCost4 + number1;
             }
-            April[0] = TotalRevenue4.ToString();
-            April[1] = TotalCost4.ToString();
-            April[2] = (TotalRevenue4 - TotalCost4).ToString();
+            April[0] = String.Format("{0:0,0.00}", TotalRevenue4).ToString();
+            April[1] = String.Format("{0:0,0.00}", TotalCost4).ToString();
+            April[2] = String.Format("{0:0,0.00}", (TotalRevenue4 - TotalCost4)).ToString();
 
 
 
@@ -382,9 +386,9 @@ namespace POSTiw.PageReport
                 float.TryParse(text1, out number1);
                 TotalCost5 = TotalCost5 + number1;
             }
-            May[0] = TotalRevenue5.ToString();
-            May[1] = TotalCost5.ToString();
-            May[2] = (TotalRevenue5 - TotalCost5).ToString();
+            May[0] = String.Format("{0:0,0.00}", TotalRevenue5).ToString();
+            May[1] = String.Format("{0:0,0.00}", TotalCost5).ToString();
+            May[2] = String.Format("{0:0,0.00}", (TotalRevenue5 - TotalCost5)).ToString();
 
 
             string[] June = new string[3];
@@ -406,9 +410,9 @@ namespace POSTiw.PageReport
                 float.TryParse(text1, out number1);
                 TotalCost6 = TotalCost6 + number1;
             }
-            June[0] = TotalRevenue6.ToString();
-            June[1] = TotalCost6.ToString();
-            June[2] = (TotalRevenue6 - TotalCost6).ToString();
+            June[0] = String.Format("{0:0,0.00}", TotalRevenue6).ToString();
+            June[1] = String.Format("{0:0,0.00}", TotalCost6).ToString();
+            June[2] = String.Format("{0:0,0.00}", (TotalRevenue6 - TotalCost6)).ToString();
 
 
             string[] July = new string[3];
@@ -430,9 +434,9 @@ namespace POSTiw.PageReport
                 float.TryParse(text1, out number1);
                 TotalCost7 = TotalCost7 + number1;
             }
-            July[0] = TotalRevenue7.ToString();
-            July[1] = TotalCost7.ToString();
-            July[2] = (TotalRevenue7 - TotalCost7).ToString();
+            July[0] = String.Format("{0:0,0.00}", TotalRevenue7).ToString();
+            July[1] = String.Format("{0:0,0.00}", TotalCost7).ToString();
+            July[2] = String.Format("{0:0,0.00}", (TotalRevenue7 - TotalCost7)).ToString();
 
 
             string[] August = new string[3];
@@ -454,9 +458,9 @@ namespace POSTiw.PageReport
                 float.TryParse(text1, out number1);
                 TotalCost8 = TotalCost8 + number1;
             }
-            August[0] = TotalRevenue8.ToString();
-            August[1] = TotalCost8.ToString();
-            August[2] = (TotalRevenue8 - TotalCost8).ToString();
+            August[0] = String.Format("{0:0,0.00}", TotalRevenue8).ToString();
+            August[1] = String.Format("{0:0,0.00}", TotalCost8).ToString();
+            August[2] = String.Format("{0:0,0.00}", (TotalRevenue8 - TotalCost8)).ToString();
 
 
             string[] September = new string[3];
@@ -478,9 +482,9 @@ namespace POSTiw.PageReport
                 float.TryParse(text1, out number1);
                 TotalCost9 = TotalCost9 + number1;
             }
-            September[0] = TotalRevenue9.ToString();
-            September[1] = TotalCost9.ToString();
-            September[2] = (TotalRevenue9 - TotalCost9).ToString();
+            September[0] = String.Format("{0:0,0.00}", TotalRevenue9).ToString();
+            September[1] = String.Format("{0:0,0.00}", TotalCost9).ToString();
+            September[2] = String.Format("{0:0,0.00}", (TotalRevenue9 - TotalCost9)).ToString();
 
 
             string[] October = new string[3];
@@ -502,9 +506,9 @@ namespace POSTiw.PageReport
                 float.TryParse(text1, out number1);
                 TotalCost10 = TotalCost10 + number1;
             }
-            October[0] = TotalRevenue10.ToString();
-            October[1] = TotalCost10.ToString();
-            October[2] = (TotalRevenue10 - TotalCost10).ToString();
+            October[0] = String.Format("{0:0,0.00}", TotalRevenue10).ToString();
+            October[1] = String.Format("{0:0,0.00}", TotalCost10).ToString();
+            October[2] = String.Format("{0:0,0.00}", (TotalRevenue10 - TotalCost10)).ToString();
 
 
             string[] November = new string[3];
@@ -526,9 +530,9 @@ namespace POSTiw.PageReport
                 float.TryParse(text1, out number1);
                 TotalCost11 = TotalCost11 + number1;
             }
-            November[0] = TotalRevenue11.ToString();
-            November[1] = TotalCost11.ToString();
-            November[2] = (TotalRevenue11 - TotalCost11).ToString();
+            November[0] = String.Format("{0:0,0.00}", TotalRevenue11).ToString();
+            November[1] = String.Format("{0:0,0.00}", TotalCost11).ToString();
+            November[2] = String.Format("{0:0,0.00}", (TotalRevenue11 - TotalCost11)).ToString();
 
 
             string[] December = new string[3];
@@ -550,9 +554,9 @@ namespace POSTiw.PageReport
                 float.TryParse(text1, out number1);
                 TotalCost12 = TotalCost12 + number1;
             }
-            December[0] = TotalRevenue12.ToString();
-            December[1] = TotalCost12.ToString();
-            December[2] = (TotalRevenue12 - TotalCost12).ToString();
+            December[0] = String.Format("{0:0,0.00}", TotalRevenue12).ToString();
+            December[1] = String.Format("{0:0,0.00}", TotalCost12).ToString();
+            December[2] = String.Format("{0:0,0.00}", (TotalRevenue12 - TotalCost12)).ToString();
 
 
             for (int i = 0; i < 3; i++)
@@ -606,6 +610,7 @@ namespace POSTiw.PageReport
                     dataGridView1.Rows[num].Cells[11].Value = Drow["November"].ToString();
                     dataGridView1.Rows[num].Cells[12].Value = Drow["December"].ToString();
                 }
+
             }
         }
     }

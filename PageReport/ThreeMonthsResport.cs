@@ -103,6 +103,9 @@ namespace POSTiw.PageReport
                 dataGridView1.Columns["TotalCost"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 dataGridView1.Columns["TotalRevenue"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
+                dataGridView1.Columns["TotalRevenue"].DefaultCellStyle.Format = "N2";
+                dataGridView1.Columns["TotalCost"].DefaultCellStyle.Format = "N2";
+
                 float TotalSale = 0;
                 float TotalCost = 0;
                 for (int i = 0; i < data.Rows.Count; i++)
@@ -118,9 +121,9 @@ namespace POSTiw.PageReport
                     TotalCost = TotalCost + number1;
                 }
 
-                label8.Text = TotalSale.ToString();
-                label9.Text = TotalCost.ToString();
-                label10.Text = (TotalSale - TotalCost).ToString();
+                label8.Text = String.Format("{0:0,0.00}", TotalSale).ToString();
+                label9.Text = String.Format("{0:0,0.00}", TotalCost).ToString();
+                label10.Text = String.Format("{0:0,0.00}", (TotalSale - TotalCost)).ToString();
             }
             if (values == "ไตรมาส 2")
             {
@@ -171,9 +174,9 @@ namespace POSTiw.PageReport
                     TotalCost = TotalCost + number1;
                 }
 
-                label8.Text = TotalSale.ToString();
-                label9.Text = TotalCost.ToString();
-                label10.Text = (TotalSale - TotalCost).ToString();
+                label8.Text = String.Format("{0:0,0.00}",TotalSale).ToString();
+                label9.Text = String.Format("{0:0,0.00}",TotalCost).ToString();
+                label10.Text = String.Format("{0:0,0.00}",(TotalSale - TotalCost)).ToString();
             }
             if (values == "ไตรมาส 3")
             {
@@ -224,9 +227,9 @@ namespace POSTiw.PageReport
                     TotalCost = TotalCost + number1;
                 }
 
-                label8.Text = TotalSale.ToString();
-                label9.Text = TotalCost.ToString();
-                label10.Text = (TotalSale - TotalCost).ToString();
+                label8.Text = String.Format("{0:0,0.00}", TotalSale).ToString();
+                label9.Text = String.Format("{0:0,0.00}", TotalCost).ToString();
+                label10.Text = String.Format("{0:0,0.00}", (TotalSale - TotalCost)).ToString();
             }
             if (values == "ไตรมาส 4")
             {
@@ -277,9 +280,9 @@ namespace POSTiw.PageReport
                     TotalCost = TotalCost + number1;
                 }
 
-                label8.Text = TotalSale.ToString();
-                label9.Text = TotalCost.ToString();
-                label10.Text = (TotalSale - TotalCost).ToString();
+                label8.Text = String.Format("{0:0,0.00}", TotalSale).ToString();
+                label9.Text = String.Format("{0:0,0.00}", TotalCost).ToString();
+                label10.Text = String.Format("{0:0,0.00}", (TotalSale - TotalCost)).ToString();
             }
         }
 

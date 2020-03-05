@@ -50,29 +50,6 @@ namespace POSTiw.PageReport
 
                 totalCost = totalCost + (costs*counts);
             }
-
-            //totalProfit = totalRevenue - totalCost;
-
-            //DataTable dataOrder = new DataTable();
-            //dataOrder.Columns.Add("TotalRevenue");
-            //dataOrder.Columns.Add("TotalCost");
-            //dataOrder.Columns.Add("TotalProfit");
-
-            //DataRow row = dataOrder.NewRow();
-            //row["TotalRevenue"] = totalRevenue;
-            //row["TotalCost"] = totalCost;
-            //row["TotalProfit"] = totalProfit;
-            //dataOrder.Rows.Add(row);
-            //foreach (DataRow Drow in dataOrder.Rows)
-            //{
-            //    int num = dataGridView2.Rows.Add();
- 
-    
-            //        dataGridView2.Rows[num].Cells[0].Value = Drow["TotalRevenue"].ToString();
-            //        dataGridView2.Rows[num].Cells[1].Value = Drow["TotalCost"].ToString();
-            //        dataGridView2.Rows[num].Cells[2].Value = Drow["TotalProfit"].ToString();
- 
-            //}
             
         }
 
@@ -98,6 +75,8 @@ namespace POSTiw.PageReport
             dataGridView1.Columns["Counts"].HeaderText = "สินค้าที่ขายแล้ว(ชิ้น)";
             dataGridView1.Columns["TotalRevenue"].HeaderText = "ยอดขายสินค้า(บาท)";
 
+            dataGridView1.Columns["TotalRevenue"].DefaultCellStyle.Format = "N2";
+
             dataGridView1.Columns["CostPrice"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dataGridView1.Columns["ProductPrice"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dataGridView1.Columns["Counts"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -109,7 +88,9 @@ namespace POSTiw.PageReport
             dataGridView2.Columns[0].Width = 120;
             dataGridView2.Columns[1].Width = 120;
             dataGridView2.Columns[2].Width = 120;
-
+            dataGridView2.Columns["TotalRevenue"].DefaultCellStyle.Format = "N2";
+            dataGridView2.Columns["TotalCost"].DefaultCellStyle.Format = "N2";
+            dataGridView2.Columns["TotalProfit"].DefaultCellStyle.Format = "N2";
 
 
         }
@@ -163,9 +144,9 @@ namespace POSTiw.PageReport
             dataOrder.Columns.Add("TotalProfit");
 
             DataRow row = dataOrder.NewRow();
-            row["TotalRevenue"] = totalRevenue;
-            row["TotalCost"] = totalCost;
-            row["TotalProfit"] = totalProfit;
+            row["TotalRevenue"] = String.Format("{0:0,0.00}", totalRevenue).ToString();
+            row["TotalCost"] = String.Format("{0:0,0.00}", totalCost).ToString();
+            row["TotalProfit"] = String.Format("{0:0,0.00}", totalProfit).ToString();
             dataOrder.Rows.Add(row);
             foreach (DataRow Drow in dataOrder.Rows)
             {

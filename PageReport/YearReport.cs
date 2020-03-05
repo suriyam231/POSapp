@@ -121,6 +121,9 @@ namespace POSTiw.PageReport
             dataGridView1.Columns["TotalCost"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dataGridView1.Columns["TotalRevenue"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
+            dataGridView1.Columns["TotalCost"].DefaultCellStyle.Format = "N2";
+            dataGridView1.Columns["TotalRevenue"].DefaultCellStyle.Format = "N2";
+
 
 
             float totalRevenue = 0;
@@ -153,9 +156,9 @@ namespace POSTiw.PageReport
             dataOrder.Columns.Add("TotalProfit");
 
             DataRow row = dataOrder.NewRow();
-            row["TotalRevenue"] = totalRevenue;
-            row["TotalCost"] = totalCost;
-            row["TotalProfit"] = totalProfit;
+            row["TotalRevenue"] = String.Format("{0:0,0.00}", totalRevenue).ToString();
+            row["TotalCost"] = String.Format("{0:0,0.00}", totalCost).ToString();
+            row["TotalProfit"] = String.Format("{0:0,0.00}", totalProfit).ToString();
             dataOrder.Rows.Add(row);
             foreach (DataRow Drow in dataOrder.Rows)
             {

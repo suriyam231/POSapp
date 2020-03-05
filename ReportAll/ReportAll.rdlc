@@ -545,7 +545,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!TotalCost.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <Format>#,0.00;(#,0.00)</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -575,7 +577,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!TotalRevenue.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <Format>#,0.00;(#,0.00)</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -625,7 +629,7 @@
             <Top>0.06944in</Top>
             <Left>0.17578in</Left>
             <Height>0.5in</Height>
-            <Width>9.36334in</Width>
+            <Width>9.36335in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -930,6 +934,7 @@
                         <FontFamily>TH SarabunPSK</FontFamily>
                         <FontSize>16pt</FontSize>
                         <FontWeight>Bold</FontWeight>
+                        <Format>#,0.00;(#,0.00)</Format>
                         <TextDecoration>None</TextDecoration>
                         <Color>#000000</Color>
                       </Style>
@@ -969,6 +974,7 @@
                         <FontFamily>TH SarabunPSK</FontFamily>
                         <FontSize>16pt</FontSize>
                         <FontWeight>Bold</FontWeight>
+                        <Format>#,0.00;(#,0.00)</Format>
                         <TextDecoration>None</TextDecoration>
                         <Color>#000000</Color>
                       </Style>
@@ -1008,6 +1014,7 @@
                         <FontFamily>TH SarabunPSK</FontFamily>
                         <FontSize>16pt</FontSize>
                         <FontWeight>Bold</FontWeight>
+                        <Format>#,0.00;(#,0.00)</Format>
                         <TextDecoration>None</TextDecoration>
                         <Color>#000000</Color>
                       </Style>

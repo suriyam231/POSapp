@@ -39,6 +39,12 @@ namespace POSTiw
             this.reportViewer1.LocalReport.DataSources.Clear();
             this.reportViewer1.LocalReport.DataSources.Add(report);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "POSTiw.Report1.rdlc";
+            float numberget;
+            float.TryParse(Getmoney, out numberget);
+
+            Getmoney = String.Format("{0:0,0}", numberget).ToString();
+
+
             Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[]
             {
                 new Microsoft.Reporting.WinForms.ReportParameter("Store",Store.ToString()),

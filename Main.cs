@@ -433,6 +433,7 @@ namespace POSTiw
                     int texts;
                     Int32.TryParse(gettext, out texts);
                     Total = Total + texts;
+                    String.Format("{0:0,0}", Total);
                 }
                 catch (Exception er)
                 {
@@ -440,7 +441,7 @@ namespace POSTiw
                     break;
                 }
             }
-            label12.Text = Total.ToString();
+            label12.Text = String.Format("{0:0,0}", Total).ToString();
 
         }
         public void Click_OK(object sender, KeyEventArgs kea)
@@ -540,63 +541,6 @@ namespace POSTiw
                                 int index;
                                 adapter.Fill(data);
                                 index = data.Rows[0].Field<int>(0);
-                                //string Descrip = data.Rows[0][1].ToString();
-                                //string Strsup;
-                                //try
-                                //{
-                                //     Strsup = Descrip.Substring(0, 4).ToString();
-                                //}catch(Exception ex)
-                                //{
-                                //    Strsup = "NOTS";
-                                //}
-                                
-                                //conn.Close();
-
-                                //if(Strsup == "Pack")
-                                //{
-                                //    conn.Open();
-                                //    string str = ProductID.Substring(1);
-                                //    string Pack = "select ProductQuantity from Products where ProductID= '" + str + "'";
-                                //    DataTable PackData = new DataTable();
-                                //    SqlDataAdapter AdapterPack = new SqlDataAdapter(Pack, conn);
-                                //    int piece;
-                                //    int Packnumber;
-                                //    Int32.TryParse(Descrip.Substring(5), out Packnumber);
-                                //    AdapterPack.Fill(PackData);
-                                //    piece = PackData.Rows[0].Field<int>(0);
-                                //    int Total = piece - Packnumber;
-
-                                //    string ChangPack = "UPDATE Products SET ProductQuantity = " + Total + " Where ProductID = '" + str + "'";
-                                //    SqlDataReader PackUdate = new SqlCommand(ChangPack, conn).ExecuteReader();
-                                //    conn.Close();
-                                //}
-                                //else if (Strsup != "Pack")
-                                //{
-                                //    conn.Open();
-                                //    string str = "1"+ProductID;
-                                //    string Pack = "select ProductQuantity ,Description from Products where ProductID= '" + str + "'";
-                                //    DataTable PackData = new DataTable();
-                                //    SqlDataAdapter AdapterPack = new SqlDataAdapter(Pack, conn);
-                                //    int piece;
-                                //    int PackNumber;
-                                //    AdapterPack.Fill(PackData);
-                                //    if (PackData.Rows.Count != 0)
-                                //    {
-                                //        Int32.TryParse(PackData.Rows[0][1].ToString().Substring(5), out PackNumber);
-                                //        piece = PackData.Rows[0].Field<int>(0);
-
-                                //        int TotalPack = piece * PackNumber;
-                                //        int Total = index - Amount;
-                                //        if (Total < TotalPack)
-                                //        {
-                                //            piece = piece - 1;
-                                //            string ChangPack = "UPDATE Products SET ProductQuantity = " + piece + " Where ProductID = '" + str + "'";
-                                //            SqlDataReader PackUdate = new SqlCommand(ChangPack, conn).ExecuteReader();
-                                //        }
-                                        
-                                //    }
-                                //    conn.Close();
-                                //}
 
 
                                
@@ -608,7 +552,9 @@ namespace POSTiw
                             SqlConnection connn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
 
                             connn.Open();
-                            string qry2 = "INSERT Receipt Values('" + textID + "','" + DateTime.Now.Date + "','" + DateTime.Now.TimeOfDay + "','" + label12.Text.ToString() + "','" + num + "','" + Active + "')";
+                            float numTo;
+                            float.TryParse(label12.Text.ToString(), out numTo);
+                            string qry2 = "INSERT Receipt Values('" + textID + "','" + DateTime.Now.Date + "','" + DateTime.Now.TimeOfDay + "','" + numTo + "','" + num + "','" + Active + "')";
                             SqlDataReader reader2 = new SqlCommand(qry2, connn).ExecuteReader();
 
                             using (IDbConnection db = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd"))

@@ -290,7 +290,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Total.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <Format>#,0.00;(#,0.00)</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -336,7 +338,7 @@
             <Top>1.83332in</Top>
             <Left>1.61458in</Left>
             <Height>0.5in</Height>
-            <Width>4.47917in</Width>
+            <Width>4.47915in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -739,6 +741,7 @@
                         <FontFamily>th SarabunPSK</FontFamily>
                         <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>
+                        <Format>#,0.00;(#,0.00)</Format>
                       </Style>
                     </TextRun>
                   </TextRuns>

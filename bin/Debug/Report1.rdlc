@@ -261,6 +261,7 @@
                                     <FontFamily>th SarabunPSK</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
+                                    <Format>n0</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -327,6 +328,7 @@
                       <FontFamily>th SarabunPSK</FontFamily>
                       <FontSize>8pt</FontSize>
                       <FontWeight>Bold</FontWeight>
+                      <Format>n0</Format>
                     </Style>
                   </TextRun>
                   <TextRun>
@@ -335,6 +337,7 @@
                       <FontFamily>th SarabunPSK</FontFamily>
                       <FontSize>8pt</FontSize>
                       <FontWeight>Bold</FontWeight>
+                      <Format>n0</Format>
                     </Style>
                   </TextRun>
                   <TextRun>
@@ -343,6 +346,7 @@
                       <FontFamily>th SarabunPSK</FontFamily>
                       <FontSize>8pt</FontSize>
                       <FontWeight>Bold</FontWeight>
+                      <Format>n0</Format>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -379,6 +383,7 @@
                       <FontFamily>th SarabunPSK</FontFamily>
                       <FontSize>8pt</FontSize>
                       <FontWeight>Bold</FontWeight>
+                      <Format>#,0;(#,0)</Format>
                     </Style>
                   </TextRun>
                   <TextRun>
@@ -387,6 +392,7 @@
                       <FontFamily>th SarabunPSK</FontFamily>
                       <FontSize>8pt</FontSize>
                       <FontWeight>Bold</FontWeight>
+                      <Format>#,0;(#,0)</Format>
                     </Style>
                   </TextRun>
                   <TextRun>
@@ -395,6 +401,7 @@
                       <FontFamily>th SarabunPSK</FontFamily>
                       <FontSize>8pt</FontSize>
                       <FontWeight>Bold</FontWeight>
+                      <Format>#,0;(#,0)</Format>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -431,6 +438,7 @@
                       <FontFamily>th SarabunPSK</FontFamily>
                       <FontSize>8pt</FontSize>
                       <FontWeight>Bold</FontWeight>
+                      <Format>n0</Format>
                     </Style>
                   </TextRun>
                   <TextRun>
@@ -439,6 +447,7 @@
                       <FontFamily>th SarabunPSK</FontFamily>
                       <FontSize>8pt</FontSize>
                       <FontWeight>Bold</FontWeight>
+                      <Format>n0</Format>
                     </Style>
                   </TextRun>
                   <TextRun>
@@ -447,6 +456,7 @@
                       <FontFamily>th SarabunPSK</FontFamily>
                       <FontSize>8pt</FontSize>
                       <FontWeight>Bold</FontWeight>
+                      <Format>n0</Format>
                     </Style>
                   </TextRun>
                 </TextRuns>
