@@ -114,19 +114,35 @@ namespace POSTiw
             adapter.Fill(data);
             index = data.Rows[0].Field<string>(0);
 
-            string delete = "delete TypeProduct where TypeID = '" + index + "'";
-          
-            SqlDataReader reader = new SqlCommand(delete, connn).ExecuteReader();
-            MessageBox.Show("ลบประเภทสินค้า : " + textBox1.Text.ToString() + " เรียบร้อยแล้ว") ;
-            SqlCommand command = new SqlCommand();
-            SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
-            command.Connection = conn;
-            command.CommandText = "SELECT TypeName FROM [dbo].[TypeProduct]";
-            DataTable data2 = new DataTable();
-            SqlDataAdapter adapter2 = new SqlDataAdapter(command);
-            adapter2.Fill(data2);
-            dataGridView1.DataSource = data2;
-            textBox1.Text = "";
+
+            string check = "select * from Products Where TypeName = '" + textBox1.Text.ToString() + "'";
+            DataTable datacheck = new DataTable();
+            SqlDataAdapter adaptercheck = new SqlDataAdapter(check, connn);
+
+            adaptercheck.Fill(datacheck);
+
+            if (datacheck.Rows.Count == 0)
+            {
+                string delete = "delete TypeProduct where TypeID = '" + index + "'";
+
+                SqlDataReader reader = new SqlCommand(delete, connn).ExecuteReader();
+                MessageBox.Show("ลบประเภทสินค้า : " + textBox1.Text.ToString() + " เรียบร้อยแล้ว");
+                SqlCommand command = new SqlCommand();
+                SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
+                command.Connection = conn;
+                command.CommandText = "SELECT TypeName FROM [dbo].[TypeProduct]";
+                DataTable data2 = new DataTable();
+                SqlDataAdapter adapter2 = new SqlDataAdapter(command);
+                adapter2.Fill(data2);
+                dataGridView1.DataSource = data2;
+                textBox1.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("ไม่สามารถลบประเทภเสินค้า  " + textBox1.Text.ToString() + " ได้เนื่องจากยังมีสินค้าที่ใช่ประเภทนี้อยู่"); ;
+            }
+
+            
         }
 
         private void button4_Click(object sender, EventArgs e)

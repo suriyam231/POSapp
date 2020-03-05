@@ -133,6 +133,7 @@ namespace POSTiw
             // 
             this.adduser.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.adduser.BackColor = System.Drawing.Color.LightBlue;
+            this.adduser.Controls.Add(this.edituser);
             this.adduser.Controls.Add(this.button4);
             this.adduser.Controls.Add(this.button3);
             this.adduser.Controls.Add(this.panel3);
@@ -205,6 +206,7 @@ namespace POSTiw
             this.addRepass.Name = "addRepass";
             this.addRepass.Size = new System.Drawing.Size(262, 43);
             this.addRepass.TabIndex = 5;
+            this.addRepass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress_Event);
             // 
             // label3
             // 
@@ -224,6 +226,7 @@ namespace POSTiw
             this.addPass.Name = "addPass";
             this.addPass.Size = new System.Drawing.Size(262, 43);
             this.addPass.TabIndex = 3;
+            this.addPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress_Event);
             // 
             // label5
             // 
@@ -254,6 +257,7 @@ namespace POSTiw
             this.addID.Name = "addID";
             this.addID.Size = new System.Drawing.Size(262, 43);
             this.addID.TabIndex = 0;
+            this.addID.TextChanged += new System.EventHandler(this.addID_TextChanged);
             // 
             // panel2
             // 
@@ -352,7 +356,7 @@ namespace POSTiw
             this.edituser.Controls.Add(this.panel5);
             this.edituser.Controls.Add(this.panel6);
             this.edituser.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.edituser.Location = new System.Drawing.Point(1, 86);
+            this.edituser.Location = new System.Drawing.Point(0, 3);
             this.edituser.Name = "edituser";
             this.edituser.Size = new System.Drawing.Size(1535, 707);
             this.edituser.TabIndex = 7;
@@ -548,7 +552,7 @@ namespace POSTiw
             // 
             this.comboBox3.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(120, 122);
+            this.comboBox3.Location = new System.Drawing.Point(177, 122);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(259, 41);
             this.comboBox3.TabIndex = 16;
@@ -561,9 +565,9 @@ namespace POSTiw
             this.label19.ForeColor = System.Drawing.Color.DarkBlue;
             this.label19.Location = new System.Drawing.Point(45, 121);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(59, 39);
+            this.label19.Size = new System.Drawing.Size(126, 39);
             this.label19.TabIndex = 15;
-            this.label19.Text = "ชื่อ : ";
+            this.label19.Text = "รหัสผู้ใช้งาน :";
             // 
             // label12
             // 
@@ -643,6 +647,7 @@ namespace POSTiw
             this.passWord.Name = "passWord";
             this.passWord.Size = new System.Drawing.Size(202, 43);
             this.passWord.TabIndex = 17;
+            this.passWord.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress_Event);
             // 
             // label11
             // 
@@ -768,7 +773,6 @@ namespace POSTiw
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1534, 791);
-            this.Controls.Add(this.edituser);
             this.Controls.Add(this.adduser);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button2);

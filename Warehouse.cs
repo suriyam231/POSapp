@@ -59,9 +59,7 @@ namespace POSTiw
             editProduct1.Show();
             editProduct1.BringToFront();
 
-             
-
-
+   
         }
 
         private void button4_Click(object sender, EventArgs e)

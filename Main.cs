@@ -869,5 +869,15 @@ namespace POSTiw
                 }
             }
         }
+
+        public void textBox_KeyPress_Event(object sender, KeyPressEventArgs e)
+        {
+            Char chr = e.KeyChar;
+            if (!Char.IsDigit(chr) && chr != 8)
+            {
+                e.Handled = true;
+
+            }
+        }
     }
 }

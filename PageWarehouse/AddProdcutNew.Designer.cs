@@ -243,7 +243,7 @@
             this.Pprice_txt.Name = "Pprice_txt";
             this.Pprice_txt.Size = new System.Drawing.Size(276, 32);
             this.Pprice_txt.TabIndex = 19;
-            this.Pprice_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Pprice_txt_KeyPress);
+            this.Pprice_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Pcost_txt_KeyPress);
             // 
             // label11
             // 

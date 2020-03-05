@@ -242,21 +242,17 @@ namespace POSTiw.Page
 
         private void Pprice_txt_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Char chr = e.KeyChar;
-            if (!Char.IsDigit(chr) && chr != 8)
+            if (char.IsLetter(e.KeyChar) || (Keys)e.KeyChar == Keys.Space)
             {
                 e.Handled = true;
-
             }
         }
 
         private void Pcost_txt_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Char chr = e.KeyChar;
-            if (!Char.IsDigit(chr) && chr != 8)
+            if (char.IsLetter(e.KeyChar) || (Keys)e.KeyChar == Keys.Space)
             {
                 e.Handled = true;
-
             }
         }
 

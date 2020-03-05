@@ -30,6 +30,13 @@ namespace POSTiw
             passWord.MaxLength = 8;
             firstName.MaxLength = 30;
             lastName.MaxLength = 30;
+
+            addPass.PasswordChar = '*';
+            addRepass.PasswordChar = '*';
+
+            passWord.PasswordChar = '*';
+
+
         }
         public void fillComboBox()
         {
@@ -39,11 +46,12 @@ namespace POSTiw
             SqlDataReader reader;
             try
             {
+                comboBox3.Items.Clear();
                 conn.Open();
                 reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    string fname = reader.GetString(3);
+                    string fname = reader.GetString(1);
                     comboBox3.Items.Add(fname);
                 }
             }
@@ -62,6 +70,7 @@ namespace POSTiw
         {
             edituser.Show();
             edituser.BringToFront();
+            fillComboBox();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -111,9 +120,11 @@ namespace POSTiw
                     SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
 
                     conn.Open();
-                    string qry = "UPDATE Users SET Username = '" + ID.ToString()+ "', Password = '" + Password.ToString() + "', FirstName = '" + Firstname.ToString() + "', Lastname = '" + Lastname.ToString() + "', Position = '" + Status.ToString() + "' WHERE Firstname = '" + comboBox3.Text + "' ";
+                    string qry = "UPDATE Users SET Username = '" + ID.ToString()+ "', Password = '" + Password.ToString() + "', FirstName = '" + Firstname.ToString() + "', Lastname = '" + Lastname.ToString() + "', Position = '" + Status.ToString() + "' WHERE Username = '" + comboBox3.Text + "' ";
                     SqlDataReader reader = new SqlCommand(qry, conn).ExecuteReader();
                     MessageBox.Show("แก้ไขผู้ใช้งาน : คุณ" + Firstname + " เรียบร้อยแล้ว");
+                    comboBox3.Text = "";
+                    fillComboBox();
                     userID.Text = null;
                     passWord.Text = null;
                     firstName.Text = null;
@@ -148,7 +159,7 @@ namespace POSTiw
         private void ComboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
-            string qry = "SELECT * FROM Users WHERE Firstname = '"+comboBox3.Text+"';";
+            string qry = "SELECT * FROM Users WHERE Username = '"+comboBox3.Text+"';";
             SqlCommand cmd = new SqlCommand(qry, conn);
             SqlDataReader reader;
             try
@@ -177,26 +188,35 @@ namespace POSTiw
 
         private void Button3_Click(object sender, EventArgs e)
         {
+            SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
+
             try
             {
-                string ID = addID.Text.ToString();
+                string Username = addID.Text.ToString();
                 string Password = addPass.Text.ToString();
                 string Repassword = addRepass.Text.ToString();
                 string Firstname = addFname.Text.ToString();
                 string Lastname = addLname.Text.ToString();
-                
 
-                if (ID != "" && Password != "" && Repassword != "" && Firstname != "" && Lastname != "" )
+                int ID = 0;
+
+                SqlDataAdapter sda = new SqlDataAdapter("Select COUNT(*) from Users", conn);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                string textID = dt.Rows[0][0].ToString();
+
+                Int32.TryParse(textID, out ID);
+
+                if (ID != 0 && Password != "" && Repassword != "" && Firstname != "" && Lastname != "" )
                 {
                     string Status = addStatus.SelectedItem.ToString();
 
-                    SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
-
+                    
                     conn.Open();
                     if (Password == Repassword && Status != "")
                     {
-                        
-                        string qry = "INSERT INTO Users Values('" + ID + "','" + ID + "','" + Password + "','" + Firstname + "','" + Lastname + "','" + Status + "')";
+                        ID = ID + 1;
+                        string qry = "INSERT INTO Users Values('" + ID + "','" + Username + "','" + Password + "','" + Firstname + "','" + Lastname + "','" + Status + "')";
                         SqlDataReader reader = new SqlCommand(qry, conn).ExecuteReader();
                         MessageBox.Show("เพิ่มผู้ใช้งาน : คุณ" + Firstname + " เรียบร้อยแล้ว");
                         if (ID == null)
@@ -272,7 +292,7 @@ namespace POSTiw
         private void button7_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection(@"Data Source=122.155.3.151;Initial Catalog=posservicetp_co_cc_data;Persist Security Info=True;User ID=posservicetp_co_cc_data;Password=p@$$w0rd");
-            string qry = "SELECT * FROM Users WHERE Firstname = '" + comboBox3.Text + "';";
+            string qry = "SELECT * FROM Users WHERE Username = '" + comboBox3.Text + "';";
             SqlCommand cmd = new SqlCommand(qry, conn);
             SqlDataReader reader;
             try
@@ -383,5 +403,19 @@ namespace POSTiw
         private void label6_Click(object sender, EventArgs e)
         {
         }
+
+        private void addID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        public void textBox_KeyPress_Event(object sender, KeyPressEventArgs e)
+        {
+            if ( (Keys)e.KeyChar == Keys.Space)
+            {
+                e.Handled = true;
+            }
+                
+        }
+
     }
 }

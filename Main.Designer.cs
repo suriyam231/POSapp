@@ -658,6 +658,7 @@
             this.textBox3.Size = new System.Drawing.Size(88, 34);
             this.textBox3.TabIndex = 44;
             this.textBox3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Click_OK);
+            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress_Event);
             // 
             // label19
             // 
